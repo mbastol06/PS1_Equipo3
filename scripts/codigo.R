@@ -67,3 +67,62 @@ extraer_primera_tabla <- function(b, url, espera_js = 12) {
   
   return(tb)
 }
+
+## 4) Se corre un loop para cada una de las diez páginas en una sola sesión de Chrome, y se fuerza a cerrar
+
+b <- chromote::ChromoteSession$new()
+on.exit(b$close(), add = TRUE)
+
+tablas_por_pagina <- vector("list", length = nrow(paginas))
+
+for (i in seq_len(nrow(paginas))) {
+  url_i <- paginas$url[i]
+  chunk_i <- paginas$chunk[i]
+  
+  tb_i <- try(extraer_primera_tabla(b, url_i, espera_js = espera_js), silent = TRUE)
+  
+  if (inherits(tb_i, "try-error") || is.null(tb_i)) {
+    message(sprintf("No se pudo extraer tabla de page%d.", chunk_i))
+    next
+  }
+  
+  tb_i <- tb_i |>
+    dplyr::mutate(chunk = chunk_i, url = url_i) |>
+    dplyr::relocate(chunk, url)
+  
+  ## 5) Se guardan como csv cada una de las tablas extraídas por medio del web scrapping
+  
+  ruta_csv <- fs::path(dir_proc, sprintf("tabla_page%d.csv", chunk_i))
+  readr::write_csv(tb_i, ruta_csv)
+  message("Guardado: ", ruta_csv, "  (", nrow(tb_i), " filas, ", ncol(tb_i), " cols)")
+  
+  tablas_por_pagina[[i]] <- tb_i
+}
+
+## 6) Se combinan todas las tablas extraídas y se guardan, a su vez, como df y csv
+
+tablas_validas <- compact(tablas_por_pagina)
+
+if (length(tablas_validas) > 0) {
+  combinado <- dplyr::bind_rows(tablas_validas)
+  
+  ruta_csv_comb <- fs::path(dir_proc, "tablas_page1_a_page10_combinado.csv")
+  ruta_rds_comb <- fs::path(dir_proc, "tablas_page1_a_page10_combinado.rds")
+  readr::write_csv(combinado, ruta_csv_comb)
+  saveRDS(combinado, ruta_rds_comb)
+  
+  message("Combinado guardado en:")
+  message("   - ", ruta_csv_comb)
+  message("   - ", ruta_rds_comb)
+  
+  resumen <- combinado |>
+    dplyr::group_by(chunk) |>
+    dplyr::summarise(
+      filas = dplyr::n(),
+      columnas = ncol(dplyr::cur_data()),
+      .groups = "drop"
+    )
+  print(resumen)
+} else {
+  message("No se extrajo ninguna tabla de las 10 páginas.")
+}
