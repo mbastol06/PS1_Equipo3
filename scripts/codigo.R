@@ -90,7 +90,7 @@ for (i in seq_len(nrow(paginas))) {
     dplyr::mutate(chunk = chunk_i, url = url_i) |>
     dplyr::relocate(chunk, url)
   
-  ## 5) Se guardan como csv cada una de las tablas extraídas por medio del web scrapping
+## 5) Se guardan como csv cada una de las tablas extraídas por medio del web scrapping
   
   ruta_csv <- fs::path(dir_proc, sprintf("tabla_page%d.csv", chunk_i))
   readr::write_csv(tb_i, ruta_csv)
@@ -126,3 +126,92 @@ if (length(tablas_validas) > 0) {
 } else {
   message("No se extrajo ninguna tabla de las 10 páginas.")
 }
+
+
+#### ============================================================
+###Punto 2 - Limpieza de Datos
+
+## 1) Se filtran los individuos por edad mayor a 18 años y empleados (se excluyen los empleados por cuenta propia)
+
+combinado <- combinado %>%
+  dplyr::filter(age >= 18)
+
+combinado <- combinado %>%
+  dplyr::filter(!is.na(y_ing_lab_m) & y_ing_lab_m > 0)
+
+combinado <- combinado %>%
+  dplyr::filter(dsi != 1)
+
+combinado <- combinado %>%
+  dplyr::filter(cuenta_propia != 1)
+
+## 2) Se filtran las variables ue no sirvan para el análisis, como missing values en todas las observaciones o valores iguales
+
+combinado <- combinado %>%
+  dplyr::select(where(~ !all(is.na(.))))
+
+combinado <- combinado %>%
+  dplyr::select(where(~ dplyr::n_distinct(.) > 1))
+
+combinado <- combinado %>%
+  dplyr::select(where(~ mean(is.na(.)) <= 0.6))
+
+## 3) Se identifican las variables categóricas que están definidas como integers
+
+cols_con_na <- names(combinado)[colSums(is.na(combinado)) > 0]
+sapply(combinado[ , cols_con_na, drop = FALSE], class)
+
+variables_categoricas <- c(
+  "p6100", "p6585s2a2", "p7510s1", "p7510s2", "p7510s3",
+  "p7510s5", "p7510s6", "p7510s7",
+  "reg_salud"
+)
+
+variables_categoricas <- intersect(variables_categoricas, names(combinado))
+
+## 4) Se reemplazan los NAs de las variables categóricas por la moda de los individuos que comparten estrato
+
+moda <- function(x) {
+  x <- x[!is.na(x)]
+  if (length(x) == 0) return(NA_integer_)
+  ux <- unique(x)
+  ux[which.max(tabulate(match(x, ux)))]
+}
+
+combinado <- combinado %>%
+  group_by(estrato1) %>%
+  mutate(across(all_of(variables_categoricas),
+                ~ ifelse(is.na(.), moda(.), .)
+  )) %>%
+  ungroup()
+
+colSums(is.na(combinado[ , variables_categoricas]))
+
+combinado <- combinado %>%
+  mutate(across(where(is.integer), as.factor))
+
+## 5) Se reemplazan los NAs de las variables numéricas con método KNN
+
+variables_numericas <- c("p6510s1", "p6545s1", "p6580s1", "p6585s1a1", 
+                         "p6585s2a1", "p6585s3a1", "p7070", "isa", 
+                         "y_auxilio_transp_m", "y_prima_servicios_m")
+
+combinado <- VIM::kNN(
+  data    = combinado,
+  variable = variables_numericas,
+  k       = 5,
+  imp_var = FALSE
+)
+
+## 6) Se eliminan las observaciones que estén por encima del percentil 97.5 para que no exista una distribución asimétrica
+
+variables_ingresos <- names(combinado)[
+  grepl("(^y_|ingtot|p6500)", names(combinado), ignore.case = TRUE)
+]
+
+for (v in variables_ingresos) {
+  p975 <- quantile(combinado[[v]], probs = 0.975, na.rm = TRUE, names = FALSE)
+  combinado[[v]] <- ifelse(combinado[[v]] > p975, p975, combinado[[v]])
+}
+
+message("Variables de ingreso tratadas: ", paste(variables_ingresos, collapse = ", "))
