@@ -215,3 +215,65 @@ for (v in variables_ingresos) {
 }
 
 message("Variables de ingreso tratadas: ", paste(variables_ingresos, collapse = ", "))
+
+
+#### ============================================================
+###Punto 2 - Estadísticas Descriptivas
+
+## 1) Se definen los nombres de las variables de interés
+
+combinado <- combinado %>% mutate(ln_salario = log(y_total_m_ha))
+
+variables_descriptivas <- tibble::tribble(
+  ~var,               ~label,
+  "y_total_m",       "Salario mensual",
+  "y_total_m_ha",    "Salario por hora",
+  "ln_salario",       "ln(Salario)",
+  "age",              "Edad",
+  "sex",              "Sexo (1 = Mujer)",
+  "micro_empresa",    "Trabaja en microempresa (1 = Sí)",
+  "formal",           "Trabajo formal (1 = Sí)",
+  "hours_work_usual", "Horas trabajadas",
+  "p7040",       "Segundo trabajo (1 = Sí)"
+) %>%
+  dplyr::filter(var %in% names(combinado))
+
+to_numeric <- function(x) {
+  if (is.factor(x) || is.character(x)) suppressWarnings(as.numeric(as.character(x))) else as.numeric(x)
+}
+
+## 2) Se calculan las estadísticas descriptivas para cada variable
+
+tabla_1 <- variables_descriptivas %>%
+  mutate(
+    x        = map(var, ~ to_numeric(combinado[[.x]])),
+    N        = map_int(x, ~ sum(!is.na(.))),
+    Media    = map_dbl(x, ~ mean(., na.rm = TRUE)),
+    DesvEst  = map_dbl(x, ~ sd(.,   na.rm = TRUE)),
+    Min      = map_dbl(x, ~ suppressWarnings(min(., na.rm = TRUE))),
+    Max      = map_dbl(x, ~ suppressWarnings(max(., na.rm = TRUE)))
+  ) %>%
+  transmute(
+    Variable = label, N, Media, `Desv. Est.` = DesvEst, Min, Max
+  )
+
+## 3) Se usan dos decimales 
+
+tabla_1 <- tabla_1 %>%
+  mutate(
+    N           = comma(N, accuracy = 1),
+    Media       = comma(Media, accuracy = 0.01),
+    `Desv. Est.`= comma(`Desv. Est.`, accuracy = 0.01),
+    Min         = comma(Min, accuracy = 0.01),
+    Max         = comma(Max, accuracy = 0.01)
+  )
+
+## 4) Se usa GT para construir la tabla, como se presentó en clase 
+
+gt(tabla_1) |>
+  tab_header(title = md("**Tabla 1. Estadísticas descriptivas**")) |>
+  cols_label(
+    Variable = "Variable", N = "N",
+    Media = "Media", `Desv. Est.` = "Desv. Est.", Min = "Min", Max = "Max"
+  ) |>
+  fmt_missing(everything(), missing_text = "NA")
