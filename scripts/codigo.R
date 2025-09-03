@@ -38,12 +38,12 @@ fs::dir_create(dir_proc, recurse = TRUE)
 
 #Se dejan doce segundos de espera para cada una de las cargas de las páginas ya que tardan en cargar
 
-espera_js  <- 12   
+espera_js  <- 25   
 options(timeout = 180)
 
 ## 2) Se extrae la primera tabla de cada página (la única con base en el tiempo de espera definido)
 
-extraer_primera_tabla <- function(b, url, espera_js = 12) {
+extraer_primera_tabla <- function(b, url, espera_js = 25) {
   b$Page$navigate(url)
   b$Page$loadEventFired(wait_ = TRUE)
   Sys.sleep(espera_js)
