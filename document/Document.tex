@@ -20,7 +20,7 @@
 \usepackage{threeparttable}
 \usepackage[capposition=top]{floatrow}
 \usepackage[labelsep=period]{caption}
-
+\usepackage[spanish]{babel}
 \usepackage{subcaption}
 \usepackage{lscape}
 \usepackage{pdflscape}
@@ -78,9 +78,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Title, authors and date
 
-\title{Tesis PEG Template }
+\title{PS1 }
 
-\author{Ignacio Sarmiento-Barbieri } 
+\author{Lucas Eduardo Veras Costa,  Catalina Leal Rojas,Lucas Daniel Carrillo Aguirre, Lucas Eduardo Veras Costa, Maria Paula Basto Lozano} 
 \date{\today}
 \begin{document}
 
@@ -90,33 +90,9 @@
 
 \thispagestyle{empty} % Leaves first page without page number
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%          			  ABSTRACT       					      %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
 
 
-
-
-\begin{abstract}
-%100-word Abstract
-\noindent %
-
-\end{abstract}
-
-
-
-
-% Keywords and JEL Classification
-\medskip
-
-\begin{flushleft}
-	{\bf Key words: } 				\\
-	{\bf JEL Classification: }
-\end{flushleft}
-
-% Ends title page and defines spacing for the rest of the document
-\pagebreak
-\doublespacing
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %    DOCUMENT    		          %
@@ -149,16 +125,39 @@ If you decide to have a separate section, please be careful in relating it to yo
 
 \section{Data}
 
-\section{Identification}
+\section{¿Trabajos semejantes pagos semejantes?}
 
-Writing equations is also quite easy: 
+En la estimación del diferencial salarial por género bajo el principio de 
+``igual remuneración por igual trabajo'', la elección de variables de control 
+es fundamental. Hemos organizado las covariables en cuatro bloques analíticos:
 
-\begin{equation}
-\label{eq:ols}
-    \hat{\beta}= (X'X)^{-1}X'y
-\end{equation}
+\begin{itemize}
+    \item \textbf{Capital humano}: Incluimos edad y su cuadrado como 
+    aproximación a la experiencia laboral, así como el nivel educativo más alto 
+    alcanzado. Estas variables capturan diferencias en productividad potencial.
 
-Equation \eqref{eq:ols} shows ...
+    \item \textbf{Características del empleo}: Incorporamos ocupación, tamaño 
+    de la firma, tipo de relación laboral, formalidad del empleo y la antigüedad 
+    en el puesto. Estos factores permiten aproximar la comparabilidad entre 
+    trabajos, tal como lo exige la noción de ``igual trabajo''.
+
+    \item \textbf{Condiciones de mercado laboral}: Se añaden controles 
+    geográficos (departamento y área urbana/rural) y temporales (mes de la 
+    encuesta) para absorber variaciones en salarios asociadas a diferencias 
+    regionales o estacionales.
+
+    \item \textbf{Intensidad laboral}: En las especificaciones con salarios 
+    mensuales, se consideran las horas usuales de trabajo y la existencia de un 
+    segundo empleo. En las especificaciones con salarios por hora, estas 
+    variables se omiten deliberadamente para evitar un ajuste redundante.
+\end{itemize}
+
+La estrategia empírica consiste en estimar primero la brecha salarial sin 
+controles y, posteriormente, añadir secuencialmente los bloques de covariables. 
+De este modo, se puede observar cómo evoluciona el coeficiente asociado a la 
+variable de género, lo que permite interpretar en qué medida el diferencial 
+incondicional se explica por diferencias observables en características de los 
+trabajadores y de sus empleos.
 
 \section{Results}
 

@@ -1,5 +1,5 @@
 
-#define el directorio una carpeta rriba del código, esto es exactamente el repositorio
+#define el directorio una carpeta arriba del código, esto es exactamente el repositorio
 setwd(dirname(dirname(rstudioapi::getActiveDocumentContext()$path))) 
 
 require("pacman")
