@@ -1,6 +1,8 @@
 #### ============================================================
 ### Punto 2 - Web Scrapping
 
+setwd(dirname(dirname(rstudioapi::getActiveDocumentContext()$path))) 
+
 if (!requireNamespace("pacman", quietly = TRUE)) install.packages("pacman")
 
 pacman::p_load(
@@ -30,7 +32,7 @@ pacman::p_load(
 url_or   <- "https://ignaciomsarmiento.github.io/GEIH2018_sample/pages/"
 paginas <- tibble::tibble(
   chunk = 1:10,
-  url   = paste0(url_base, "geih_page_", chunk, ".html")
+  url   = paste0(url_or, "geih_page_", chunk, ".html")
 )
 
 ## 2) Se extraen las tablas de formato HTML
@@ -51,9 +53,9 @@ funciontabla <- function(url_tabla, chunk){
 }
 
 ## 3) Aplicar a todas las páginas
-data_final <- purrr::map2_dfr(paginas$url, paginas$chunk, extraer_tabla)
+data_final <- purrr::map2_dfr(paginas$url, paginas$chunk, funciontabla)
 
 
 # 4) Guardar
 
-write_csv(data_final, "stores/Datos_Extraidos.csv")
+write_csv(data_final, "stores/tablas_page1_a_page10_combinado.csv")
