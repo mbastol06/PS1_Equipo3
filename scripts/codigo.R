@@ -1,5 +1,6 @@
 #### Taller 1 - Big Data and Machine Learning
 
+setwd(dirname(dirname(rstudioapi::getActiveDocumentContext()$path)))
 
 if (!requireNamespace("pacman", quietly = TRUE)) install.packages("pacman")
 
@@ -20,7 +21,8 @@ pacman::p_load(
   VIM,
   gtsummary,
   gt,
-  scales
+  scales,
+  ggplot2
 )
 
 
@@ -28,6 +30,10 @@ pacman::p_load(
 ###Punto 2 - Limpieza de Datos
 
 ## Se carga la tabla extraída por medio del Web Scrapping
+
+ruta_csv <- "stores/tablas_page1_a_page10_combinado.csv"
+
+combinado <- read_csv(ruta_csv)
 
 ## 1) Se filtran los individuos por edad mayor a 18 años y empleados (se excluyen los empleados por cuenta propia)
 
@@ -175,3 +181,74 @@ gt(tabla_1) |>
     Media = "Media", `Desv. Est.` = "Desv. Est.", Min = "Min", Max = "Max"
   ) |>
   fmt_missing(everything(), missing_text = "NA")
+
+
+#### ============================================================
+###Punto 2 - Histogramas
+
+## 1) Se asegura que las variables a graficar sean numéricas, para eso se mutan
+
+combinado_grafica <- combinado %>%
+  mutate(
+    salario_hora = as.numeric(y_total_m_ha),
+    ln_salario   = log(salario_hora)
+  ) %>%
+  filter(is.finite(salario_hora), salario_hora > 0,
+         is.finite(ln_salario))
+
+## 2) Se definen las estadísticas para las líneas verticales
+
+media_hora   <- mean(combinado_grafica$salario_hora, na.rm = TRUE)
+mediana_hora <- median(combinado_grafica$salario_hora, na.rm = TRUE)
+
+media_ln   <- mean(combinado_grafica$ln_salario, na.rm = TRUE)
+mediana_ln <- median(combinado_grafica$ln_salario, na.rm = TRUE)
+
+## 3) Se grafica usando ggplot, como se usó en clase, un histograma para Salario por Hora
+
+p1 <- ggplot(combinado_grafica, aes(x = salario_hora)) +
+  geom_histogram(binwidth = diff(range(combinado_grafica$salario_hora, na.rm = TRUE))/60,
+                 fill = "steelblue", color = "black", alpha = 0.6) +
+  geom_vline(xintercept = media_hora,   linetype = "dashed", color = "red", size = 1) +
+  geom_vline(xintercept = mediana_hora, linetype = "dashed", color = "blue", size = 1) +
+  scale_x_continuous(labels = scales::comma) +
+  scale_y_continuous(labels = scales::comma) +
+  labs(
+    title = "Salario por hora",
+    x = "Salario por hora",
+    y = "Conteo"
+  ) +
+  theme_minimal(base_size = 12) +
+  theme(
+    plot.title = element_text(face = "bold", hjust = 0.5),
+    panel.grid = element_blank(),
+    axis.line = element_line(color = "black")
+  )
+
+p1
+
+## 4) Se grafica usando ggplot, como se usó en clase, un histograma para Logaritmo de Salario
+
+p2 <- ggplot(combinado_grafica, aes(x = ln_salario)) +
+  geom_histogram(
+    binwidth = diff(range(combinado_grafica$ln_salario, na.rm = TRUE)) / 40,
+    fill = "steelblue", color = "black", alpha = 0.6
+  ) +
+  geom_vline(xintercept = media_ln,   linetype = "dashed", color = "red", size = 1) +
+  geom_vline(xintercept = mediana_ln, linetype = "dashed", color = "blue", size = 1) +
+  scale_x_continuous(labels = scales::comma) +
+  scale_y_continuous(labels = scales::comma) +
+  labs(
+    title = "Logaritmo natural del salario",
+    x = "Logaritmo natural del salario",
+    y = "Conteo"
+  ) +
+  theme_minimal(base_size = 12) +
+  theme(
+    plot.title = element_text(face = "bold", hjust = 0.5),
+    panel.grid = element_blank(),
+    axis.line = element_line(color = "black")
+  )
+
+p2
+
