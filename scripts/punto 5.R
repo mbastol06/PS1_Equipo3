@@ -36,14 +36,10 @@ db[categoricas] <- lapply(db[categoricas], factor)
 
 set.seed(10101) 
 
-# Reemplazo de valores “nuevos” en testing
-testing$oficio <- as.character(testing$oficio)
-testing$oficio[!(testing$oficio %in% levels(training$oficio))] <- "otros"
-testing$oficio <- factor(testing$oficio, levels = c(levels(training$oficio), "otros"))
 
 #Dividimos la muestra en 70/30
 inTrain <- createDataPartition(
-  y = db$y_salary_m_hu,  
+  y = db$y_ing_lab_m_ha,  
   p = .70, 
   list = FALSE
 )
@@ -54,35 +50,35 @@ testing  <- db |> filter(!(row_number() %in% inTrain))
 #Definimos los 8 modelos y sacamos el RMSE
 
 #1. modelo del punto 3
-form_1   <- log(y_salary_m_hu) ~ age  + I(age^2)
+form_1   <- log(y_ing_lab_m_ha) ~ age  + I(age^2)
 modelo1a <- lm(form_1,
                data = training)
 
 predictions <- predict(object = modelo1a, newdata = testing)
-score1a<- RMSE(pred = predictions, obs = testing$y_salary_m_hu )
+score1a<- RMSE(pred = predictions, obs = testing$y_ing_lab_m_ha )
 score1a
 
 #2. primer modelo del punto 4
-form_2   <- log(y_salary_m_hu) ~ female
+form_2   <- log(y_ing_lab_m_ha) ~ female
 modelo2a <- lm(form_2,
                data = training)
 
 predictions <- predict(object = modelo2a, newdata = testing)
-score2a <- RMSE(pred = predictions, obs = testing$y_salary_m_hu )
+score2a <- RMSE(pred = predictions, obs = testing$y_ing_lab_m_ha )
 score2a
 
 #3. segundo modelo del punto 4
 
 #para segurar que en ambos grupos estén los mismos factores en
 #variables categóricas
-rec <- recipe(y_salary_m_hu ~ ., data = training) %>%
+rec <- recipe(y_ing_lab_m_ha ~ ., data = training) %>%
   step_other(oficio, size_firm, max_educ_level, threshold = 0.05)
 
 rec_prep <- prep(rec, training = training)
 training <- bake(rec_prep, new_data = training)
 testing <- bake(rec_prep, new_data = testing)
 
-form_3 <- log(y_salary_m_hu) ~ female + age + I(age^2) + 
+form_3 <- log(y_ing_lab_m_ha) ~ female + age + I(age^2) + 
   max_educ_level + total_hours_worked + 
   micro_empresa + formal + 
   size_firm + oficio
@@ -90,11 +86,11 @@ modelo3a <- lm(form_3,
                data = training)
 
 predictions <- predict(modelo3a, testing)
-score3a<- RMSE(predictions, testing$y_salary_m_hu )
+score3a<- RMSE(predictions, testing$y_ing_lab_m_ha )
 score3a
 
 #4. modelo con polinomio 3 en edad e interacción con el resto de regresores
-form_4 <- log(y_salary_m_hu) ~ 
+form_4 <- log(y_ing_lab_m_ha) ~ 
   female + poly(age, 3, raw = TRUE) + max_educ_level +
   total_hours_worked + micro_empresa + formal + size_firm + oficio +
   poly(age, 3, raw = TRUE):female +
@@ -108,11 +104,11 @@ modelo4a <- lm(form_4,
                data = training)
 
 predictions <- predict(modelo4a, testing)
-score4a<- RMSE(predictions, testing$y_salary_m_hu )
+score4a<- RMSE(predictions, testing$y_ing_lab_m_ha )
 score4a
 
 #5. modelo con polinomio 5 en edad e interacción con el resto de regresores
-form_5 <- log(y_salary_m_hu) ~ 
+form_5 <- log(y_ing_lab_m_ha) ~ 
   female + poly(age, 5, raw = TRUE) + max_educ_level +
   total_hours_worked + micro_empresa + formal + size_firm + oficio +
   poly(age, 5, raw = TRUE):female +
@@ -126,22 +122,22 @@ modelo5a <- lm(form_5,
                data = training)
 
 predictions <- predict(modelo5a, testing)
-score5a<- RMSE(predictions, testing$y_salary_m_hu )
+score5a<- RMSE(predictions, testing$y_ing_lab_m_ha )
 score5a
 
 #6. modelo con 1 variables independientes adicional (college)
-form_6 <- log(y_salary_m_hu) ~ 
+form_6 <- log(y_ing_lab_m_ha) ~ 
   female + age + I(age^2) + max_educ_level +
-  total_hours_worked + micro_empresa + formal + size_firm + oficio + college
+  total_hours_worked + micro_empresa + formal + size_firm + oficio + college + p7040
 modelo6a <- lm(form_6,  
                data = training)
 
 predictions <- predict(modelo6a, testing)
-score6a<- RMSE(predictions, testing$y_salary_m_hu )
+score6a<- RMSE(predictions, testing$y_ing_lab_m_ha )
 score6a
 
 #7. modelo con variables continua como polinomios de grado 5 
-form_7 <- log(y_salary_m_hu) ~ 
+form_7 <- log(y_ing_lab_m_ha) ~ 
   female + poly(age, 5, raw = TRUE) + max_educ_level +
   micro_empresa + formal + size_firm + oficio + college +
   poly(total_hours_worked, 5, raw = TRUE)
@@ -149,11 +145,11 @@ modelo7a <- lm(form_7,
                data = training)
 
 predictions <- predict(modelo7a, testing)
-score7a<- RMSE(predictions, testing$y_salary_m_hu )
+score7a<- RMSE(predictions, testing$y_ing_lab_m_ha )
 score7a
 
 #8. modelo 7 con interacciones
-form_8 <- log(y_salary_m_hu) ~ 
+form_8 <- log(y_ing_lab_m_ha) ~ 
   poly(age, 3, raw = TRUE) * female +
   poly(age, 3, raw = TRUE) * max_educ_level +
   poly(age, 3, raw = TRUE) * micro_empresa +
@@ -172,13 +168,13 @@ form_8 <- log(y_salary_m_hu) ~
 modelo8a <- lm(form_8, data = training)
 
 predictions <- predict(modelo8a, testing)
-score8a<- RMSE(predictions, testing$y_salary_m_hu )
+score8a<- RMSE(predictions, testing$y_ing_lab_m_ha )
 score8a
 
 #2 mejores con LOOCV
 ## RUN THE MODEL WITH ALL OBS
 
-full_model <- lm(form_4,
+full_model <- lm(form_1,
                  data = db )
 
 X<- model.matrix(full_model)
