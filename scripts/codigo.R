@@ -38,27 +38,27 @@ combinado <- read_csv(ruta_csv)
 ## 1) Se filtran los individuos por edad mayor a 18 años y empleados (se excluyen los empleados por cuenta propia)
 
 combinado <- combinado %>%
-  dplyr::filter(age >= 18)
+  filter(age >= 18)
 
 combinado <- combinado %>%
-  dplyr::filter(!is.na(y_ing_lab_m) & y_ing_lab_m > 0)
+  filter(!is.na(y_ing_lab_m) & y_ing_lab_m > 0)
 
 combinado <- combinado %>%
-  dplyr::filter(dsi != 1)
+  filter(dsi != 1)
 
 combinado <- combinado %>%
-  dplyr::filter(cuenta_propia != 1)
+  filter(cuenta_propia != 1)
 
 ## 2) Se filtran las variables ue no sirvan para el análisis, como missing values en todas las observaciones o valores iguales
 
 combinado <- combinado %>%
-  dplyr::select(where(~ !all(is.na(.))))
+  select(where(~ !all(is.na(.))))
 
 combinado <- combinado %>%
-  dplyr::select(where(~ dplyr::n_distinct(.) > 1))
+  select(where(~ n_distinct(.) > 1))
 
 combinado <- combinado %>%
-  dplyr::select(where(~ mean(is.na(.)) <= 0.6))
+  select(where(~ mean(is.na(.)) <= 0.6))
 
 ## 3) Se identifican las variables categóricas que están definidas como integers
 
@@ -94,7 +94,7 @@ colSums(is.na(combinado[ , variables_categoricas]))
 combinado <- combinado %>%
   mutate(across(where(is.integer), as.factor))
 
-## 5) Se reemplazan los NAs de las variables numéricas con método KNN
+## 5) Se reemplazan los NAs de las variables numéricas con método KNN usando la función kNN específicamente del paquete VIM
 
 variables_numericas <- c("p6510s1", "p6545s1", "p6580s1", "p6585s1a1", 
                          "p6585s2a1", "p6585s3a1", "p7070", "isa", 
@@ -118,9 +118,6 @@ for (v in variables_ingresos) {
   combinado[[v]] <- ifelse(combinado[[v]] > p975, p975, combinado[[v]])
 }
 
-message("Variables de ingreso tratadas: ", paste(variables_ingresos, collapse = ", "))
-
-
 #### ============================================================
 ###Punto 2 - Estadísticas Descriptivas
 
@@ -128,7 +125,7 @@ message("Variables de ingreso tratadas: ", paste(variables_ingresos, collapse = 
 
 combinado <- combinado %>% mutate(ln_salario = log(y_total_m_ha))
 
-variables_descriptivas <- tibble::tribble(
+variables_descriptivas <- tribble(
   ~var,               ~label,
   "y_total_m",       "Salario mensual",
   "y_total_m_ha",    "Salario por hora",
@@ -140,7 +137,7 @@ variables_descriptivas <- tibble::tribble(
   "hours_work_usual", "Horas trabajadas",
   "p7040",       "Segundo trabajo (1 = Sí)"
 ) %>%
-  dplyr::filter(var %in% names(combinado))
+  filter(var %in% names(combinado))
 
 to_numeric <- function(x) {
   if (is.factor(x) || is.character(x)) suppressWarnings(as.numeric(as.character(x))) else as.numeric(x)
