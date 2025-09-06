@@ -37,6 +37,7 @@ setwd("C:/Users/mpaul/OneDrive - Universidad de los andes/repositorios/PS1_Equip
 
 # Cargue de los datos 
 db <- read_csv("stores/tablas_page1_a_page10_combinado.csv")
+<<<<<<< Updated upstream
 db <- as_tibble(db) %>% 
   dplyr::select(
     directorio,     # Llave de vivienda
@@ -252,6 +253,8 @@ des_vars <- c("totalHoursWorked", "num_minors", "y_ing_lab_m_ha", "bin_male",
 stargazer(as.data.frame(db[,des_vars]), type = "text")
 
 ##########################################################
+=======
+>>>>>>> Stashed changes
 
 #### ============================================================
 ###Punto 2 - Limpieza de Datos
