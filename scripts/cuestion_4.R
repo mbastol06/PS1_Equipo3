@@ -102,18 +102,21 @@ ggsave(sd_hist, dpi = 300,filename = "views/sd_fwl_hist.png")
 #-------------------------------------------------------------------------------
 # Haciendo varias regresiones con los controles
 #-------------------------------------------------------------------------------
-reg_fem <- lm(data = data_reg, log(y_ingLab_m_ha) ~ female)
+reg_fem <- lm(data = data_reg, log(y_total_m_ha) ~ female)
 
-reg_fem_age <- lm(data = data_reg, log(y_ingLab_m_ha) ~ female + age + age_sqr)
+reg_fem_age <- lm(data = data_reg, log(y_total_m_ha) ~ female + age + age_sqr)
 
-reg_fem_age_educ <- lm(data = data_reg, log(y_ingLab_m_ha) ~ female + age + age_sqr  + as.factor(maxEducLevel) )
+reg_fem_age_educ <- lm(data = data_reg, log(y_total_m_ha) ~ female + age + age_sqr  + as.factor(maxEducLevel) )
 
-reg_fem_age_educ_hwork <- lm(data = data_reg, log(y_ingLab_m_ha) ~ female + age + age_sqr  + as.factor(maxEducLevel) + + totalHoursWorked)
+reg_fem_age_educ_hwork <- lm(data = data_reg, log(y_total_m_ha) ~ female + age + age_sqr  + as.factor(maxEducLevel) + + totalHoursWorked)
 
-reg_fem_age_educ_cwork <-lm(data = data_reg, log(y_ingLab_m_ha) ~ "female" + age + age_sqr  + as.factor(maxEducLevel) + totalHoursWorked 
+reg_fem_age_educ_cwork <-lm(data = data_reg, log(y_total_m_ha) ~ "female" + age + age_sqr  + as.factor(maxEducLevel) + totalHoursWorked 
                              + cuentaPropia + microEmpresa + formal + as.factor(sizeFirm) + as.factor(oficio)) 
 reg_list <- list(
   reg_fem,reg_fem_age,reg_fem_age_educ, reg_fem_age_educ_hwork,reg_fem_age_educ_cwork)
+
+stargazer(reg_list, type = "latex", omit = c("sizeFirm","oficio"), out = "views/reg_controls.tex")
+
 
 #-------------------------------------------------------------------------------
 # Calculating the peak age for the models through bootstrat

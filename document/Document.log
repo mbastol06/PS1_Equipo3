@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.8.29)  5 SEP 2025 23:29
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.8.29)  6 SEP 2025 09:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -834,41 +834,39 @@ Package pdftex.def Info: ../views/sd_fwl_hist.png  used on input line 268.
 [3]
 
 [4 <../views/sd_fwl_hist.png>]
-<../views/age_peak_bar.png, id=91, 489.2679pt x 380.8629pt>
+
+[5]
+<../views/age_peak_bar.png, id=96, 489.2679pt x 380.8629pt>
 File: ../views/age_peak_bar.png Graphic file (type png)
 <use ../views/age_peak_bar.png>
-Package pdftex.def Info: ../views/age_peak_bar.png  used on input line 383.
+Package pdftex.def Info: ../views/age_peak_bar.png  used on input line 377.
 (pdftex.def)             Requested size: 366.95001pt x 285.64645pt.
 
 
-[5]
-
-[6]
-<../views/age_whiskey_point.png, id=102, 489.2679pt x 380.8629pt>
+[6 <../views/age_peak_bar.png>]
+<../views/age_whiskey_point.png, id=103, 489.2679pt x 380.8629pt>
 File: ../views/age_whiskey_point.png Graphic file (type png)
 <use ../views/age_whiskey_point.png>
-Package pdftex.def Info: ../views/age_whiskey_point.png  used on input line 391
+Package pdftex.def Info: ../views/age_whiskey_point.png  used on input line 385
 .
 (pdftex.def)             Requested size: 366.95001pt x 285.64645pt.
 
 
-[7 <../views/age_peak_bar.png>]
+[7 <../views/age_whiskey_point.png>] (Document.bbl)
 
-[8 <../views/age_whiskey_point.png>] (Document.bbl)
+[8] (../views/av_discrimination.tex)
 
-[9] (../views/av_discrimination.tex)
-
-[10]
-<../views/fig1a.pdf, id=137, 504.88625pt x 504.88625pt>
+[9]
+<../views/fig1a.pdf, id=133, 504.88625pt x 504.88625pt>
 File: ../views/fig1a.pdf Graphic file (type pdf)
 <use ../views/fig1a.pdf>
-Package pdftex.def Info: ../views/fig1a.pdf  used on input line 431.
+Package pdftex.def Info: ../views/fig1a.pdf  used on input line 425.
 (pdftex.def)             Requested size: 378.66374pt x 378.66374pt.
 
 
-[11 <../views/fig1a.pdf>]
+[10 <../views/fig1a.pdf>]
 
-[12] (Document.aux
+[11] (Document.aux
 LaTeX Info: Redefining \. on input line 14.
 LaTeX Info: Redefining \% on input line 14.
 )
@@ -884,13 +882,13 @@ Package rerunfilecheck Info: File `Document.out' has not changed.
 (rerunfilecheck)             Checksum: 7A896B2AEB075C9595459D29F5BF9AE0;1017.
  ) 
 Here is how much of TeX's memory you used:
- 16466 strings out of 468219
- 261022 string characters out of 5442933
- 719436 words of memory out of 5000000
+ 16465 strings out of 468219
+ 261015 string characters out of 5442933
+ 721451 words of memory out of 5000000
  44679 multiletter control sequences out of 15000+600000
  636037 words of font info for 75 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,13n,79p,666b,589s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,13n,79p,659b,589s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Progra
 m Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files/MiKT
 eX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX/fonts/type
@@ -904,9 +902,9 @@ nts/cm/cmsy6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.
 pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Prog
 ram Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files/Mi
 KTeX/fonts/type1/public/amsfonts/cm/cmti8.pfb>
-Output written on Document.pdf (12 pages, 469418 bytes).
+Output written on Document.pdf (11 pages, 468773 bytes).
 PDF statistics:
- 224 PDF objects out of 1000 (max. 8388607)
- 42 named destinations out of 1000 (max. 500000)
+ 220 PDF objects out of 1000 (max. 8388607)
+ 41 named destinations out of 1000 (max. 500000)
  85 words of extra memory for PDF output out of 10000 (max. 10000000)
 
