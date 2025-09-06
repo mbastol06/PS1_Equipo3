@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.8.29)  6 SEP 2025 09:41
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.8.29)  6 SEP 2025 11:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -697,10 +697,10 @@ File: l3backend-pdftex.def 2025-04-14 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count355
 )
 (Document.aux
-LaTeX Info: Redefining \. on input line 14.
-LaTeX Info: Redefining \% on input line 14.
+LaTeX Info: Redefining \. on input line 12.
+LaTeX Info: Redefining \% on input line 12.
 Package babel Info: 'spanish' activates 'spanish' shorthands.
-(babel)             Reported  on input line 14.
+(babel)             Reported  on input line 12.
 )
 \openout1 = `Document.aux'.
 
@@ -807,12 +807,12 @@ Package hyperref Info: Link coloring ON on input line 86.
 \@outlinefile=\write4
 \openout4 = `Document.out'.
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 119
+LaTeX Font Info:    Trying to load font information for U+msa on input line 129
 .
  (C:\Program Files\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 119
+LaTeX Font Info:    Trying to load font information for U+msb on input line 129
 .
 
 (C:\Program Files\MiKTeX\tex/latex/amsfonts\umsb.fd
@@ -824,11 +824,11 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 {C:/Users/lveras/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
 
 [2]
-<../views/sd_fwl_hist.png, id=69, 317.988pt x 148.8762pt>
+<../views/sd_fwl_hist.png, id=57, 489.2679pt x 148.8762pt>
 File: ../views/sd_fwl_hist.png Graphic file (type png)
 <use ../views/sd_fwl_hist.png>
-Package pdftex.def Info: ../views/sd_fwl_hist.png  used on input line 268.
-(pdftex.def)             Requested size: 238.4904pt x 111.65688pt.
+Package pdftex.def Info: ../views/sd_fwl_hist.png  used on input line 254.
+(pdftex.def)             Requested size: 366.95001pt x 111.65688pt.
 
 
 [3]
@@ -836,39 +836,31 @@ Package pdftex.def Info: ../views/sd_fwl_hist.png  used on input line 268.
 [4 <../views/sd_fwl_hist.png>]
 
 [5]
-<../views/age_peak_bar.png, id=96, 489.2679pt x 380.8629pt>
+<../views/age_peak_bar.png, id=79, 489.2679pt x 380.8629pt>
 File: ../views/age_peak_bar.png Graphic file (type png)
 <use ../views/age_peak_bar.png>
-Package pdftex.def Info: ../views/age_peak_bar.png  used on input line 377.
+Package pdftex.def Info: ../views/age_peak_bar.png  used on input line 363.
 (pdftex.def)             Requested size: 366.95001pt x 285.64645pt.
-
-
-[6 <../views/age_peak_bar.png>]
-<../views/age_whiskey_point.png, id=103, 489.2679pt x 380.8629pt>
+<../views/age_whiskey_point.png, id=81, 489.2679pt x 380.8629pt>
 File: ../views/age_whiskey_point.png Graphic file (type png)
 <use ../views/age_whiskey_point.png>
-Package pdftex.def Info: ../views/age_whiskey_point.png  used on input line 385
+Package pdftex.def Info: ../views/age_whiskey_point.png  used on input line 371
 .
 (pdftex.def)             Requested size: 366.95001pt x 285.64645pt.
 
 
+[6 <../views/age_peak_bar.png>]
+
+LaTeX Warning: Reference `tab:avdiscriminationrates' on page 7 undefined on inp
+ut line 378.
+
+
+
 [7 <../views/age_whiskey_point.png>] (Document.bbl)
 
-[8] (../views/av_discrimination.tex)
-
-[9]
-<../views/fig1a.pdf, id=133, 504.88625pt x 504.88625pt>
-File: ../views/fig1a.pdf Graphic file (type pdf)
-<use ../views/fig1a.pdf>
-Package pdftex.def Info: ../views/fig1a.pdf  used on input line 425.
-(pdftex.def)             Requested size: 378.66374pt x 378.66374pt.
-
-
-[10 <../views/fig1a.pdf>]
-
-[11] (Document.aux
-LaTeX Info: Redefining \. on input line 14.
-LaTeX Info: Redefining \% on input line 14.
+[8] (Document.aux
+LaTeX Info: Redefining \. on input line 12.
+LaTeX Info: Redefining \% on input line 12.
 )
  ***********
 LaTeX2e <2025-06-01> patch level 1
@@ -876,35 +868,33 @@ L3 programming layer <2025-05-26>
  ***********
 
 
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `Document.out' has not changed.
-(rerunfilecheck)             Checksum: 7A896B2AEB075C9595459D29F5BF9AE0;1017.
+(rerunfilecheck)             Checksum: 7FED1AB57E5FB52C282B82C39D349AD6;782.
  ) 
 Here is how much of TeX's memory you used:
- 16465 strings out of 468219
- 261015 string characters out of 5442933
- 721451 words of memory out of 5000000
- 44679 multiletter control sequences out of 15000+600000
- 636037 words of font info for 75 fonts, out of 8000000 for 9000
+ 16409 strings out of 468219
+ 259741 string characters out of 5442933
+ 718280 words of memory out of 5000000
+ 44640 multiletter control sequences out of 15000+600000
+ 634637 words of font info for 69 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,13n,79p,659b,589s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,13n,79p,659b,567s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Progra
 m Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files/MiKT
 eX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX/fonts/type
-1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsf
-onts/cm/cmr12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17
-.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Progr
-am Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files/MiKTe
-X/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX/fonts/type1/
-public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfo
-nts/cm/cmsy6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.
-pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Prog
-ram Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files/Mi
-KTeX/fonts/type1/public/amsfonts/cm/cmti8.pfb>
-Output written on Document.pdf (11 pages, 468773 bytes).
+1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsf
+onts/cm/cmr17.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.
+pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Progra
+m Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKT
+eX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Program Files/MiKTeX/fonts/type
+1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsf
+onts/cm/cmti12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmti
+8.pfb>
+Output written on Document.pdf (8 pages, 306499 bytes).
 PDF statistics:
- 220 PDF objects out of 1000 (max. 8388607)
- 41 named destinations out of 1000 (max. 500000)
- 85 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 167 PDF objects out of 1000 (max. 8388607)
+ 30 named destinations out of 1000 (max. 500000)
+ 72 words of extra memory for PDF output out of 10000 (max. 10000000)
 
