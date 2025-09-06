@@ -27,10 +27,10 @@ pacman::p_load(
   dplyr
 )
 
-db <- readRDS("C:/Users/catal/Documents/PEG-1/Big Data/Taller 1/PS1_Equipo3/stores/combinado.rds")
+db <- readRDS("C:/Users/catal/Documents/PEG-1/Big Data/Taller 1/PS1_Equipo3/stores/base_final.csv")
 
 #Ajuste de variables relevantes
-db <- db %>% mutate(female = 1 - sex)
+#db <- db %>% mutate(female = 1 - sex)
 categoricas <- c("oficio", "size_firm", "max_educ_level")
 db[categoricas] <- lapply(db[categoricas], factor)
 
@@ -55,7 +55,7 @@ modelo1a <- lm(form_1,
                data = training)
 
 predictions <- predict(object = modelo1a, newdata = testing)
-score1a<- RMSE(pred = predictions, obs = testing$y_ing_lab_m_ha )
+score1a<- RMSE(pred = predictions, obs = log(testing$y_ing_lab_m_ha) )
 score1a
 
 #2. primer modelo del punto 4
@@ -128,7 +128,7 @@ score5a
 #6. modelo con 1 variables independientes adicional (college)
 form_6 <- log(y_ing_lab_m_ha) ~ 
   female + age + I(age^2) + max_educ_level +
-  total_hours_worked + micro_empresa + formal + size_firm + oficio + college + p7040
+  total_hours_worked + micro_empresa + formal + size_firm + oficio + college
 modelo6a <- lm(form_6,  
                data = training)
 
@@ -202,3 +202,62 @@ for (i in 1:N) {
 
 looCV_error <- mean(LOO)
 sqrt(looCV_error)
+
+#INTENTO CHATG
+# Asumo que ya tienes: full_model <- lm(form_1, data = db)
+
+fit <- full_model
+
+# Extrae X e y CONSISTENTES con el modelo (maneja na.omit, factores, etc.)
+mf <- model.frame(fit)
+X  <- model.matrix(fit)
+y  <- model.response(mf)
+
+# Coefs y diagnósticos
+beta_hat <- coef(fit)
+e <- resid(fit)
+h <- hatvalues(fit)
+
+# (X'X)^{-1} estable (mejor que solve(t(X)%*%X))
+qrX   <- qr(X)
+G_inv <- chol2inv(qr.R(qrX))
+
+N <- nrow(X)
+LOO <- numeric(N)
+
+for (i in 1:N) {
+  x_i   <- drop(X[i, ])                # vector columna "plano"
+  scale <- e[i] / (1 - h[i])           # escalar e_i / (1 - h_ii)
+  b_new <- beta_hat - (G_inv %*% x_i) * scale
+  yhat_new_i <- drop(x_i %*% b_new)    # predicción de i con el modelo -i
+  LOO[i] <- (y[i] - yhat_new_i)^2
+}
+
+rmse_loop    <- sqrt(mean(LOO))
+rmse_formula <- sqrt(mean( (e/(1 - h))^2 ))
+
+c(loop = rmse_loop, formula = rmse_formula, diff = rmse_loop - rmse_formula)
+
+#idea 2
+rmse_loocv <- sqrt(mean( (resid(full_model) / (1 - hatvalues(full_model)))^2 ))
+rmse_loocv
+
+#IDEA CON NIVELES
+fit <- full_model
+
+mf   <- model.frame(fit)
+ylog <- model.response(mf)          # y en log (lo que usa el modelo)
+yhat <- fitted(fit)                 # predicciones en log in-sample
+e    <- resid(fit)
+h    <- hatvalues(fit)
+
+# Predicción LOO en log (vectorizado)
+yhat_loo_log <- yhat + e/(1 - h)
+
+# Volver a niveles
+y_level        <- exp(ylog)         # y original en niveles
+yhat_loo_level <- exp(yhat_loo_log)
+
+rmse_loo_level <- sqrt(mean( (y_level - yhat_loo_level)^2 ))
+rmse_loo_level
+
