@@ -155,7 +155,7 @@ f_edad_pico(db3, 1:nrow(db3))
 ## El bootstrap -------------------------------------------------------------------
 # para identificar intervalo de confianza de la edad máxima segun cambie la muestra
 
-set.seed(123)
+set.seed(10101)
 boot_p3 <- boot(data = db3, f_edad_pico, R = 1000) # no paramétrico
 boot_p3
 
