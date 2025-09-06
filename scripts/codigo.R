@@ -3,10 +3,9 @@
 
 setwd(dirname(dirname(rstudioapi::getActiveDocumentContext()$path)))
 
-ruta_csv2 <- "stores/limpieza_base_datos.csv"
+ruta_csv2 <- "stores/base_final.csv"
 
-combinado <- read_csv(ruta_csv)
-
+combinado <- read_csv(ruta_csv2)
 
 ## 1) Se definen los nombres de las variables de interés
 
@@ -67,6 +66,7 @@ gt(tabla_1) |>
   fmt_missing(everything(), missing_text = "NA")
 
 
+
 #### ============================================================
 ###Punto 2 - Histogramas
 
@@ -111,6 +111,8 @@ p1 <- ggplot(combinado_grafica, aes(x = salario_hora)) +
 
 p1
 
+ggsave(p1, dpi = 300, filename = "views/1_histo_sal.png" )
+
 ## 4) Se grafica usando ggplot, como se usó en clase, un histograma para Logaritmo de Salario
 
 p2 <- ggplot(combinado_grafica, aes(x = ln_salario)) +
@@ -136,3 +138,4 @@ p2 <- ggplot(combinado_grafica, aes(x = ln_salario)) +
 
 p2
 
+ggsave(p2, dpi = 300, filename = "views/1_histo_sal_hora.png" )
