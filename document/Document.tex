@@ -6,7 +6,8 @@
 
 \usepackage[margin=1in]{geometry}
 \usepackage{authblk}
-\usepackage[latin1]{inputenc}
+\usepackage{caption}
+\usepackage[utf8]{inputenc}
 \usepackage{amsfonts}
 \usepackage{a4wide,graphicx,color}
 \usepackage{amsmath}
@@ -20,7 +21,7 @@
 \usepackage{threeparttable}
 \usepackage[capposition=top]{floatrow}
 \usepackage[labelsep=period]{caption}
-
+\usepackage[spanish]{babel}
 \usepackage{subcaption}
 \usepackage{lscape}
 \usepackage{pdflscape}
@@ -28,7 +29,7 @@
 \usepackage[bottom]{footmisc}
 \setlength\footnotemargin{5pt}
 \usepackage{longtable} %for long tables
-
+\usepackage{graphicx}
 \usepackage{enumerate}
 \usepackage{units}  %nicefraction
 \usepackage{placeins}
@@ -52,7 +53,6 @@
 
 \usepackage{comment} %to comment entire sections
 
-\usepackage{xfrac} %sideways fractions
 
 
 \usepackage{bbold} %for indicators
@@ -78,10 +78,11 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Title, authors and date
 
-\title{Tesis PEG Template }
+\title{PS1 }
 
-\author{Ignacio Sarmiento-Barbieri } 
+\author{Catalina Leal Rojas, Lucas Daniel Carrillo Aguirre, Lucas Eduardo Veras Costa, Maria Paula Basto Lozano} 
 \date{\today}
+
 \begin{document}
 
 
@@ -90,33 +91,9 @@
 
 \thispagestyle{empty} % Leaves first page without page number
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%          			  ABSTRACT       					      %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
 
 
-
-
-\begin{abstract}
-%100-word Abstract
-\noindent %
-
-\end{abstract}
-
-
-
-
-% Keywords and JEL Classification
-\medskip
-
-\begin{flushleft}
-	{\bf Key words: } 				\\
-	{\bf JEL Classification: }
-\end{flushleft}
-
-% Ends title page and defines spacing for the rest of the document
-\pagebreak
-\doublespacing
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %    DOCUMENT    		          %
@@ -149,17 +126,267 @@ If you decide to have a separate section, please be careful in relating it to yo
 
 \section{Data}
 
-\section{Identification}
+\section{¿Trabajos semejantes pagos semejantes?}
 
-Writing equations is also quite easy: 
+En esta sección analizaremos la relación entre ingresos y género femenino. 
+En primer lugar, es importante discutir qué medida de ingreso utilizar. 
+La base de datos de la GNIH incluye diversas medidas, como ingreso por primas monetarias, ingreso mensual, ingreso usual en el mes e ingreso efectivo en el mes, entre otras. 
+
+En los estudios que analizan la brecha salarial entre hombres y mujeres, es común emplear el ingreso por hora, ya que permite aislar el efecto de las horas trabajadas en el mes, lo cual podría sesgar los resultados. 
+Asimismo, suele utilizarse la variable de ingreso en logaritmos, lo que mejora la interpretabilidad del coeficiente estimado, que pasaría a representar cuánto impacta, en términos porcentuales, una unidad adicional de la variable independiente sobre el ingreso. 
+
+También es importante señalar que nos interesa comparar únicamente a hombres y mujeres que trabajan. 
+Por lo tanto, el análisis se centra en los individuos ocupados de la muestra.
+
+Inicialmente estimamos el siguiente modelo:
 
 \begin{equation}
-\label{eq:ols}
-    \hat{\beta}= (X'X)^{-1}X'y
+\log(\omega) = \beta_0 + \beta_1 Female + u 
+\label{eq_inc}
 \end{equation}
 
-Equation \eqref{eq:ols} shows ...
 
+\begin{table}[!htbp] 
+\centering    
+\caption{Resultados del modelo incondicional}    
+\label{cuadro_inco}  
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{@{\extracolsep{5pt}}lccccc}  
+\\[-1.8ex]\hline  
+\hline \\[-1.8ex]   
+& \multicolumn{5}{c}{\textit{Variable dependiente:}} \\  
+\cline{2-6}  
+\\[-1.8ex] & log(ysalarym) & log(ysalarymha) & log(yingLabm) & log(ytotalm) & log(ytotalmha) \\  
+\\[-1.8ex] & (1) & (2) & (3) & (4) & (5)\\  
+\hline \\[-1.8ex]   
+female & $-$0.149$^{***}$ & $-$0.045$^{***}$ & $-$0.147$^{***}$ & $-$0.238$^{***}$ & $-$0.090$^{***}$ \\    
+& (0.015) & (0.015) & (0.015) & (0.015) & (0.014) \\    
+& & & & & \\   
+Constant & 13.977$^{***}$ & 8.641$^{***}$ & 14.088$^{***}$ & 13.981$^{***}$ & 8.667$^{***}$ \\    
+& (0.011) & (0.010) & (0.011) & (0.010) & (0.009) \\    
+& & & & & \\  
+\hline \\[-1.8ex]  
+Observaciones & 9,892 & 9,892 & 9,892 & 14,764 & 14,764 \\  
+R$^{2}$ & 0.010 & 0.001 & 0.009 & 0.018 & 0.003 \\  
+R$^{2}$ ajustado & 0.010 & 0.001 & 0.009 & 0.017 & 0.003 \\  
+Error estándar residual & 0.751 (df = 9890) & 0.721 (df = 9890) & 0.762 (df = 9890) & 0.889 (df = 14762) & 0.832 (df = 14762) \\  
+F Statistic & 97.364$^{***}$ (df = 1; 9890) & 9.559$^{***}$ (df = 1; 9890) & 91.422$^{***}$ (df = 1; 9890) & 263.841$^{***}$ (df = 1; 14762) & 43.342$^{***}$ (df = 1; 14762) \\  
+\hline  \hline \\[-1.8ex]  
+\textit{Nota:}  & \multicolumn{5}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\  
+\end{tabular}  
+} % cierre de resizebox
+\end{table}
+El Cuadro \ref{cuadro_inco} presenta los resultados de la estimación por mínimos cuadrados ordinarios utilizando diversas medidas de ingreso. 
+$ysalarym$ corresponde al ingreso nominal de la ocupación principal, $ysalarymha$ al salario por hora de la ocupación principal, $yingLabm$ al ingreso proveniente de todas las ocupaciones, $ytotalm$ al ingreso total proveniente de ocupaciones e ingresos independientes, y $ytotalmha$ al ingreso total de ocupaciones e independientes medido por hora.
+
+Los resultados muestran evidencia de que las mujeres ganan menos que los hombres. Aunque existe cierta variación en los coeficientes de la variable $female$, todos son negativos y estadísticamente significativos, lo que indica pérdidas salariales para las mujeres.
+
+Cabe señalar que en los resultados anteriores todos los coeficientes fueron estimados mediante mínimos cuadrados ordinarios. 
+No obstante, es posible obtenerlos aplicando el Teorema de Frisch-Waugh-Lovell (FWL). 
+Supongamos que queremos estimar el coeficiente de una variable $X_1$ en una regresión múltiple que también incluye una variable de control $X_2$, en el siguiente modelo:
+
+\[
+y = \beta_1 X_1 + \beta_2 X_2 + u
+\]
+
+Para estimar $\beta_1$ usando el Teorema de Frisch-Waugh-Lovell, se siguen los siguientes pasos:
+
+\begin{enumerate}
+    \item Regrese $y$ sobre $X_2$ y obtenga los residuos.\\
+    Denotemos estos residuos como $r_y$:
+    \[
+    r_y = y - \hat{y}_2 \quad \text{donde } \hat{y}_2 = X_2 \hat{\beta}_2
+    \]
+
+    \item Regrese $X_1$ sobre $X_2$ y obtenga los residuos.\\
+    Denotemos estos residuos como $r_{X_1}$:
+    \[
+    r_{X_1} = X_1 - \hat{X}_{1,2} \quad \text{donde } \hat{X}_{1,2} = X_2 \hat{\gamma}
+    \]
+
+    \item Regrese los residuos $r_y$ sobre $r_{X_1}$.\\
+    El coeficiente estimado será exactamente igual a $\hat{\beta}_1$ de la regresión original:
+    \[
+    \hat{\beta}_1 = \frac{r_{X_1}' r_y}{r_{X_1}' r_{X_1}}
+    \]
+\end{enumerate}
+
+Este procedimiento permite estimar el efecto de $X_1$ sobre $y$, controlando por $X_2$, sin necesidad de realizar directamente la regresión múltiple completa. 
+Además, resulta útil para reducir el costo computacional en aplicaciones con gran cantidad de variables.
+
+Como ilustración de este procedimiento, estimamos el siguiente modelo mediante el método clásico de MCO y también aplicando el teorema de FWL:
+
+\begin{equation}
+\log(\omega) = \beta_1 + \beta_2 female + \beta_3 age + \beta_4 age^2
+\label{eq_age}
+\end{equation}
+\begin{table}[!htbp] 
+\centering 
+\caption{Comparación de las estimaciones por MCO y FWL} 
+\label{cuadro_FWL} 
+\scriptsize   % <-- reduce tamaño de fuente
+\begin{tabular}{@{\extracolsep{5pt}}lcc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & \multicolumn{2}{c}{\textit{Variable dependiente:}} \\ 
+\cline{2-3} 
+ & log(y\_ingLab\_m) & resid\_ing \\ 
+ & (1) & (2)\\ 
+\hline \\[-1.8ex] 
+ female & $-$0.163$^{***}$ &  \\ 
+  & (0.015) &  \\ 
+ age & 0.091$^{***}$ &  \\ 
+  & (0.004) &  \\ 
+ age\_sqr & $-$0.001$^{***}$ &  \\ 
+  & (0.00005) &  \\ 
+ resid\_fem &  & $-$0.163$^{***}$ \\ 
+  &  & (0.017) \\ 
+ Constant & 12.338$^{***}$ & $-$0.000 \\ 
+  & (0.071) & (0.007) \\ 
+\hline \\[-1.8ex] 
+Observations & 9,892 & 9,892 \\ 
+R$^{2}$ & 0.069 & 0.012 \\ 
+Adjusted R$^{2}$ & 0.069 & 0.012 \\ 
+Residual Std. Error & 0.739 (df = 9888) & 0.739 (df = 9890) \\ 
+F Statistic & 245.548$^{***}$ (df = 3; 9888) & 119.495$^{***}$ (df = 1; 9890) \\ 
+\hline 
+\hline \\[-1.8ex] 
+\textit{Note:}  & \multicolumn{2}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+\end{tabular} 
+\end{table}
+
+El Cuadro \ref{cuadro_FWL} muestra que los coeficientes de $female$ y $resid\_fem$ son idénticos. 
+Sin embargo, los errores estándar no lo son. 
+Esto ocurre debido a la forma en que se realiza la estimación en dos etapas: al reducir el número de variables en la segunda ecuación, los grados de libertad utilizados también disminuyen. 
+
+Otra manera de estimar el error estándar es a través del método bootstrap. 
+Este procedimiento consiste en realizar un remuestreo de la muestra $n$ veces y reestimar el coeficiente en cada repetición. 
+El error estándar se obtiene a partir de la dispersión de esta distribución de estimaciones.
+
+\begin{figure}[H]
+\caption{Coeficiente de $female$} \label{fig:female}
+    \includegraphics[scale=0.75]{../views/sd_fwl_hist.png}   
+ \flushleft
+ \textit{Nota:} La figura muestra el histograma de los coeficientes de $female$ obtenidos a través del bootstrap con 5000 remuestreos.
+\end{figure}
+
+La Figura \ref{fig:female} muestra la distribución del coeficiente de $female$. 
+Al calcular el error estándar, obtenemos un valor de 0.01472, prácticamente idéntico al obtenido mediante la estimación por MCO.
+
+Al estimarmos el modelo \ref{eq_inc}, no hemos considerado ningún control. Es posible que existan variables omitidas influenciando nuestros resultados. De esta manera, a fin de verificar la robustez agregamos los siguientes controles a nuestra estimación:
+\begin{itemize}
+    \item \textbf{Capital humano}: Incluimos edad y su cuadrado como 
+    aproximación a la experiencia laboral, así como el nivel educativo más alto 
+    alcanzado. Estas variables capturan diferencias en productividad potencial.
+    
+    \item \textbf{Intensidad laboral}: En las especificaciones con salarios 
+    mensuales, se consideran las horas usuales de trabajo y la existencia de un 
+    segundo empleo. En las especificaciones con salarios por hora, estas 
+    variables se omiten deliberadamente para evitar un ajuste redundante.
+
+    \item \textbf{Características del empleo}: Incorporamos ocupación, tamaño 
+    de la firma, tipo de relación laboral, formalidad del empleo y la antigüedad 
+    en el puesto. Estos factores permiten aproximar la comparabilidad entre 
+    trabajos, tal como lo exige la noción de ``igual trabajo''.
+
+\end{itemize}
+
+La estrategia empírica consiste en estimar primero la brecha salarial sin 
+controles y, posteriormente, añadir secuencialmente los bloques de covariables. 
+De este modo, se puede observar cómo evoluciona el coeficiente asociado a la 
+variable de género, lo que permite interpretar en qué medida el diferencial 
+incondicional se explica por diferencias observables en características de los 
+trabajadores y de sus empleos. En esta parte estimamos apenas como variable dependente la variable de ingreso de la ocupación principal por hora. 
+\begin{table}[!htbp] 
+\centering 
+\caption{Resultados de las regresiones con controles} 
+\label{cuadro_controls} 
+\resizebox{\textwidth}{!}{
+\begin{tabular}{@{\extracolsep{5pt}}lccccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & \multicolumn{5}{c}{\textit{Variable dependiente:}} \\ 
+\cline{2-6} 
+\\[-1.8ex] & \multicolumn{5}{c}{log(y\_ingLab\_m\_ha)} \\ 
+\\[-1.8ex] & (1) & (2) & (3) & (4) & (5)\\ 
+\hline \\[-1.8ex] 
+ female & $-$0.045$^{***}$ & $-$0.058$^{***}$ & $-$0.142$^{***}$ & $-$0.179$^{***}$ & $-$0.106$^{***}$ \\ 
+  & (0.015) & (0.014) & (0.012) & (0.012) & (0.012) \\ 
+  & & & & & \\ 
+ age &  & 0.068$^{***}$ & 0.062$^{***}$ & 0.068$^{***}$ & 0.038$^{***}$ \\ 
+  &  & (0.004) & (0.003) & (0.003) & (0.003) \\ 
+  & & & & & \\ 
+ age\_sqr &  & $-$0.001$^{***}$ & $-$0.001$^{***}$ & $-$0.001$^{***}$ & $-$0.0003$^{***}$ \\ 
+  &  & (0.00004) & (0.00004) & (0.00004) & (0.00003) \\ 
+  & & & & & \\ 
+ primarios incompleto &  &  & 0.199$^{**}$ & 0.223$^{**}$ & 0.167$^{**}$ \\ 
+  &  &  & (0.094) & (0.093) & (0.076) \\ 
+  & & & & & \\ 
+ as.factor(primario completo)4 &  &  & 0.289$^{***}$ & 0.303$^{***}$ & 0.203$^{***}$ \\ 
+  &  &  & (0.091) & (0.090) & (0.073) \\ 
+  & & & & & \\ 
+ as.factor(secundario incompleto)5 &  &  & 0.347$^{***}$ & 0.355$^{***}$ & 0.229$^{***}$ \\ 
+  &  &  & (0.091) & (0.089) & (0.073) \\ 
+  & & & & & \\ 
+ as.factor(secundario completo)6 &  &  & 0.565$^{***}$ & 0.575$^{***}$ & 0.292$^{***}$ \\ 
+  &  &  & (0.090) & (0.088) & (0.072) \\ 
+  & & & & & \\ 
+ as.factor(terciario)7 &  &  & 1.253$^{***}$ & 1.238$^{***}$ & 0.557$^{***}$ \\ 
+  &  &  & (0.089) & (0.088) & (0.073) \\ 
+  & & & & & \\ 
+ totalHoursWorked &  &  &  & $-$0.009$^{***}$ & $-$0.010$^{***}$ \\ 
+  &  &  &  & (0.0005) & (0.0004) \\ 
+  & & & & & \\ 
+ cuentaPropia &  &  &  &  &  \\ 
+  &  &  &  &  &  \\ 
+  & & & & & \\ 
+ microEmpresa &  &  &  &  & $-$0.392$^{***}$ \\ 
+  &  &  &  &  & (0.044) \\ 
+  & & & & & \\ 
+ formal &  &  &  &  & 0.261$^{***}$ \\ 
+  &  &  &  &  & (0.015) \\ 
+  & & & & & \\ 
+ Constant & 8.747$^{***}$ & 7.392$^{***}$ & 6.583$^{***}$ & 6.940$^{***}$ & 8.793$^{***}$ \\ 
+  & (0.010) & (0.068) & (0.104) & (0.104) & (0.164) \\ 
+  & & & & & \\ 
+\hline \\[-1.8ex] 
+Observations & 9,892 & 9,892 & 9,891 & 9,891 & 9,891 \\ 
+R$^{2}$ & 0.001 & 0.046 & 0.335 & 0.358 & 0.576 \\ 
+Adjusted R$^{2}$ & 0.001 & 0.045 & 0.335 & 0.358 & 0.572 \\ 
+Residual Std. Error & 0.727 (df = 9890) & 0.711 (df = 9888) & 0.593 (df = 9882) & 0.583 (df = 9881) & 0.476 (df = 9798) \\ 
+F Statistic & 9.317$^{***}$ (df = 1; 9890) & 158.028$^{***}$ (df = 3; 9888) & 623.580$^{***}$ (df = 8; 9882) & 612.986$^{***}$ (df = 9; 9881) & 144.719$^{***}$ (df = 92; 9798) \\ 
+\hline 
+\hline \\[-1.8ex] 
+\textit{Note:}  & \multicolumn{5}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+\end{tabular} 
+} 
+\end{table}
+
+\noindent \textit{Nota:} En la ecuación (5) se omitieron las variables relacionadas con el oficio y el número de personas que trabajan en la empresa.
+
+Los resultados en el Cuadro \ref{cuadro_controls} muestran que el coeficiente de $female$ sigue siendo negativo y significativo. Además, la inclusión de controles incrementa la magnitud del coeficiente. El modelo con todos los controles indica que las mujeres llegan a ganar aproximadamente un 10\% menos que los hombres, dado que ambos tengan la misma experiencia, edad y ejerzan profesiones similares.
+
+Un aspecto interesante sería estimar la edad pico en la que las mujeres alcanzarían su máximo salarial. Esto puede calcularse mediante un problema sencillo de maximización: 
+\[
+pico = -\frac{\beta_2}{2\beta_3},
+\] 
+donde $\beta_2$ es el coeficiente de \textit{age} y $\beta_3$ es el coeficiente de \textit{age}$^2$.
+
+\begin{figure}[H]
+\caption{Edad pico según nuestros modelos} \label{fig:age_peak_bar}
+    \includegraphics[scale=0.75]{../views/age_peak_bar.png}   
+ \flushleft
+\end{figure}
+
+La Figura \ref{fig:age_peak_bar} muestra los resultados de la edad pico. En general, los modelos indican que la edad pico estaría entre los 45 y 54 años. La inclusión de controles parece incrementar dicha edad. Cabe señalar que, al estimar la edad pico a partir de los coeficientes de MCO, no es posible calcular sus errores estándar ni los intervalos de confianza. Para generar dichos intervalos, empleamos el método bootstrap. En particular, remuestreamos los datos 2000 veces y registramos la distribución de la edad pico. Con esta distribución construimos el intervalo de confianza al 5\% para nuestros modelos.
+
+\begin{figure}[H]
+\caption{Intervalos de confianza de la edad pico} \label{fig:age_whiskey_bar}
+    \includegraphics[scale=0.75]{../views/age_whiskey_point.png}   
+ \flushleft
+\end{figure}
+
+La Figura \ref{fig:age_whiskey_bar} muestra los resultados de los intervalos de confianza. Como era de esperar, la inclusión de más controles amplía dichos intervalos; sin embargo, el incremento no supera los 2 años con respecto al valor central de la estimación.
 \section{Results}
 
 Referencing tables is very easy you can do the following: In Table \ref{tab:avdiscriminationrates} ...
