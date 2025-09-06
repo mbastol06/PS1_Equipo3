@@ -79,6 +79,22 @@ print(sd)
 sd_hist <- ggplot(data = data.frame(sd = coefs_store), aes(x = sd)) + geom_histogram() +
   labs(x = "coef_value")
 
+# buil the formula for Frisch-Waugh-Lowell
+
+variables <- c("age", "age_sqr")
+dependent <- "y_ingLab_m"
+var_interes <- "female"
+
+FWL <- function(variables,dependent,data,var_interes){
+  data_reg <- data %>% select(variables,dependent,var_interes) %>% drop_na()
+  formula1 = as.formula(paste(paste("log(",dependent, ") ~ "), paste(variables, collapse = " + ")))
+  formula2 = as.formula(paste(paste(var_interes, " ~ "), paste(variables, collapse = " + ")))
+  data_reg <- data_reg %>% mutate(resid_1 = lm(data = data_reg, formula1)$resid) %>%
+                           mutate(resid_2 =lm(data = data_reg, formula2)$resid)
+  
+  reg_final <- lm(resid1 ~ resid1, data = data_reg)
+}
+
 
 write.csv(sd, "stores/sd_FWL.csv")
 stargazer(reg_age, reg_age_FWL, type = "latex", out = "views/reg_FWL.tex")
@@ -94,18 +110,31 @@ reg_fem_age_educ <- lm(data = data_reg, log(y_ingLab_m_ha) ~ female + age + age_
 
 reg_fem_age_educ_hwork <- lm(data = data_reg, log(y_ingLab_m_ha) ~ female + age + age_sqr  + as.factor(maxEducLevel) + + totalHoursWorked)
 
-reg_fem_age_educ_cwork <-lm(data = data_reg, log(y_ingLab_m_ha) ~ female + age + age_sqr  + as.factor(maxEducLevel) + totalHoursWorked 
+reg_fem_age_educ_cwork <-lm(data = data_reg, log(y_ingLab_m_ha) ~ "female" + age + age_sqr  + as.factor(maxEducLevel) + totalHoursWorked 
                              + cuentaPropia + microEmpresa + formal + as.factor(sizeFirm) + as.factor(oficio)) 
 reg_list <- list(
   reg_fem,reg_fem_age,reg_fem_age_educ, reg_fem_age_educ_hwork,reg_fem_age_educ_cwork)
 
 #-------------------------------------------------------------------------------
-
-data_chart <- data.frame(coef1 = 0,coef2 = 0, peak_age = 0)
+# Calculating the peak age for the models through bootstrat
+data_chart <- data.frame(coef1 = 0,coef2 = 0, peak_age = 0,cf_0.05 = 0, cf_0.95 = 0)
 
 for (reg in reg_list[-1]){
-  data_coef <- data.frame(coef1 = reg$coef[3],coef2 = reg$coef[4],peak_age = -(reg$coef[3]/(2*reg$coef[4])))
+  
+  B = 1000
+  
+  age_peaks <- rep(NA,B)
+  
+  for(i in 1:B){
+    data_sample = sample_frac(data_reg,size=1,replace=TRUE)
+    reg_sample <- lm(data = data_sample,formula(reg))
+    age_peaks[i] <- -(reg_sample$coef[3]/(2*reg_sample$coef[4]))
+    
+  }
+  data_coef <- data.frame(coef1 = reg$coef[3],coef2 = reg$coef[4],peak_age = -(reg$coef[3]/(2*reg$coef[4])), cf_0.05 = quantile(age_peaks,0.05),
+                          cf_0.95 = quantile(age_peaks,0.95))
   data_chart <- rbind(data_chart,data_coef)
+  
 }
 
 data_chart <- data_chart[-1,]
@@ -115,6 +144,15 @@ data_chart$model <- factor(c("No Controls","educ ctrl","educ/hours ctrl","educ/h
 
 age_peak_bar = ggplot(data = data_chart, aes(y = peak_age, x = model)) + geom_bar(stat = "identity") +
   scale_y_continuous(limits = c(NA,70))
+
+# doing a whiskey point chart
+
+age_peak_whiskey_point <- ggplot(data_chart, aes(x = model, y = peak_age)) +
+  geom_point(size = 3) +
+  geom_errorbar(aes(ymin = cf_0.05, ymax = cf_0.95), width = 0.2) +
+  theme_minimal() +
+  labs(x = "Model", y = "Peak Age", 
+       title = "Peak Age with 95% CI across Models")
 
 # doing a line chart for the quadratic age function
 
@@ -141,3 +179,5 @@ stargazer(reg_list,omit = c("oficio","sizeFirm"), type = "latex", out = "stores/
 ggsave(age_quad_chart, dpi = 300, filename ="views/age_quad_chart.png")
 
 ggsave(age_peak_bar, dpi = 300, filename ="views/age_peak_bar.png")
+
+ggsave(age_peak_whiskey_point, dpi = 300, filename ="views/age_whiskey_point.png")
