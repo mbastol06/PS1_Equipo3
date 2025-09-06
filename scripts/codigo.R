@@ -120,7 +120,7 @@ for (v in variables_ingresos) {
 
 ## 7) Se guarda la tabla para que se pueda cargar más adelante
 
-write_csv(combinado, "combinado.csv")
+write_csv(combinado, "stores/combinado.csv")
 
 #### ============================================================
 ###Punto 2 - Estadísticas Descriptivas
