@@ -17,7 +17,8 @@ data = read.csv("stores/data_scrapped.csv")
 
 # Renaming some variable and filtering for above 18
 
-data <- data %>% filter(age >= 18) %>% mutate(female = 1 - sex) %>% mutate(age_sqr = age^2)
+data <- data %>% filter(age >= 18) %>% mutate(female = 1 - sex) %>% mutate(age_sqr = age^2) %>%
+  mutate(rural = 1 - clase)
 
 # Now creating data_reg for the regresions we will consider only the occupied ones
 
@@ -37,10 +38,10 @@ all_formal_h = lm(log(y_total_m_ha) ~ female, data = data_reg)
 
 stargazer(nominal_salary,princ_occup,all_occup,all_formal,all_formal_h, type = "text")
 stargazer(nominal_salary,princ_occup,all_occup,all_formal,all_formal_h, type = "latex",
-          out = "store/simple_female_reg.tex")
-
+          out = "views/simple_female_reg.tex")
+#-------------------------------------------------------------------------------
 ## Estimando usando Frisch Waugh-Lowell
-
+#-------------------------------------------------------------------------------
 data_FWL = data %>% select(y_ingLab_m, female, age, age_sqr) %>% drop_na()
 
 reg_age = lm(data = data_FWL, log(y_ingLab_m) ~ female + age + age_sqr)
@@ -75,10 +76,68 @@ for(i in 1:B){
 sd <- sd(coefs_store)
 print(sd)
 
-sd_hist <- ggplot(data = data.frame(sd = coefs_store), aes(x = sd)) + geom_histogram()
+sd_hist <- ggplot(data = data.frame(sd = coefs_store), aes(x = sd)) + geom_histogram() +
+  labs(x = "coef_value")
 
 
 write.csv(sd, "stores/sd_FWL.csv")
-stargazer(reg_age, reg_age_FWL, type = "latex", out = "stores/reg_FWL.tex")
-ggsave(sd_hist, dpi = 300,filename = "stores/sd_fwl_hist.png")
+stargazer(reg_age, reg_age_FWL, type = "latex", out = "views/reg_FWL.tex")
+ggsave(sd_hist, dpi = 300,filename = "views/sd_fwl_hist.png")
 #-------------------------------------------------------------------------------
+# Haciendo varias regresiones con los controles
+#-------------------------------------------------------------------------------
+reg_fem <- lm(data = data_reg, log(y_ingLab_m_ha) ~ female)
+
+reg_fem_age <- lm(data = data_reg, log(y_ingLab_m_ha) ~ female + age + age_sqr)
+
+reg_fem_age_educ <- lm(data = data_reg, log(y_ingLab_m_ha) ~ female + age + age_sqr  + as.factor(maxEducLevel) )
+
+reg_fem_age_educ_hwork <- lm(data = data_reg, log(y_ingLab_m_ha) ~ female + age + age_sqr  + as.factor(maxEducLevel) + + totalHoursWorked)
+
+reg_fem_age_educ_cwork <-lm(data = data_reg, log(y_ingLab_m_ha) ~ female + age + age_sqr  + as.factor(maxEducLevel) + totalHoursWorked 
+                             + cuentaPropia + microEmpresa + formal + as.factor(sizeFirm) + as.factor(oficio)) 
+reg_list <- list(
+  reg_fem,reg_fem_age,reg_fem_age_educ, reg_fem_age_educ_hwork,reg_fem_age_educ_cwork)
+
+#-------------------------------------------------------------------------------
+
+data_chart <- data.frame(coef1 = 0,coef2 = 0, peak_age = 0)
+
+for (reg in reg_list[-1]){
+  data_coef <- data.frame(coef1 = reg$coef[3],coef2 = reg$coef[4],peak_age = -(reg$coef[3]/(2*reg$coef[4])))
+  data_chart <- rbind(data_chart,data_coef)
+}
+
+data_chart <- data_chart[-1,]
+data_chart$model <- factor(c("No Controls","educ ctrl","educ/hours ctrl","educ/hours/work ctrl"), levels = c("No Controls","educ ctrl","educ/hours ctrl","educ/hours/work ctrl") )
+
+# doing a bar chart
+
+age_peak_bar = ggplot(data = data_chart, aes(y = peak_age, x = model)) + geom_bar(stat = "identity") +
+  scale_y_continuous(limits = c(NA,70))
+
+# doing a line chart for the quadratic age function
+
+grid_age =18:75
+
+age_quad_data  = data.frame(age=0,log_wage=0,model=0)
+
+for (i in 1:4){
+  age_quad_mod = data.frame(age = grid_age,
+                            log_wage = grid_age*data_chart$coef1[i] + grid_age^2*data_chart$coef2[i],
+                            model = data_chart$model[i])
+  age_quad_data = rbind(age_quad_data,age_quad_mod)
+}
+
+age_quad_data  =age_quad_data[-1,]
+
+age_quad_chart = ggplot(data = age_quad_data, aes(x = age, y = log_wage,colour = model)) + 
+  geom_line()
+
+# saving the outputs
+
+stargazer(reg_list,omit = c("oficio","sizeFirm"), type = "latex", out = "stores/reg_pay_fem.tex")
+
+ggsave(age_quad_chart, dpi = 300, filename ="views/age_quad_chart.png")
+
+ggsave(age_peak_bar, dpi = 300, filename ="views/age_peak_bar.png")
