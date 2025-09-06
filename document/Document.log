@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.8.29)  4 SEP 2025 20:06
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.8.29)  5 SEP 2025 23:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -58,6 +58,24 @@ Package: authblk 2001/02/27 1.3 (PWD)
 \c@authors=\count287
 \c@affil=\count288
 )
+(C:\Program Files\MiKTeX\tex/latex/caption\caption.sty
+Package: caption 2023/08/05 v3.6o Customizing captions (AR)
+
+(C:\Program Files\MiKTeX\tex/latex/caption\caption3.sty
+Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
+\caption@tempdima=\dimen157
+\captionmargin=\dimen158
+\caption@leftmargin=\dimen159
+\caption@rightmargin=\dimen160
+\caption@width=\dimen161
+\caption@indent=\dimen162
+\caption@parindent=\dimen163
+\caption@hangindent=\dimen164
+Package caption Info: Standard document class detected.
+)
+\c@caption@flags=\count289
+\c@continuedfloat=\count290
+)
 (C:\Program Files\MiKTeX\tex/latex/base\inputenc.sty
 Package: inputenc 2024/02/08 v1.3d Input encoding file
 \inpenc@prehook=\toks19
@@ -95,8 +113,8 @@ Package graphics Info: Driver file: pdftex.def on input line 106.
 (C:\Program Files\MiKTeX\tex/latex/graphics-def\pdftex.def
 File: pdftex.def 2024/04/13 v1.2c Graphics/color driver for pdftex
 ))
-\Gin@req@height=\dimen157
-\Gin@req@width=\dimen158
+\Gin@req@height=\dimen165
+\Gin@req@width=\dimen166
 )
 (C:\Program Files\MiKTeX\tex/latex/graphics\color.sty
 Package: color 2025/01/14 v1.3e Standard LaTeX Color (DPC)
@@ -118,23 +136,23 @@ Package: amstext 2024/11/17 v2.01 AMS text
 (C:\Program Files\MiKTeX\tex/latex/amsmath\amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks22
-\ex@=\dimen159
+\ex@=\dimen167
 ))
 (C:\Program Files\MiKTeX\tex/latex/amsmath\amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
-\pmbraise@=\dimen160
+\pmbraise@=\dimen168
 )
 (C:\Program Files\MiKTeX\tex/latex/amsmath\amsopn.sty
 Package: amsopn 2022/04/08 v2.04 operator names
 )
-\inf@bad=\count289
+\inf@bad=\count291
 LaTeX Info: Redefining \frac on input line 233.
-\uproot@=\count290
-\leftroot@=\count291
+\uproot@=\count292
+\leftroot@=\count293
 LaTeX Info: Redefining \overline on input line 398.
 LaTeX Info: Redefining \colon on input line 409.
-\classnum@=\count292
-\DOTSCASE@=\count293
+\classnum@=\count294
+\DOTSCASE@=\count295
 LaTeX Info: Redefining \ldots on input line 495.
 LaTeX Info: Redefining \dots on input line 498.
 LaTeX Info: Redefining \cdots on input line 619.
@@ -144,30 +162,30 @@ LaTeX Info: Redefining \big on input line 721.
 LaTeX Info: Redefining \Big on input line 722.
 LaTeX Info: Redefining \bigg on input line 723.
 LaTeX Info: Redefining \Bigg on input line 724.
-\big@size=\dimen161
+\big@size=\dimen169
 LaTeX Font Info:    Redeclaring font encoding OML on input line 742.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 743.
-\macc@depth=\count294
+\macc@depth=\count296
 LaTeX Info: Redefining \bmod on input line 904.
 LaTeX Info: Redefining \pmod on input line 909.
 LaTeX Info: Redefining \smash on input line 939.
 LaTeX Info: Redefining \relbar on input line 969.
 LaTeX Info: Redefining \Relbar on input line 970.
-\c@MaxMatrixCols=\count295
+\c@MaxMatrixCols=\count297
 \dotsspace@=\muskip17
-\c@parentequation=\count296
-\dspbrk@lvl=\count297
+\c@parentequation=\count298
+\dspbrk@lvl=\count299
 \tag@help=\toks23
-\row@=\count298
-\column@=\count299
-\maxfields@=\count300
+\row@=\count300
+\column@=\count301
+\maxfields@=\count302
 \andhelp@=\toks24
-\eqnshift@=\dimen162
-\alignsep@=\dimen163
-\tagshift@=\dimen164
-\tagwidth@=\dimen165
-\totwidth@=\dimen166
-\lineht@=\dimen167
+\eqnshift@=\dimen170
+\alignsep@=\dimen171
+\tagshift@=\dimen172
+\tagwidth@=\dimen173
+\totwidth@=\dimen174
+\lineht@=\dimen175
 \@envbody=\toks25
 \multlinegap=\skip54
 \multlinetaggap=\skip55
@@ -203,9 +221,9 @@ Package: colortbl 2024/10/29 v1.0k Color table columns (DPC)
 
 (C:\Program Files\MiKTeX\tex/latex/tools\array.sty
 Package: array 2025/06/08 v2.6j Tabular extension package (FMi)
-\col@sep=\dimen168
+\col@sep=\dimen176
 \ar@mcellbox=\box55
-\extrarowheight=\dimen169
+\extrarowheight=\dimen177
 \NC@list=\toks27
 \extratabsurround=\skip56
 \backup@length=\skip57
@@ -213,30 +231,30 @@ Package: array 2025/06/08 v2.6j Tabular extension package (FMi)
 )
 \everycr=\toks28
 \minrowclearance=\skip58
-\rownum=\count301
+\rownum=\count303
 )
 (C:\Program Files\MiKTeX\tex/latex/setspace\setspace.sty
 Package: setspace 2022/12/04 v6.7b set line spacing
 )
 (C:\Program Files\MiKTeX\tex/latex/booktabs\booktabs.sty
 Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
-\heavyrulewidth=\dimen170
-\lightrulewidth=\dimen171
-\cmidrulewidth=\dimen172
-\belowrulesep=\dimen173
-\belowbottomsep=\dimen174
-\aboverulesep=\dimen175
-\abovetopsep=\dimen176
-\cmidrulesep=\dimen177
-\cmidrulekern=\dimen178
-\defaultaddspace=\dimen179
-\@cmidla=\count302
-\@cmidlb=\count303
-\@aboverulesep=\dimen180
-\@belowrulesep=\dimen181
-\@thisruleclass=\count304
-\@lastruleclass=\count305
-\@thisrulewidth=\dimen182
+\heavyrulewidth=\dimen178
+\lightrulewidth=\dimen179
+\cmidrulewidth=\dimen180
+\belowrulesep=\dimen181
+\belowbottomsep=\dimen182
+\aboverulesep=\dimen183
+\abovetopsep=\dimen184
+\cmidrulesep=\dimen185
+\cmidrulekern=\dimen186
+\defaultaddspace=\dimen187
+\@cmidla=\count304
+\@cmidlb=\count305
+\@aboverulesep=\dimen188
+\@belowrulesep=\dimen189
+\@thisruleclass=\count306
+\@lastruleclass=\count307
+\@thisrulewidth=\dimen190
 )
 (C:\Program Files\MiKTeX\tex/latex/tools\dcolumn.sty
 Package: dcolumn 2023/07/08 v1.06 decimal alignment package (DPC)
@@ -247,7 +265,7 @@ Package: rotating 2025/01/14 v2.16e rotated objects in LaTeX
 (C:\Program Files\MiKTeX\tex/latex/base\ifthen.sty
 Package: ifthen 2024/03/16 v1.1e Standard LaTeX ifthen package (DPC)
 )
-\c@r@tfl@t=\count306
+\c@r@tfl@t=\count308
 \rotFPtop=\skip59
 \rotFPbot=\skip60
 \rot@float@box=\box57
@@ -264,20 +282,20 @@ Package: soul-ori 2023-06-14 v3.1 letterspacing/underlining (mf)
 \SOUL@cmds=\toks33
 \SOUL@buffer=\toks34
 \SOUL@token=\toks35
-\SOUL@syllgoal=\dimen183
-\SOUL@syllwidth=\dimen184
-\SOUL@charkern=\dimen185
-\SOUL@hyphkern=\dimen186
-\SOUL@dimen=\dimen187
-\SOUL@dimeni=\dimen188
-\SOUL@minus=\count307
-\SOUL@comma=\count308
-\SOUL@apo=\count309
-\SOUL@grave=\count310
+\SOUL@syllgoal=\dimen191
+\SOUL@syllwidth=\dimen192
+\SOUL@charkern=\dimen193
+\SOUL@hyphkern=\dimen194
+\SOUL@dimen=\dimen195
+\SOUL@dimeni=\dimen196
+\SOUL@minus=\count309
+\SOUL@comma=\count310
+\SOUL@apo=\count311
+\SOUL@grave=\count312
 \SOUL@spaceskip=\skip61
-\SOUL@ttwidth=\dimen189
-\SOUL@uldp=\dimen190
-\SOUL@ulht=\dimen191
+\SOUL@ttwidth=\dimen197
+\SOUL@uldp=\dimen198
+\SOUL@ulht=\dimen199
 )
 (C:\Program Files\MiKTeX\tex/generic/infwarerr\infwarerr.sty
 Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
@@ -291,20 +309,7 @@ Package: threeparttable 2003/06/13  v 3.0
 )
 (C:\Program Files\MiKTeX\tex/latex/floatrow\floatrow.sty
 Package: floatrow 2008/08/02 v0.3b floatrow: float package extension
-
-(C:\Program Files\MiKTeX\tex/latex/caption\caption3.sty
-Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
-\caption@tempdima=\dimen192
-\captionmargin=\dimen193
-\caption@leftmargin=\dimen194
-\caption@rightmargin=\dimen195
-\caption@width=\dimen196
-\caption@indent=\dimen197
-\caption@parindent=\dimen198
-\caption@hangindent=\dimen199
-Package caption Info: Standard document class detected.
-)
-\c@float@type=\count311
+\c@float@type=\count313
 \float@exts=\toks36
 \float@box=\box59
 \@floatcapt=\box60
@@ -322,33 +327,23 @@ Package floatrow Info: Modified rotfloat package code loaded on input line 473.
 \FBo@max=\skip65
 \FBc@max=\skip66
 \FBf@max=\skip67
-\c@FBl@b=\count312
-\floatbox@depth=\count313
-\c@FRobj=\count314
-\c@FRsobj=\count315
+\c@FBl@b=\count314
+\floatbox@depth=\count315
+\c@FRobj=\count316
+\c@FRsobj=\count317
 \Xhsize=\skip68
 \sXhsize=\skip69
 \Zhsize=\skip70
 \sZhsize=\skip71
 \flrow@rowbox=\box61
 \FR@Zunitlength=\dimen259
-\c@FBcnt=\count316
-\FPOScnt=\count317
+\c@FBcnt=\count318
+\FPOScnt=\count319
 \LTleft=\skip72
 \LTright=\skip73
 \LTleft=\skip74
 \LTright=\skip75
 \flrow@types=\toks38
-)
-(C:\Program Files\MiKTeX\tex/latex/caption\caption.sty
-Package: caption 2023/08/05 v3.6o Customizing captions (AR)
-\c@caption@flags=\count318
-\c@continuedfloat=\count319
-Package caption Info: float package is loaded.
-Package caption Info: floatrow package is loaded.
-Package caption Info: floatrow package is loaded.
-Package caption Info: rotating package is loaded.
-Package caption Info: threeparttable package is loaded.
 )
 (C:\Program Files\MiKTeX\tex/generic/babel\babel.sty
 Package: babel 2025/05/14 v25.9 The multilingual framework for pdfLaTeX, LuaLaT
@@ -397,9 +392,9 @@ Package babel Info: Making < an active character on input line 722.
 Package babel Info: Making > an active character on input line 722.
 ))
 LaTeX Encoding Info:    Redeclaring text command \guillemotleft (encoding OT1) 
-on input line 24.
+on input line 25.
 LaTeX Encoding Info:    Redeclaring text command \guillemotright (encoding OT1)
- on input line 24.
+ on input line 25.
 
 (C:\Program Files\MiKTeX\tex/latex/caption\subcaption.sty
 Package: subcaption 2023/07/28 v1.6b Sub-captions (AR)
@@ -709,24 +704,24 @@ Package babel Info: 'spanish' activates 'spanish' shorthands.
 )
 \openout1 = `Document.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 85.
-LaTeX Font Info:    ... okay on input line 85.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 85.
-LaTeX Font Info:    ... okay on input line 85.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 85.
-LaTeX Font Info:    ... okay on input line 85.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 85.
-LaTeX Font Info:    ... okay on input line 85.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 85.
-LaTeX Font Info:    ... okay on input line 85.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 85.
-LaTeX Font Info:    ... okay on input line 85.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 85.
-LaTeX Font Info:    ... okay on input line 85.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 85.
-LaTeX Font Info:    ... okay on input line 85.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 85.
-LaTeX Font Info:    ... okay on input line 85.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 86.
+LaTeX Font Info:    ... okay on input line 86.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 86.
+LaTeX Font Info:    ... okay on input line 86.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 86.
+LaTeX Font Info:    ... okay on input line 86.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 86.
+LaTeX Font Info:    ... okay on input line 86.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 86.
+LaTeX Font Info:    ... okay on input line 86.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 86.
+LaTeX Font Info:    ... okay on input line 86.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 86.
+LaTeX Font Info:    ... okay on input line 86.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 86.
+LaTeX Font Info:    ... okay on input line 86.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 86.
+LaTeX Font Info:    ... okay on input line 86.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -762,6 +757,20 @@ LaTeX Font Info:    ... okay on input line 85.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: float package is loaded.
+Package caption Info: floatrow package is loaded.
+Package caption Info: floatrow package is loaded.
+Package caption Info: hyperref package is loaded.
+Package caption Info: longtable package is loaded.
+(C:\Program Files\MiKTeX\tex/latex/caption\ltcaption.sty
+Package: ltcaption 2021/01/08 v1.4c longtable captions (AR)
+)
+Package caption Info: Fixing longtable code of `floatrow' package.
+Package caption Info: rotating package is loaded.
+Package caption Info: threeparttable package is loaded.
+Package caption Info: End \AtBeginDocument code.
+
 (C:\Program Files\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count356
@@ -783,16 +792,6 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 (C:\Program Files\MiKTeX\tex/latex/00miktex\epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
-Package caption Info: Begin \AtBeginDocument code.
-Package caption Info: hyperref package is loaded.
-Package caption Info: longtable package is loaded.
-
-(C:\Program Files\MiKTeX\tex/latex/caption\ltcaption.sty
-Package: ltcaption 2021/01/08 v1.4c longtable captions (AR)
-)
-Package caption Info: Fixing longtable code of `floatrow' package.
-Package caption Info: End \AtBeginDocument code.
-
 (C:\Program Files\MiKTeX\tex/latex/floatrow\fr-longtable.sty
 Package: fr-longtable 2007/11/28 v0.1b (beta) floatrow: additions for longtable
 
@@ -800,20 +799,20 @@ Package: fr-longtable 2007/11/28 v0.1b (beta) floatrow: additions for longtable
 \flrow@LT@prelastfoot=\box116
 \c@FBLTpage=\count362
 )
-LaTeX Info: Redefining \. on input line 85.
-LaTeX Info: Redefining \% on input line 85.
-Package hyperref Info: Link coloring ON on input line 85.
+LaTeX Info: Redefining \. on input line 86.
+LaTeX Info: Redefining \% on input line 86.
+Package hyperref Info: Link coloring ON on input line 86.
  (Document.out)
 (Document.out)
 \@outlinefile=\write4
 \openout4 = `Document.out'.
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 118
+LaTeX Font Info:    Trying to load font information for U+msa on input line 119
 .
  (C:\Program Files\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 118
+LaTeX Font Info:    Trying to load font information for U+msb on input line 119
 .
 
 (C:\Program Files\MiKTeX\tex/latex/amsfonts\umsb.fd
@@ -824,21 +823,52 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 {C:/Users/lveras/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
 
-[2] (Document.bbl)
+[2]
+<../views/sd_fwl_hist.png, id=69, 317.988pt x 148.8762pt>
+File: ../views/sd_fwl_hist.png Graphic file (type png)
+<use ../views/sd_fwl_hist.png>
+Package pdftex.def Info: ../views/sd_fwl_hist.png  used on input line 268.
+(pdftex.def)             Requested size: 238.4904pt x 111.65688pt.
 
-[3] (../views/av_discrimination.tex)
 
-[4]
-<../views/fig1a.pdf, id=82, 504.88625pt x 504.88625pt>
+[3]
+
+[4 <../views/sd_fwl_hist.png>]
+<../views/age_peak_bar.png, id=91, 489.2679pt x 380.8629pt>
+File: ../views/age_peak_bar.png Graphic file (type png)
+<use ../views/age_peak_bar.png>
+Package pdftex.def Info: ../views/age_peak_bar.png  used on input line 383.
+(pdftex.def)             Requested size: 366.95001pt x 285.64645pt.
+
+
+[5]
+
+[6]
+<../views/age_whiskey_point.png, id=102, 489.2679pt x 380.8629pt>
+File: ../views/age_whiskey_point.png Graphic file (type png)
+<use ../views/age_whiskey_point.png>
+Package pdftex.def Info: ../views/age_whiskey_point.png  used on input line 391
+.
+(pdftex.def)             Requested size: 366.95001pt x 285.64645pt.
+
+
+[7 <../views/age_peak_bar.png>]
+
+[8 <../views/age_whiskey_point.png>] (Document.bbl)
+
+[9] (../views/av_discrimination.tex)
+
+[10]
+<../views/fig1a.pdf, id=137, 504.88625pt x 504.88625pt>
 File: ../views/fig1a.pdf Graphic file (type pdf)
 <use ../views/fig1a.pdf>
-Package pdftex.def Info: ../views/fig1a.pdf  used on input line 197.
+Package pdftex.def Info: ../views/fig1a.pdf  used on input line 431.
 (pdftex.def)             Requested size: 378.66374pt x 378.66374pt.
 
 
-[5 <../views/fig1a.pdf>]
+[11 <../views/fig1a.pdf>]
 
-[6] (Document.aux
+[12] (Document.aux
 LaTeX Info: Redefining \. on input line 14.
 LaTeX Info: Redefining \% on input line 14.
 )
@@ -846,27 +876,37 @@ LaTeX Info: Redefining \% on input line 14.
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-05-26>
  ***********
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package rerunfilecheck Info: File `Document.out' has not changed.
 (rerunfilecheck)             Checksum: 7A896B2AEB075C9595459D29F5BF9AE0;1017.
  ) 
 Here is how much of TeX's memory you used:
- 16411 strings out of 468219
- 259855 string characters out of 5442933
- 697086 words of memory out of 5000000
- 44639 multiletter control sequences out of 15000+600000
- 635685 words of font info for 74 fonts, out of 8000000 for 9000
+ 16466 strings out of 468219
+ 261022 string characters out of 5442933
+ 719436 words of memory out of 5000000
+ 44679 multiletter control sequences out of 15000+600000
+ 636037 words of font info for 75 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,11n,79p,533b,591s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,13n,79p,666b,589s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Progra
-m Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTe
-X/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX/fonts/type1
-/public/amsfonts/cm/cmr17.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfo
-nts/cm/cmr7.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pf
-b><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Progra
-m Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on Document.pdf (6 pages, 250368 bytes).
+m Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files/MiKT
+eX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX/fonts/type
+1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsf
+onts/cm/cmr12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17
+.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Progr
+am Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files/MiKTe
+X/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX/fonts/type1/
+public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfo
+nts/cm/cmsy6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.
+pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Prog
+ram Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files/Mi
+KTeX/fonts/type1/public/amsfonts/cm/cmti8.pfb>
+Output written on Document.pdf (12 pages, 469418 bytes).
 PDF statistics:
- 136 PDF objects out of 1000 (max. 8388607)
- 25 named destinations out of 1000 (max. 500000)
- 70 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 224 PDF objects out of 1000 (max. 8388607)
+ 42 named destinations out of 1000 (max. 500000)
+ 85 words of extra memory for PDF output out of 10000 (max. 10000000)
 
