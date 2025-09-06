@@ -433,7 +433,7 @@ ggplot(db3, aes(age, log_w_hat)) +
   labs(x = "Edad", y = "log(Salario)") +
   theme_bw() +
   theme(legend.position = "bottom")
-
+dev.off() 
 
 
 
@@ -471,13 +471,13 @@ edad_max_boot <- boot_p3$t # edades máximas estimadas por el boostrap
 
 
 #Guardar a PDF
-pdf("views/plot_hats_p3.pdf", width = 8, height = 6)  
+pdf("views/p3edad_max2.pdf", width = 8, height = 6)  
 ggplot(data.frame(edad_max_boot), aes(x = edad_max_boot)) +
-  geom_histogram(aes(y =after_stat(density)), bins = 30, fill = "lightblue", color = "black", alpha = 0.7) +
+  geom_histogram(aes(y =after_stat(density)), bins = 30, fill = "lightblue", color = "lightblue", alpha = 0.7) +
   geom_density(color = "blue", linewidth = 1) +  # Agregar densidad
-  geom_vline(aes(xintercept = mean(edad_max_boot)), color = "red", linetype = "dashed", linewidth = 1) +  # Media
-  geom_vline(aes(xintercept = ic_p3[1]), color = "black", linetype = "dotted", linewidth = 1.2) +  # Límite inferior IC
-  geom_vline(aes(xintercept = ic_p3[2]), color = "black", linetype = "dotted", linewidth = 1.2) +  # Límite superior IC
+  geom_vline(aes(xintercept = mean(edad_max_boot)), color = "darkorchid", linetype = "dashed", linewidth = 1) +  # Media
+  geom_vline(aes(xintercept = ic_p3[1]), color = "black", linetype = "longdash", linewidth = 0.5) +  # Límite inferior IC
+  geom_vline(aes(xintercept = ic_p3[2]), color = "black", linetype = "longdash", linewidth = 0.5) +  # Límite superior IC
   labs(
     x = "Edad máxima estimada",
     y = "Densidad") +
