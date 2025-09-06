@@ -118,6 +118,10 @@ for (v in variables_ingresos) {
   combinado[[v]] <- ifelse(combinado[[v]] > p975, p975, combinado[[v]])
 }
 
+## 7) Se guarda la tabla para que se pueda cargar más adelante
+
+write_csv(combinado, "combinado.csv")
+
 #### ============================================================
 ###Punto 2 - Estadísticas Descriptivas
 
