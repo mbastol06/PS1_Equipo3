@@ -7,7 +7,7 @@ setwd(dirname(dirname(rstudioapi::getActiveDocumentContext()$path)))
 require("pacman")
 pacman::p_load(rvest,tidyverse,stargazer)
 
-set.seed(1234)
+set.seed(10101)
 
 ################################################################################
 ################## Respondiendo la cuestión 4 ##################################
@@ -106,12 +106,12 @@ reg_fem <- lm(data = data_reg, log(y_total_m_ha) ~ female)
 
 reg_fem_age <- lm(data = data_reg, log(y_total_m_ha) ~ female + age + age_sqr)
 
-reg_fem_age_educ <- lm(data = data_reg, log(y_total_m_ha) ~ female + age + age_sqr  + as.factor(maxEducLevel) )
+reg_fem_age_educ <- lm(data = data_reg, log(y_total_m_ha) ~ female + age + age_sqr  + as.factor(maxEducLevel) ) + colleg
 
-reg_fem_age_educ_hwork <- lm(data = data_reg, log(y_total_m_ha) ~ female + age + age_sqr  + as.factor(maxEducLevel) + + totalHoursWorked)
+reg_fem_age_educ_hwork <- lm(data = data_reg, log(y_total_m_ha) ~ female + age + age_sqr  + as.factor(maxEducLevel) + totalHoursWorked)
 
-reg_fem_age_educ_cwork <-lm(data = data_reg, log(y_total_m_ha) ~ "female" + age + age_sqr  + as.factor(maxEducLevel) + totalHoursWorked 
-                             + cuentaPropia + microEmpresa + formal + as.factor(sizeFirm) + as.factor(oficio)) 
+reg_fem_age_educ_cwork <-lm(data = data_reg, log(y_total_m_ha) ~ female + age + age_sqr  + as.factor(maxEducLevel) + totalHoursWorked 
+                             + microEmpresa + formal + as.factor(sizeFirm) + as.factor(oficio)) 
 reg_list <- list(
   reg_fem,reg_fem_age,reg_fem_age_educ, reg_fem_age_educ_hwork,reg_fem_age_educ_cwork)
 
