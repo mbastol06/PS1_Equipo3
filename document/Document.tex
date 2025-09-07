@@ -152,18 +152,33 @@ Tabla
 Histogramas
 
 \begin{figure}[H]
-\caption{Salario por Hora} \label{fig:1_histo_sal}
-    \includegraphics[scale=0.75]{../views/1_histo_sal.png}   
- \flushleft
- \textit{Nota:} La figura muestra el histograma del salario por hora de la muestra. La línea roja presenta la media y la azul la mediana.
+    \centering
+    \caption{Distribuciones del salario por hora y su logaritmo natural}
+    \label{fig:hist-doble}
+
+    \begin{subfigure}[t]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{../views/1_histo_sal.png}
+        \caption{Salario por hora}
+        \label{fig:hist-sal}
+    \end{subfigure}
+        \hspace{0.01\textwidth}
+    \begin{subfigure}[t]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{../views/1_histo_sal_hora.png}
+        \caption{Logaritmo natural del salario}
+        \label{fig:hist-log}
+    \end{subfigure}
+
+    \vspace{4pt}
+    \begin{flushleft}
+    \textit{Nota:} En el panel izquierdo se encuentra la distribución del salario por hora en pesos.
+    En el panel derecho se encuentra la distribución del logaritmo natural del salario por hora.
+    La línea roja es la mediana y la azul es la media.
+    \end{flushleft}
 \end{figure}
 
-\begin{figure}[H]
-\caption{Logaritmo del Salario por Hora} \label{fig:1_histo_sal_hora}
-    \includegraphics[scale=0.75]{../views/1_histo_sal_hora.png}   
- \flushleft
- \textit{Nota:} La figura muestra el histograma del logaritmo natural del salario por hora de la muestra. La línea roja presenta la media y la azul la mediana.
-\end{figure}
+
 
 \end{itemize}
 

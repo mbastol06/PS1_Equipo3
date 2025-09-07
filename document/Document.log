@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.9.7)  7 SEP 2025 16:56
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.9.7)  7 SEP 2025 17:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -784,56 +784,54 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
 {C:/Users/lukaz/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] [2]
-<../views/1_histo_sal.png, id=47, 416.0343pt x 245.718pt>
+<../views/1_histo_sal.png, id=47, 289.08pt x 252.945pt>
 File: ../views/1_histo_sal.png Graphic file (type png)
 <use ../views/1_histo_sal.png>
-Package pdftex.def Info: ../views/1_histo_sal.png  used on input line 156.
-(pdftex.def)             Requested size: 312.02495pt x 184.28804pt.
-<../views/1_histo_sal_hora.png, id=49, 416.0343pt x 245.718pt>
+Package pdftex.def Info: ../views/1_histo_sal.png  used on input line 161.
+(pdftex.def)             Requested size: 221.14421pt x 193.49843pt.
+<../views/1_histo_sal_hora.png, id=49, 289.08pt x 252.945pt>
 File: ../views/1_histo_sal_hora.png Graphic file (type png)
 <use ../views/1_histo_sal_hora.png>
-Package pdftex.def Info: ../views/1_histo_sal_hora.png  used on input line 163.
+Package pdftex.def Info: ../views/1_histo_sal_hora.png  used on input line 168.
 
-(pdftex.def)             Requested size: 312.02495pt x 184.28804pt.
+(pdftex.def)             Requested size: 221.14421pt x 193.49843pt.
  [3 <../views/1_histo_sal.png> <../views/1_histo_sal_hora.png>] [4] [5]
 <../views/3_fig_pred_ic.pdf, id=79, 722.7pt x 433.62pt>
 File: ../views/3_fig_pred_ic.pdf Graphic file (type pdf)
 <use ../views/3_fig_pred_ic.pdf>
-Package pdftex.def Info: ../views/3_fig_pred_ic.pdf  used on input line 277.
+Package pdftex.def Info: ../views/3_fig_pred_ic.pdf  used on input line 292.
 (pdftex.def)             Requested size: 361.3491pt x 216.80946pt.
- [6 <../views/3_fig_pred_ic.pdf>]
-<../views/3_fig_boot.pdf, id=95, 722.7pt x 361.35pt>
+<../views/3_fig_boot.pdf, id=80, 722.7pt x 361.35pt>
 File: ../views/3_fig_boot.pdf Graphic file (type pdf)
 <use ../views/3_fig_boot.pdf>
-Package pdftex.def Info: ../views/3_fig_boot.pdf  used on input line 301.
+Package pdftex.def Info: ../views/3_fig_boot.pdf  used on input line 316.
 (pdftex.def)             Requested size: 433.62334pt x 216.81168pt.
-
-[7] [8 <../views/3_fig_boot.pdf>] [9]
-<../views/sd_fwl_hist.png, id=127, 334.1283pt x 148.8762pt>
+ [6 <../views/3_fig_pred_ic.pdf>]
+[7 <../views/3_fig_boot.pdf>] [8]
+<../views/sd_fwl_hist.png, id=121, 334.1283pt x 148.8762pt>
 File: ../views/sd_fwl_hist.png Graphic file (type png)
 <use ../views/sd_fwl_hist.png>
-Package pdftex.def Info: ../views/sd_fwl_hist.png  used on input line 449.
+Package pdftex.def Info: ../views/sd_fwl_hist.png  used on input line 464.
 (pdftex.def)             Requested size: 250.5956pt x 111.65688pt.
- [10] [11 <../views/sd_fwl_hist.png>]
-[12]
-<../views/age_peak_bar.png, id=147, 334.1283pt x 148.8762pt>
+ [9] [10 <../views/sd_fwl_hist.png>] [11]
+<../views/age_peak_bar.png, id=142, 334.1283pt x 148.8762pt>
 File: ../views/age_peak_bar.png Graphic file (type png)
 <use ../views/age_peak_bar.png>
-Package pdftex.def Info: ../views/age_peak_bar.png  used on input line 558.
+Package pdftex.def Info: ../views/age_peak_bar.png  used on input line 573.
 (pdftex.def)             Requested size: 250.5956pt x 111.65688pt.
-<../views/age_whiskey_point.png, id=149, 334.1283pt x 148.8762pt>
+<../views/age_whiskey_point.png, id=144, 334.1283pt x 148.8762pt>
 File: ../views/age_whiskey_point.png Graphic file (type png)
 <use ../views/age_whiskey_point.png>
-Package pdftex.def Info: ../views/age_whiskey_point.png  used on input line 566
+Package pdftex.def Info: ../views/age_whiskey_point.png  used on input line 581
 .
 (pdftex.def)             Requested size: 250.5956pt x 111.65688pt.
 
+[12 <../views/age_peak_bar.png> <../views/age_whiskey_point.png>]
 
 LaTeX Warning: Reference `tab:avdiscriminationrates' on page 13 undefined on in
-put line 573.
+put line 588.
 
-[13 <../views/age_peak_bar.png> <../views/age_whiskey_point.png>] [14]
-(Document.bbl) [15] (Document.aux
+[13] (Document.bbl) [14] (Document.aux
 LaTeX Info: Redefining \. on input line 12.
 LaTeX Info: Redefining \% on input line 12.
 )
@@ -852,13 +850,13 @@ Package rerunfilecheck Info: File `Document.out' has not changed.
 (rerunfilecheck)             Checksum: 05D8EF72EBB923042C453E09C3F06BDD;782.
  ) 
 Here is how much of TeX's memory you used:
- 16122 strings out of 474486
- 256137 string characters out of 5753571
- 1960542 words of memory out of 5000000
- 38094 multiletter control sequences out of 15000+600000
+ 16134 strings out of 474486
+ 256421 string characters out of 5753571
+ 1961542 words of memory out of 5000000
+ 38108 multiletter control sequences out of 15000+600000
  567453 words of font info for 71 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,13n,79p,1081b,564s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,13n,79p,1081b,672s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\lukaz\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm
 1200.pk><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/
 Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program File
@@ -871,9 +869,9 @@ c/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm
 s/type1/public/amsfonts/cm/cmsy6.pfb><C:/Program Files/MiKTeX/fonts/type1/publi
 c/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm
 /cmti12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmti8.pfb>
-Output written on Document.pdf (15 pages, 398792 bytes).
+Output written on Document.pdf (14 pages, 393011 bytes).
 PDF statistics:
- 247 PDF objects out of 1000 (max. 8388607)
- 45 named destinations out of 1000 (max. 500000)
+ 242 PDF objects out of 1000 (max. 8388607)
+ 43 named destinations out of 1000 (max. 500000)
  92 words of extra memory for PDF output out of 10000 (max. 10000000)
 

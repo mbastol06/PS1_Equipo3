@@ -131,7 +131,13 @@ p1 <- ggplot(combinado_grafica, aes(x = salario_hora)) +
 
 p1
 
-ggsave(p1, dpi = 300, filename = "views/1_histo_sal.png" )
+ggsave(
+  p1,
+  filename = "views/1_histo_sal.png",
+  dpi = 300,
+  width = 4,
+  height = 3.5
+)
 
 ## 4) Se grafica usando ggplot, como se usó en clase, un histograma para Logaritmo de Salario
 
@@ -157,4 +163,10 @@ p2 <- ggplot(combinado_grafica, aes(x = ln_salario)) +
 
 p2
 
-ggsave(p2, dpi = 300, filename = "views/1_histo_sal_hora.png" )
+ggsave(
+  p1,
+  filename = "views/1_histo_sal_hora.png",
+  dpi = 300,
+  width = 4,
+  height = 3.5
+)
