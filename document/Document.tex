@@ -18,7 +18,7 @@
 \usepackage{booktabs}
 \usepackage{dcolumn}
 \usepackage{rotating}
-\usepackage{color,soul}
+%\usepackage{color,soul}
 \usepackage{threeparttable}
 \usepackage[capposition=top]{floatrow}
 \usepackage[labelsep=period]{caption}
@@ -221,6 +221,21 @@ A continuación se presenta el gráfico de los valores predichos con cada modelo
 	\includegraphics[scale=0.5]{../views/3_fig_pred_ic.pdf}
             \label{fig:3_predicho}
 \end{figure}
+
+La edad pico se refiere a la edad en la cual el logaritmo del salario alcanza su máximo. Y se obtiene derivando la función del logaritmo del salario e igualando a cero , es decir que la edad pico se calcula como: 
+$$ edad_pico =-\frac{\beta_2}{2\beta_3}$$
+
+Luego, para cada modelo la edad pico es:
+\begin{itemize}
+	\item \textbf{Modelo salario real}: 45.53
+	\item \textbf{Modelo salario nominal}: 44.89
+\end{itemize}
+
+Luego por bootstrap se estimaron las edades pico para cada modelo con mil repeticiones y se obtuvieron los intervalos de confianza.
+\begin{itemize}
+	\item \textbf{Modelo salario real}: (43.74 , 46.21)
+	\item \textbf{Modelo salario nominal}: (44.25 , 47.05)
+\end{itemize}
 
 
 \end{itemize}
