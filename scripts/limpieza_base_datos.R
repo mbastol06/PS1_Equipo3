@@ -31,9 +31,9 @@ pacman::p_load(
 #### ============================================================
 ###Punto 2 - Limpieza de Datos
 
-## Se carga la tabla extraída por medio del Web Scrapping
+## Se carga la tabla extraída por medio del Web Scraping
 
-ruta_csv <- "stores/tablas_page1_a_page10_combinado.csv"
+ruta_csv <- "stores/datos_extraidos.csv"
 
 combinado <- read_csv(ruta_csv)
 

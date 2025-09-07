@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.8.29)  6 SEP 2025 11:39
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.8.29)  7 SEP 2025 12:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -670,6 +670,11 @@ Package: amsthm 2020/05/29 v2.20.6
 \beamer@dimb=\dimen301
 )
 (C:\Program Files\MiKTeX\tex/latex/beamer\beamerouterthemedefault.sty)))
+(C:\Program Files\MiKTeX\tex/latex/base\inputenc.sty
+Package: inputenc 2024/02/08 v1.3d Input encoding file
+\inpenc@prehook=\toks46
+\inpenc@posthook=\toks47
+)
 (C:\Program Files\MiKTeX\tex/generic/babel\babel.sty
 Package: babel 2025/05/14 v25.9 The multilingual framework for pdfLaTeX, LuaLaT
 eX and XeLaTeX
@@ -710,7 +715,7 @@ Language: spanish.ldf 2021/05/27 v5.0q Spanish support from the babel system
 Package babel Info: Importing font and identification data for spanish
 (babel)             from babel-es.ini. Reported on input line 11.
 )
-\es@quottoks=\toks46
+\es@quottoks=\toks48
 \es@quotdepth=\count360
 Package babel Info: Making " an active character on input line 570.
 Package babel Info: Making . an active character on input line 675.
@@ -730,7 +735,7 @@ Package: array 2025/06/08 v2.6j Tabular extension package (FMi)
 \col@sep=\dimen303
 \ar@mcellbox=\box78
 \extrarowheight=\dimen304
-\NC@list=\toks47
+\NC@list=\toks49
 \extratabsurround=\skip67
 \backup@length=\skip68
 \ar@cellbox=\box79
@@ -741,7 +746,7 @@ Package: array 2025/06/08 v2.6j Tabular extension package (FMi)
 \TX@target=\dimen308
 \TX@delta=\dimen309
 \TX@cols=\count361
-\TX@ftn=\toks48
+\TX@ftn=\toks50
 )
 (C:\Program Files\MiKTeX\tex/latex/booktabs\booktabs.sty
 Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
@@ -857,8 +862,12 @@ LaTeX Info: Redefining \cite on input line 694.
 (C:\Program Files\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
 File: l3backend-pdftex.def 2025-04-14 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count373
+) (main.aux
+LaTeX Info: Redefining \. on input line 11.
+LaTeX Info: Redefining \% on input line 11.
+Package babel Info: 'spanish' activates 'spanish' shorthands.
+(babel)             Reported  on input line 11.
 )
-No file main.aux.
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 41.
@@ -879,6 +888,7 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 41.
 LaTeX Font Info:    ... okay on input line 41.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 41.
 LaTeX Font Info:    ... okay on input line 41.
+
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -920,12 +930,12 @@ LaTeX Font Info:    ... okay on input line 41.
 \scratchbox=\box81
 \nofMPsegments=\count375
 \nofMParguments=\count376
-\everyMPshowfont=\toks49
+\everyMPshowfont=\toks51
 \MPscratchCnt=\count377
 \MPscratchDim=\dimen342
 \MPnumerator=\count378
 \makeMPintoPDFobject=\count379
-\everyMPtoPDFconversion=\toks50
+\everyMPtoPDFconversion=\toks52
 ) (C:\Program Files\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -935,6 +945,8 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
 Package hyperref Info: Link coloring OFF on input line 41.
+ (main.out)
+(main.out)
 \@outlinefile=\write5
 \openout5 = `main.out'.
 
@@ -965,26 +977,81 @@ Dictionary: translator-theorem-dictionary, Language: English
 )
 LaTeX Info: Redefining \. on input line 41.
 LaTeX Info: Redefining \% on input line 41.
-Package babel Info: 'spanish' activates 'spanish' shorthands.
-(babel)             Reported  on input line 41.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-
-No file main.nav.
-
+ (main.nav)
 
 [1
 
 {C:/Users/lveras/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
 LaTeX Font Info:    Font shape `OT1/cmss/b/n' in size <10> not available
-(Font)              Font shape `OT1/cmss/bx/n' tried instead on input line 62.
-LaTeX Font Info:    Font shape `OT1/cmss/b/n' in size <9> not available
-(Font)              Font shape `OT1/cmss/bx/n' tried instead on input line 62.
+(Font)              Font shape `OT1/cmss/bx/n' tried instead on input line 80.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 80.
 
+
+(C:\Program Files\MiKTeX\tex/latex/amsfonts\umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 80.
+
+
+(C:\Program Files\MiKTeX\tex/latex/amsfonts\umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Trying to load font information for OT1+mathkerncmss on inp
+ut line 80.
+
+(C:\Program Files\MiKTeX\tex/latex/sansmathaccent\ot1mathkerncmss.fd
+File: ot1mathkerncmss.fd 2020/01/31 Fontinst v1.933 font definitions for OT1/ma
+thkerncmss.
+)
 
 [2
 
 ]
+<../../views/sd_fwl_hist.png, id=96, 334.1283pt x 148.8762pt>
+File: ../../views/sd_fwl_hist.png Graphic file (type png)
+<use ../../views/sd_fwl_hist.png>
+Package pdftex.def Info: ../../views/sd_fwl_hist.png  used on input line 135.
+(pdftex.def)             Requested size: 150.35634pt x 66.99367pt.
+
+Overfull \vbox (131.12105pt too high) detected at line 135
+ []
+
+
+
+[3
+
+ <../../views/sd_fwl_hist.png>]
+File: ../../views/sd_fwl_hist.png Graphic file (type png)
+<use ../../views/sd_fwl_hist.png>
+Package pdftex.def Info: ../../views/sd_fwl_hist.png  used on input line 154.
+(pdftex.def)             Requested size: 150.35634pt x 66.99367pt.
+
+
+[4
+
+]
+
+[5
+
+]
+<../../views/age_peak_bar.png, id=181, 334.1283pt x 148.8762pt>
+File: ../../views/age_peak_bar.png Graphic file (type png)
+<use ../../views/age_peak_bar.png>
+Package pdftex.def Info: ../../views/age_peak_bar.png  used on input line 225.
+(pdftex.def)             Requested size: 150.35634pt x 66.99367pt.
+<../../views/age_whiskey_point.png, id=182, 334.1283pt x 148.8762pt>
+File: ../../views/age_whiskey_point.png Graphic file (type png)
+<use ../../views/age_whiskey_point.png>
+Package pdftex.def Info: ../../views/age_whiskey_point.png  used on input line 
+225.
+(pdftex.def)             Requested size: 150.35634pt x 66.99367pt.
+
+
+[6
+
+ <../../views/age_peak_bar.png> <../../views/age_whiskey_point.png>]
 \tf@nav=\write6
 \openout6 = `main.nav'.
 
@@ -994,7 +1061,8 @@ LaTeX Font Info:    Font shape `OT1/cmss/b/n' in size <9> not available
 \tf@snm=\write8
 \openout8 = `main.snm'.
 
- (main.aux
+
+(main.aux
 LaTeX Info: Redefining \. on input line 11.
 LaTeX Info: Redefining \% on input line 11.
 )
@@ -1002,31 +1070,31 @@ LaTeX Info: Redefining \% on input line 11.
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-05-26>
  ***********
-
-
-Package rerunfilecheck Warning: File `main.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `main.out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  D41D8CD98F00B204E9800998ECF8427E;0.
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 25673 strings out of 468219
- 488463 string characters out of 5442933
- 887259 words of memory out of 5000000
- 53721 multiletter control sequences out of 15000+600000
- 629238 words of font info for 48 fonts, out of 8000000 for 9000
+ 25961 strings out of 468219
+ 494913 string characters out of 5442933
+ 904854 words of memory out of 5000000
+ 53945 multiletter control sequences out of 15000+600000
+ 644610 words of font info for 94 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 128i,16n,123p,381b,607s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmss12.pfb><C:/Progra
-m Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmss8.pfb><C:/Program Files/MiKTe
-X/fonts/type1/public/amsfonts/cm/cmss9.pfb><C:/Program Files/MiKTeX/fonts/type1
-/public/amsfonts/cm/cmssbx10.pfb>
-Output written on main.pdf (2 pages, 63189 bytes).
+ 128i,16n,123p,381b,814s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Progra
+m Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:/Program Files/MiKTe
+X/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX/fonts/type1
+/public/amsfonts/cm/cmr6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfon
+ts/cm/cmr7.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmss10.p
+fb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmss12.pfb><C:/Progr
+am Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmss8.pfb><C:/Program Files/MiKT
+eX/fonts/type1/public/amsfonts/cm/cmss9.pfb><C:/Program Files/MiKTeX/fonts/type
+1/public/amsfonts/cm/cmssbx10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/a
+msfonts/cm/cmssi10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/
+cmsy10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
+Output written on main.pdf (6 pages, 284499 bytes).
 PDF statistics:
- 107 PDF objects out of 1000 (max. 8388607)
- 5 named destinations out of 1000 (max. 500000)
- 91 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 268 PDF objects out of 1000 (max. 8388607)
+ 13 named destinations out of 1000 (max. 500000)
+ 106 words of extra memory for PDF output out of 10000 (max. 10000000)
 
