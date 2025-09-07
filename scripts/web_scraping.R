@@ -58,4 +58,4 @@ data_final <- purrr::map2_dfr(paginas$url, paginas$chunk, funciontabla)
 
 # 4) Guardar
 
-write_csv(data_final, "stores/tablas_page1_a_page10_combinado.csv")
+write_csv(data_final, "stores/datos_extraidos.csv")
