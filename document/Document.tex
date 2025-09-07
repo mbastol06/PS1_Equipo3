@@ -257,7 +257,7 @@ A continuación se presenta el gráfico de los valores predichos con cada modelo
 \end{figure}
 
 La edad pico se refiere a la edad en la cual el logaritmo del salario alcanza su máximo. Y se obtiene derivando la función del logaritmo del salario e igualando a cero , es decir que la edad pico se calcula como: 
-$$ edad_pico =-\frac{\beta_2}{2\beta_3}$$
+$$ edad\_pico =-\frac{\beta_2}{2\beta_3}$$
 
 Luego, para cada modelo la edad pico es:
 \begin{itemize}
@@ -265,11 +265,20 @@ Luego, para cada modelo la edad pico es:
 	\item \textbf{Modelo salario nominal}: 44.89
 \end{itemize}
 
-Luego por bootstrap se estimaron las edades pico para cada modelo con mil repeticiones y se obtuvieron los intervalos de confianza.
+Luego por bootstrap no paramétrico se estimaron las edades pico para cada modelo con mil remuestreos con reemplazo (R). En cada réplica se re estimó cada modelo obteniendo los coeficientes y luego calculando la edad pico para las R repeticiones. A partir de la distribución empírica de las R edades pico, se calcularon los intervalos de confianza al 95\% con el método de percentil, es decir que los límites corresponden a los cuartiles 2.25\% y 97.5\% de la distribución bootstrap del la edad pico. Los respectivos intervalos de confianza son:
+
 \begin{itemize}
 	\item \textbf{Modelo salario real}: (43.74 , 46.21)
 	\item \textbf{Modelo salario nominal}: (44.25 , 47.05)
 \end{itemize}
+
+La figura muestra, para cada modelo (nominal y real), la distribución bootstrap de la edad pico: el histograma en azul claro representa la frecuencia de las edades pico re‐muestreadas y la curva en azul oscuro es la densidad kernel asociada. Además se agregó: la media de la edad pico por bootstrap para cada modelo, que es representado con la línea vertical morada ; y, los intervalos de confianza para cada modelo en la línea punteada gris. En conjunto, la gráfica permite comparar visualmente la localización y la dispersión de las edades pico entre ambos modelos, dado las densidades se solapan y los intervalos percentiles son similares, se la evidencia indica que las edades pico no difieren de forma sustantiva.
+\begin{figure}[H]
+	\centering
+	\caption{Distribución estimada e intervalos de confianza edad pico}
+	\includegraphics[scale=0.6]{../views/3_fig_boot.pdf}
+            \label{fig:3_boot}
+\end{figure}
 
 
 \end{itemize}

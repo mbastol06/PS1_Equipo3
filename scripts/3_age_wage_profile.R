@@ -26,7 +26,7 @@ pacman::p_load(
   broom,       # tddy
   purr,        # funciones con listas
   ggeffects,   # ggpredict()
-  patchwork,   # gráficos lado a lado
+  patchwork  # gráficos lado a lado
 )
 
 # Directorio de trabajo
@@ -55,7 +55,7 @@ stargazer(real_ho_usual,all_formal_h,laboral_hour, type = "text")
 
 # las variables  y_total_m_ha y y_ing_lab_m_ha parecen ser la misma, verificamos
 db <- db %>% mutate(prueba = y_total_m_ha-y_ing_lab_m_ha) 
-summary(db$prueba) #efectivamente son ma misma variable
+summary(db$prueba) #efectivamente son la misma variable
 
 #  limpiamos base
 db <- db <- dplyr::select(db ,-prueba , y_ing_lab_m_ha)
@@ -72,7 +72,7 @@ stargazer(mod_p3, type = "latex", title = "Logaritmo del salario en funcion de l
 edades <- c(18, 25, 35, 45, 50)
 
 resultados <- data.frame(edad = edades, sem_elast_real_ho_usual = NA, sem_elast_all_formal_h = NA)
-colnames(resultados) <- c("Edad", "Salario Real", "Salario Nominal")
+
 
 # Calcular las semielasticidades para cada edad
 for (i in 1:length(edades)) {
@@ -86,7 +86,7 @@ for (i in 1:length(edades)) {
 }
 
 # Ver los resultados
-
+colnames(resultados) <- c("Edad", "Salario Real", "Salario Nominal")
 resultados <- round(resultados, 3)
 head(resultados)
 print(xtable(resultados, digits = 3), include.rownames = FALSE)
@@ -211,8 +211,8 @@ dev.off()
 # Funcion para estimar los coeficientes segun la muestra y la edad pico
 
 f_edad_pico <- function(db, index){
-  mod_1 <- lm(log(y_ing_lab_m_ha) ~ age + I(age^2), data = db , subset = index)
-  mod_2 <- lm(log(y_salary_m_hu)  ~ age + I(age^2), data = db , subset = index)
+  mod_1 <- lm(log(y_salary_m_hu)  ~ age + I(age^2), data = db , subset = index)
+  mod_2 <- lm(log(y_ing_lab_m_ha) ~ age + I(age^2), data = db , subset = index)
   
   b2_hat1 <- coef(mod_1)[2] # coefciente age
   b3_hat1 <- coef(mod_1)[3] # coeficiente age^2b3
@@ -223,8 +223,8 @@ f_edad_pico <- function(db, index){
   edad_max1 <- -b2_hat1/(2*b3_hat1) 
   edad_max2 <- -b2_hat2/(2*b3_hat2) 
   
-  return(c(edad_max_nominal = edad_max1,
-           edad_max_real    = edad_max2))
+  return(c(edad_pico_real = edad_max1,
+           edad_pico_nominal= edad_max2))
   
 }
 
@@ -237,53 +237,56 @@ set.seed(10101)
 boot_p3 <- boot(data = db, f_edad_pico, R = 1000) # no paramétrico
 boot_p3
 
-# CIs percentil para cada componente (1 = nominal, 2 = real)
-ic_nom <- boot.ci(boot_p3, type = "perc", index = 1)$percent[4:5]
-ic_real <- boot.ci(boot_p3, type = "perc", index = 2)$percent[4:5]
+# CIs percentil para cada componente (1 = real, 2 = nominal)
+ic_real <- boot.ci(boot_p3, type = "perc", index = 1)$percent[4:5]
+ic_nominal <- boot.ci(boot_p3, type = "perc", index = 2)$percent[4:5]
 
-ic_nom
 ic_real
+ic_nominal
 
 
-
-
-# Plot edades máximas ----------------------------------------------------------
+# Plot edades pico ----------------------------------------------------------
 
 # Las edades pico de bootstrap por modelo
-edad_max_boot_nom  <- boot_p3$t[, 1]
-edad_max_boot_real <- boot_p3$t[, 2]
-
-
+edad_pico_boot_real <- boot_p3$t[, 1]
+edad_pico_boot_nom  <- boot_p3$t[, 2]
 
 boot_long <- data.frame(
-  edad   = c(edad_max_boot_nom, edad_max_boot_real),
-  modelo = factor(rep(c("Nominal", "Real"),
+  edad   = c(edad_pico_boot_real, edad_pico_boot_nom),
+  modelo = factor(rep(c("Real", "Nominal"),
                       each = nrow(boot_p3$t)))
 )
 
 peaks_df <- data.frame(
-  modelo = c("Nominal", "Real"),
-  mean   = c(mean(edad_max_boot_nom,  na.rm = TRUE),
-             mean(edad_max_boot_real, na.rm = TRUE)),
-  low    = c(ic_nom[1],  ic_real[1]),
-  high   = c(ic_nom[2],  ic_real[2])
+  modelo = c("Real", "Nominal"),
+  mean   = c(mean(edad_pico_boot_real,  na.rm = TRUE),
+             mean(edad_pico_boot_nom, na.rm = TRUE)),
+  low    = c(ic_real[1],  ic_nominal[1]),
+  high   = c(ic_real[2],  ic_nominal[2])
 )
 
-
-
+pdf("views/3_fig_boot.pdf", width = 10, height = 5)
 ggplot(boot_long, aes(x = edad)) +
   geom_histogram(aes(y = after_stat(density)),
                  bins = 30, fill = "lightblue", color = "lightblue", alpha = 0.7) +
-  geom_density(color = "blue", linewidth = 1) +
+  geom_density(color = "darkblue", linewidth = 1) +
   geom_vline(data = peaks_df, aes(xintercept = mean),
              color = "darkorchid", linetype = "dashed", linewidth = 1) +
   geom_vline(data = peaks_df, aes(xintercept = low),
              color = "black", linetype = "longdash", linewidth = 0.5) +
   geom_vline(data = peaks_df, aes(xintercept = high),
              color = "black", linetype = "longdash", linewidth = 0.5) +
-  labs(title = "Edad pico estima por bootstrap" ,x = "Edad pico estimada", y = "Densidad") +
+  labs(title = "Perfil salario-edad con IC 95% y edad pico",
+       x = "Edad", y = "Log(Salario por hora)") +
+  labs(title = "Edad pico estimada por bootstrap" ,x = "Edad pico estimada", y = "Densidad") +
   facet_wrap(~ modelo, nrow = 1) +
-  theme_bw()
-
+  theme_bw() +
+  theme(plot.title = element_text(face = "bold"))+    # <- negrilla en el título
+  scale_x_continuous(
+    breaks = breaks_pretty(n = 12),            # más marcas
+    minor_breaks = breaks_width(1),            # líneas menores cada 1 año (sin etiqueta)
+    labels = label_number(accuracy = 1)
+  )
+dev.off() 
 
 
