@@ -110,7 +110,86 @@ Poner acá la introducción
 
 Poners cosas de los datos
 
-\section{Perfil salario-edad}
+\section{Perfil edad-salario}
+En esta sección analizaremos la relación entre el perfil edad-salario. En primer lugar, es importante discutir qué medida de ingreso utilizar. La base de datos de la GEIH incluye diversas medidas, como ingreso por primas monetarias, ingreso mensual, ingreso usual en el mes e ingreso efectivo en el mes, entre otras. 
+
+En los estudios que analizan el perfil salarial de edad, es común emplear el ingreso por hora, ya que permite aislar el efecto de las horas trabajadas en el mes, lo cual podría sesgar los resultados. 
+Asimismo, suele utilizarse la variable de ingreso en logaritmos, lo que mejora la interpretabilidad del coeficiente estimado, que pasaría a representar cuánto impacta, en términos porcentuales, una unidad adicional de la variable independiente sobre el ingreso, en este caso un año adicional en la edad.
+
+Se estimó el siguiente modelo para identificar el perfil edad-salario de las observaciones de la muestra.
+\begin{equation}
+    \ln{w_i}= \beta_1 + \beta_2 Age_i + \beta_3 Age_i^2 + u_i
+\end{equation}
+Donde $w_i$ es el ingreso salarial por hora del individuo $i$ y $Age_i$ es su edad. Se realizó la estimación del modelo con las diferentes medidas de ingreso salarial real y nominal por hora:
+
+\begin{table}[!htbp] 
+\centering 
+  \caption{Perfil de salario-edad} 
+  \label{reg_punto3} 
+\scriptsize
+\begin{tabular}{@{\extracolsep{5pt}}lcc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & \multicolumn{2}{c}{\textit{Dependent variable:}} \\ 
+\cline{2-3} 
+\\[-1.8ex] & log(y\_salary\_m\_hu) & log(y\_total\_m\_ha) \\ 
+\\[-1.8ex] & (1) & (2)\\ 
+\hline \\[-1.8ex] 
+ age & 0.059$^{***}$ & 0.066$^{***}$ \\ 
+  & (0.003) & (0.003) \\ 
+  & & \\ 
+ I(age$\hat{\mkern6mu}$2) & $-$0.001$^{***}$ & $-$0.001$^{***}$ \\ 
+  & (0.00004) & (0.00004) \\ 
+  & & \\ 
+ Constant & 7.407$^{***}$ & 7.393$^{***}$ \\ 
+  & (0.064) & (0.065) \\ 
+  & & \\ 
+\hline \\[-1.8ex] 
+Observations & 9,892 & 9,892 \\ 
+R$^{2}$ & 0.040 & 0.045 \\ 
+Adjusted R$^{2}$ & 0.040 & 0.045 \\ 
+Residual Std. Error (df = 9889) & 0.671 & 0.677 \\ 
+F Statistic (df = 2; 9889) & 206.012$^{***}$ & 235.041$^{***}$ \\ 
+\hline 
+\hline \\[-1.8ex] 
+\textit{Note:}  & \multicolumn{2}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+\end{tabular} 
+\end{table} 
+
+\begin{itemize}
+\item \textbf{Interpretación de los coeficientes:}
+
+De acuerdo con los resultados de las dos regresiones, el perfil salarial según la edad tienen la misma forma funcional, es decir una curva convexa. En concreto, el término lineal de la edad muestra el efecto directo de “sumar un año”, mientras que el término cuadrático ($\text{edad}^2$) captura cómo que existen efectos diferenciados sobre el salario en edades diferentes de la vida, es decir que la relacion entre la edad y el salario no es lineal.
+
+El sumar un año de edad incrementa 5.9\% y 6.6\% el salario (el efecto directo) tomando como el salario real y nominal por hora respectivamente. Ambos coeficientes estimados son significativos estadísticamente y postivos lo que indica en primera isntancia un efecto directo positivo de la edad sobre el salario. El coeficiente relacionado con la edad al cuadrado captura esa relación no lineal. Tanto para el modelo con el salario real como el nominal el coeficiente de la edad cuadrática es negativo lo que indica la convexidad de la relación, es decir que hasta un punto la relación entre edad y el logaritmo del salario es positiva y luego es negativa. 
+
+ Para estimar la semileasticidad de la edad sobre el logaritmo del salario solucionamos la condición de primer orden. Luego un año adicional de edad aumenta porcentualme3nte el salario en:
+\begin{equation*}
+	100 \times (\beta_2+ 2 \times \beta_3\times edad) \%
+\end{equation*}
+
+La semieleasticidad de para las edades de 18 , 25, 45 y 50 años se presentan en el siguiente cuadro:
+
+\begin{table}[ht]
+\centering
+\caption{Semielasticidad del salario sobre el ingreso}    
+\begin{tabular}{rrr}
+  \hline
+Edad & Salario Real & Salario Nominal \\ 
+  \hline
+18 & 3.588 & 3.957 \\ 
+  25 & 2.676 & 2.927 \\ 
+  35 & 1.372 & 1.456 \\ 
+  45 & 0.069 & -0.015 \\ 
+  50 & -0.582 & -0.750 \\ 
+   \hline
+\end{tabular}
+\end{table}
+
+
+\end{itemize}
+
+
 
 \section{ La brecha género-salario}
 
