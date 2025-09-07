@@ -2,7 +2,7 @@
 #                        PROBLEM SET 1
 #                            Equipo 3       
 #  Autores:   Maria Paula Basto - Lucas Daniel Carrillo Aguirre 
-#            Catalina Leal      -  Lucas Eduardo Vera Acosta
+#            Catalina Leal      -  Lucas Eduardo Vera Costa
 #                     3. Age-wage profil                                   
 ############################################################################
 
@@ -13,23 +13,15 @@ rm(list = ls()) # Vacía environment
 library(pacman)
 
 pacman::p_load(
-  tidyverse,
-  rvest,
-  httr,
-  fs,
-  janitor,
-  readr,
-  haven,
-  readxl,
-  glue,
-  chromote,
-  xml2,
-  tibble,
-  purrr,
-  VIM,
-  gtsummary,
-  gt,
-  scales, boot
+  readr,       # leer archivos CSV
+  dplyr,       # manipulación de datos 
+  tibble,      # crear data frames en tibbles
+  purr,        # aplicar funciones a listas o vectores
+  scales,      # cambiar escalas
+  gt,          # tablas
+  stargazer,   # exportar tablas
+  ggplot2,     # graficos
+  boot         # bootscraping
 )
 
 # Directorio de trabajo
