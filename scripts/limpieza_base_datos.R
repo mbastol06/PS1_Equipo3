@@ -120,6 +120,37 @@ for (v in variables_ingresos) {
   combinado[[v]] <- ifelse(combinado[[v]] > p975, p975, combinado[[v]])
 }
 
+## 7) Se hacen modificaciones finales y se eliminan variables innecesarias 
+
+combinado$female <- ifelse(combinado$sex == 0, 1, 0)
+
+combinado$tipo_ocup <- combinado$relab
+
+combinado <- combinado %>%
+  dplyr::select(
+    directorio,
+    sex,
+    female,
+    age,
+    max_educ_level,
+    total_hours_worked,
+    estrato1,
+    micro_empresa,
+    formal,
+    tipo_ocup,
+    size_firm,
+    oficio,
+    college,
+    ingtot,
+    y_ing_lab_m,
+    y_ing_lab_m_ha,
+    y_salary_m,
+    y_salary_m_hu,
+    y_total_m,
+    y_total_m_ha
+  )
+
+
 ## 7) Se guarda la tabla para que se pueda cargar más adelante
 
 write_csv(combinado, "stores/base_final.csv")

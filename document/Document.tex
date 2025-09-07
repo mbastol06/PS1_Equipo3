@@ -78,7 +78,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Title, authors and date
 
-\title{PS1 }
+\title{PS1 - Equipo 03}
 
 \author{Catalina Leal Rojas, Lucas Daniel Carrillo Aguirre, Lucas Eduardo Veras Costa, Maria Paula Basto Lozano} 
 \date{\today}
@@ -102,31 +102,17 @@
 
 
 
-\section{Introduction} \label{sec:intro}
+\section{Introducción} \label{sec:intro}
 
-Here you have to position your paper, remember RAP:
-\begin{enumerate}
-    \item R: research question
-    \item A: your answer
-    \item P: positioning in the existing literature
-\end{enumerate}
+Poner acá la introducción
 
-\section{Literature Review}
+\section{Datos}
 
-A couple of things here. First, I prefer not to have a separate section, I think it's better to have it as part of the introduction, where you can cite the papers to position yours, and also in contrasting your contribution. You can also fold this when discussion your results, so you can compare/contrast with the existing literature
+Poners cosas de los datos
 
+\section{Perfil salario-edad}
 
-If you decide to have a separate section, please be careful in relating it to your research. I encurage you to read and follow \cite{nikolov2020writing}\footnote{This is available in the \href{https://ignaciomsarmiento.github.io/teaching/Tesis.html}{course website}} excellent advice:
-
-\begin{quote}
-    {\it ``Do not title your literature review section ``literature review''! It is a bit sophomoric. Instead, integrate your discussion of previous literature under the common thread of previous work as it relates to your main thesis.  For example if your paper is ``Do Traditional Institutions Constrain Female Entrepreneurship?'' you might want to call your literature review ``Gender norms in India''. In other words, tell your readers what is in the section...''} \citep{nikolov2020writing}
-\end{quote}
-
-
-
-\section{Data}
-
-\section{¿Trabajos semejantes pagos semejantes?}
+\section{ La brecha género-salario}
 
 En esta sección analizaremos la relación entre ingresos y género femenino. 
 En primer lugar, es importante discutir qué medida de ingreso utilizar. 
@@ -387,13 +373,14 @@ La Figura \ref{fig:age_peak_bar} muestra los resultados de la edad pico. En gene
 \end{figure}
 
 La Figura \ref{fig:age_whiskey_bar} muestra los resultados de los intervalos de confianza. Como era de esperar, la inclusión de más controles amplía dichos intervalos; sin embargo, el incremento no supera los 2 años con respecto al valor central de la estimación.
-\section{Results}
+\section{Prediciendo Salarios}
 
 Referencing tables is very easy you can do the following: In Table \ref{tab:avdiscriminationrates} ...
 
 Citing papers is easier, for example \cite{albouy2020unlocking} shows that crime around parks. For many papers in parenthesis \cite{albouy2020unlocking,mcmillen2019more} 
 
-\subsection{Robustness}
+\section{?}
+
 \section{Conclusion}
 
 
@@ -408,38 +395,5 @@ Citing papers is easier, for example \cite{albouy2020unlocking} shows that crime
 \singlespacing
 \bibliography{References.bib}
 \pagebreak
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%		  TABLES				  %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section*{Tables and Figures}
-
-
-\input{../views/av_discrimination}%
-
-\pagebreak
-
-\begin{figure}[H]
-\caption{US Map} \label{fig:robust}
-    \includegraphics[scale=0.75]{../views/fig1a.pdf}   
- \flushleft
- Note: This figure shows ...
-\end{figure}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%   APPENDIX	 Tables	        %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\pagebreak
-\appendix
-\renewcommand{\theequation}{\Alph{chapter}.\arabic{equation}}
-
-\setcounter{figure}{0}
-\setcounter{table}{0}
-\makeatletter 
-\renewcommand{\thefigure}{A.\@arabic\c@figure}
-\renewcommand{\thetable}{A.\@arabic\c@table}
-
-\section{Appendix: Tables and Figures}\label{sec:appendix_tables} 
 
 \end{document}
