@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.2.19)  6 SEP 2025 20:34
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.2.19)  6 SEP 2025 22:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -825,30 +825,31 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 [1
 
 {C:/Users/mpaul/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] [2]
-[3]
-<../views/sd_fwl_hist.png, id=65, 489.2679pt x 148.8762pt>
+[3] [4]
+<../views/sd_fwl_hist.png, id=71, 489.2679pt x 148.8762pt>
 File: ../views/sd_fwl_hist.png Graphic file (type png)
 <use ../views/sd_fwl_hist.png>
-Package pdftex.def Info: ../views/sd_fwl_hist.png  used on input line 300.
+Package pdftex.def Info: ../views/sd_fwl_hist.png  used on input line 333.
 (pdftex.def)             Requested size: 366.95001pt x 111.65688pt.
- [4] [5 <../views/sd_fwl_hist.png>] [6]
-<../views/age_peak_bar.png, id=85, 489.2679pt x 380.8629pt>
+ [5 <../views/sd_fwl_hist.png>]
+<../views/age_peak_bar.png, id=81, 489.2679pt x 380.8629pt>
 File: ../views/age_peak_bar.png Graphic file (type png)
 <use ../views/age_peak_bar.png>
-Package pdftex.def Info: ../views/age_peak_bar.png  used on input line 409.
+Package pdftex.def Info: ../views/age_peak_bar.png  used on input line 442.
 (pdftex.def)             Requested size: 366.95001pt x 285.64645pt.
-<../views/age_whiskey_point.png, id=87, 489.2679pt x 380.8629pt>
+ [6] [7]
+<../views/age_whiskey_point.png, id=93, 489.2679pt x 380.8629pt>
 File: ../views/age_whiskey_point.png Graphic file (type png)
 <use ../views/age_whiskey_point.png>
-Package pdftex.def Info: ../views/age_whiskey_point.png  used on input line 417
+Package pdftex.def Info: ../views/age_whiskey_point.png  used on input line 450
 .
 (pdftex.def)             Requested size: 366.95001pt x 285.64645pt.
- [7 <../views/age_peak_bar.png>]
+ [8 <../views/age_peak_bar.png>]
 
-LaTeX Warning: Reference `tab:avdiscriminationrates' on page 8 undefined on inp
-ut line 424.
+LaTeX Warning: Reference `tab:avdiscriminationrates' on page 9 undefined on inp
+ut line 457.
 
-[8 <../views/age_whiskey_point.png>] (Document.bbl) [9] (Document.aux
+[9 <../views/age_whiskey_point.png>] (Document.bbl) [10] (Document.aux
 LaTeX Info: Redefining \. on input line 12.
 LaTeX Info: Redefining \% on input line 12.
 )
@@ -860,20 +861,17 @@ L3 programming layer <2024-01-04>
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 Package rerunfilecheck Info: File `Document.out' has not changed.
 (rerunfilecheck)             Checksum: 05D8EF72EBB923042C453E09C3F06BDD;782.
  ) 
 Here is how much of TeX's memory you used:
- 16324 strings out of 474486
- 264261 string characters out of 5743755
- 1960542 words of memory out of 5000000
- 38297 multiletter control sequences out of 15000+600000
+ 16325 strings out of 474486
+ 264281 string characters out of 5743755
+ 1961542 words of memory out of 5000000
+ 38296 multiletter control sequences out of 15000+600000
  565881 words of font info for 65 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,13n,79p,659b,462s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,13n,79p,697b,527s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/mpaul/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/
 cmbx12.pfb><C:/Users/mpaul/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
 fonts/cm/cmmi12.pfb><C:/Users/mpaul/AppData/Local/Programs/MiKTeX/fonts/type1/p
@@ -888,9 +886,9 @@ Users/mpaul/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.
 pfb><C:/Users/mpaul/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/c
 m/cmti12.pfb><C:/Users/mpaul/AppData/Local/Programs/MiKTeX/fonts/type1/public/a
 msfonts/cm/cmti8.pfb>
-Output written on Document.pdf (9 pages, 311187 bytes).
+Output written on Document.pdf (10 pages, 313755 bytes).
 PDF statistics:
- 174 PDF objects out of 1000 (max. 8388607)
- 33 named destinations out of 1000 (max. 500000)
+ 179 PDF objects out of 1000 (max. 8388607)
+ 35 named destinations out of 1000 (max. 500000)
  72 words of extra memory for PDF output out of 10000 (max. 10000000)
 

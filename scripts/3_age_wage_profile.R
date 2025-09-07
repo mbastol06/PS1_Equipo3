@@ -21,7 +21,8 @@ pacman::p_load(
   gt,          # tablas
   stargazer,   # exportar tablas
   ggplot2,     # graficos
-  boot         # bootscraping
+  boot,         # bootscraping, 
+  xtable       # tablas en latex
 )
 
 # Directorio de trabajo
@@ -62,8 +63,29 @@ stargazer(real_ho_usual,all_formal_h, type = "latex", title = "Perfil de salario
 stargazer(mod_p3, type = "text", title = "Logaritmo del salario en funcion de la edad")
 stargazer(mod_p3, type = "latex", title = "Logaritmo del salario en funcion de la edad")
 
-# RMSE
-rmse_mod3 <- sqrt(mean(residuals(mod_p3)^2))
+## semielasticidades del salario sobre el salario ----------------------------------------
+
+edades <- c(18, 25, 35, 45, 50)
+
+resultados <- data.frame(edad = edades, sem_elast_real_ho_usual = NA, sem_elast_all_formal_h = NA)
+colnames(resultados) <- c("Edad", "Salario Real", "Salario Nominal")
+
+# Calcular las semielasticidades para cada edad
+for (i in 1:length(edades)) {
+  edad <- edades[i]
+  
+  # Semielasticidad para el modelo real_ho_usual
+  resultados$sem_elast_real_ho_usual[i] <- 100 * (real_ho_usual$coefficients[2] + 2 * real_ho_usual$coefficients[3] * edad)
+  
+  # Semielasticidad para el modelo all_formal_h
+  resultados$sem_elast_all_formal_h[i] <- 100 * (all_formal_h$coefficients[2] + 2 * all_formal_h$coefficients[3] * edad)
+}
+
+# Ver los resultados
+
+resultados <- round(resultados, 3)
+head(resultados)
+print(xtable(resultados, digits = 3), include.rownames = FALSE)
 
 
 # plot
