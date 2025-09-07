@@ -1,0 +1,35 @@
+
+% Table created by stargazer v.5.2.3 by Marek Hlavac, Social Policy Institute. E-mail: marek.hlavac at gmail.com
+% Date and time: sáb, sept. 06, 2025 - 8:36:48 p. m.
+\begin{table}[!htbp] \centering 
+  \caption{Perfil de salario-edad} 
+  \label{} 
+\tiny 
+\begin{tabular}{@{\extracolsep{5pt}}lcc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & \multicolumn{2}{c}{\textit{Dependent variable:}} \\ 
+\cline{2-3} 
+\\[-1.8ex] & log(y\_salary\_m\_hu) & log(y\_total\_m\_ha) \\ 
+\\[-1.8ex] & (1) & (2)\\ 
+\hline \\[-1.8ex] 
+ age & 0.059$^{***}$ & 0.066$^{***}$ \\ 
+  & (0.003) & (0.003) \\ 
+  & & \\ 
+ I(age$\hat{\mkern6mu}$2) & $-$0.001$^{***}$ & $-$0.001$^{***}$ \\ 
+  & (0.00004) & (0.00004) \\ 
+  & & \\ 
+ Constant & 7.407$^{***}$ & 7.393$^{***}$ \\ 
+  & (0.064) & (0.065) \\ 
+  & & \\ 
+\hline \\[-1.8ex] 
+Observations & 9,892 & 9,892 \\ 
+R$^{2}$ & 0.040 & 0.045 \\ 
+Adjusted R$^{2}$ & 0.040 & 0.045 \\ 
+Residual Std. Error (df = 9889) & 0.671 & 0.677 \\ 
+F Statistic (df = 2; 9889) & 206.012$^{***}$ & 235.041$^{***}$ \\ 
+\hline 
+\hline \\[-1.8ex] 
+\textit{Note:}  & \multicolumn{2}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+\end{tabular} 
+\end{table} 
