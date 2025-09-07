@@ -1,3 +1,24 @@
+pacman::p_load(
+  tidyverse,
+  rvest,
+  httr,
+  fs,
+  janitor,
+  readr,
+  haven,
+  readxl,
+  glue,
+  chromote,
+  xml2,
+  tibble,
+  purrr,
+  VIM,
+  gtsummary,
+  gt,
+  scales
+)
+
+
 #### ============================================================
 ###Punto 2 - Estadísticas Descriptivas
 
@@ -98,8 +119,7 @@ p1 <- ggplot(combinado_grafica, aes(x = salario_hora)) +
   scale_x_continuous(labels = scales::comma) +
   scale_y_continuous(labels = scales::comma) +
   labs(
-    title = "Salario por hora",
-    x = "Salario por hora",
+    x = "Pesos colombianos por hora",
     y = "Conteo"
   ) +
   theme_minimal(base_size = 12) +
@@ -125,8 +145,7 @@ p2 <- ggplot(combinado_grafica, aes(x = ln_salario)) +
   scale_x_continuous(labels = scales::comma) +
   scale_y_continuous(labels = scales::comma) +
   labs(
-    title = "Logaritmo natural del salario",
-    x = "Logaritmo natural del salario",
+    x = "Ln del salario por hora",
     y = "Conteo"
   ) +
   theme_minimal(base_size = 12) +
