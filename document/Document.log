@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.2.19)  7 SEP 2025 15:03
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.2.19)  7 SEP 2025 15:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -802,31 +802,37 @@ File: ../views/3_fig_pred_ic.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../views/3_fig_pred_ic.pdf  used on input line 221.
 (pdftex.def)             Requested size: 361.3491pt x 216.80946pt.
 
-[3] [4 <../views/3_fig_pred_ic.pdf>] [5]
-<../views/sd_fwl_hist.png, id=86, 334.1283pt x 148.8762pt>
+[3]
+<../views/3_fig_boot.pdf, id=62, 722.7pt x 361.35pt>
+File: ../views/3_fig_boot.pdf Graphic file (type pdf)
+<use ../views/3_fig_boot.pdf>
+Package pdftex.def Info: ../views/3_fig_boot.pdf  used on input line 245.
+(pdftex.def)             Requested size: 433.62334pt x 216.81168pt.
+ [4 <../views/3_fig_pred_ic.pdf>] [5 <../views/3_fig_boot.pdf>] [6]
+<../views/sd_fwl_hist.png, id=103, 334.1283pt x 148.8762pt>
 File: ../views/sd_fwl_hist.png Graphic file (type png)
 <use ../views/sd_fwl_hist.png>
-Package pdftex.def Info: ../views/sd_fwl_hist.png  used on input line 384.
+Package pdftex.def Info: ../views/sd_fwl_hist.png  used on input line 393.
 (pdftex.def)             Requested size: 250.5956pt x 111.65688pt.
- [6] [7 <../views/sd_fwl_hist.png>]
-[8]
-<../views/age_peak_bar.png, id=110, 334.1283pt x 148.8762pt>
+ [7]
+[8 <../views/sd_fwl_hist.png>] [9]
+<../views/age_peak_bar.png, id=125, 334.1283pt x 148.8762pt>
 File: ../views/age_peak_bar.png Graphic file (type png)
 <use ../views/age_peak_bar.png>
-Package pdftex.def Info: ../views/age_peak_bar.png  used on input line 493.
+Package pdftex.def Info: ../views/age_peak_bar.png  used on input line 502.
 (pdftex.def)             Requested size: 250.5956pt x 111.65688pt.
-<../views/age_whiskey_point.png, id=112, 334.1283pt x 148.8762pt>
+<../views/age_whiskey_point.png, id=127, 334.1283pt x 148.8762pt>
 File: ../views/age_whiskey_point.png Graphic file (type png)
 <use ../views/age_whiskey_point.png>
-Package pdftex.def Info: ../views/age_whiskey_point.png  used on input line 501
+Package pdftex.def Info: ../views/age_whiskey_point.png  used on input line 510
 .
 (pdftex.def)             Requested size: 250.5956pt x 111.65688pt.
- [9 <../views/age_peak_bar.png> <../views/age_whiskey_point.png>]
+ [10 <../views/age_peak_bar.png> <../views/age_whiskey_point.png>]
 
-LaTeX Warning: Reference `tab:avdiscriminationrates' on page 10 undefined on in
-put line 508.
+LaTeX Warning: Reference `tab:avdiscriminationrates' on page 11 undefined on in
+put line 517.
 
-[10] (Document.bbl) [11] (Document.aux
+[11] (Document.bbl) [12] (Document.aux
 LaTeX Info: Redefining \. on input line 12.
 LaTeX Info: Redefining \% on input line 12.
 )
@@ -838,20 +844,17 @@ L3 programming layer <2024-01-04>
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 Package rerunfilecheck Info: File `Document.out' has not changed.
 (rerunfilecheck)             Checksum: 05D8EF72EBB923042C453E09C3F06BDD;782.
  ) 
 Here is how much of TeX's memory you used:
- 16087 strings out of 474486
- 260465 string characters out of 5743755
- 1963542 words of memory out of 5000000
- 38066 multiletter control sequences out of 15000+600000
+ 16097 strings out of 474486
+ 260734 string characters out of 5743755
+ 1961542 words of memory out of 5000000
+ 38074 multiletter control sequences out of 15000+600000
  567453 words of font info for 71 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,13n,79p,1081b,566s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,13n,79p,1081b,612s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\mpaul\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm
 1200.pk><C:/Users/mpaul/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfon
 ts/cm/cmbx12.pfb><C:/Users/mpaul/AppData/Local/Programs/MiKTeX/fonts/type1/publ
@@ -868,9 +871,9 @@ cmsy6.pfb><C:/Users/mpaul/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsf
 onts/cm/cmsy8.pfb><C:/Users/mpaul/AppData/Local/Programs/MiKTeX/fonts/type1/pub
 lic/amsfonts/cm/cmti12.pfb><C:/Users/mpaul/AppData/Local/Programs/MiKTeX/fonts/
 type1/public/amsfonts/cm/cmti8.pfb>
-Output written on Document.pdf (11 pages, 307878 bytes).
+Output written on Document.pdf (12 pages, 321203 bytes).
 PDF statistics:
- 209 PDF objects out of 1000 (max. 8388607)
- 38 named destinations out of 1000 (max. 500000)
- 77 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 224 PDF objects out of 1000 (max. 8388607)
+ 40 named destinations out of 1000 (max. 500000)
+ 82 words of extra memory for PDF output out of 10000 (max. 10000000)
 
