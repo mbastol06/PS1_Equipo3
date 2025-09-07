@@ -21,8 +21,12 @@ pacman::p_load(
   gt,          # tablas
   stargazer,   # exportar tablas
   ggplot2,     # graficos
-  boot,         # bootscraping, 
-  xtable       # tablas en latex
+  boot,        # bootscraping, 
+  xtable,      # tablas en latex
+  broom,       # tddy
+  purr,        # funciones con listas
+  ggeffects,   # ggpredict()
+  patchwork,   # gráficos lado a lado
 )
 
 # Directorio de trabajo
@@ -39,7 +43,7 @@ db <- db%>% mutate(log_w = log(y_ing_lab_m_ha))
 
 # la regresion -----------------------------------------------------------------
 
-# estimamos 2 modelos para las diferentes mediadas del perfis salaria hora-edad
+# estimamos 3 modelos para las diferentes mediadas del perfis salaria hora-edad
 
 real_ho_usual = lm(log(y_salary_m_hu) ~ age + I(age^2), data = db)
 
@@ -88,69 +92,198 @@ head(resultados)
 print(xtable(resultados, digits = 3), include.rownames = FALSE)
 
 
-# plot
-log_w_hat <- predict(mod_p3, newdata = db3)
+# Estadísticos de ajuste dentro de la muestra --------------------------------------------
 
-pdf("views/edad pico1.pdf", width = 8, height = 6)  
-ggplot(db3, aes(age, log_w_hat)) +
-  geom_point(aes(color = "Salario estimado"), alpha = 0.5) +
-  geom_vline(aes(xintercept = 44.8, color = "Edad pico", linetype = "Edad pico"),
-             linewidth = 1) +
-  scale_color_manual(name = NULL,
-                     values = c("Salario estimado" = "darkblue", "Edad pico" = "darkorchid")) +
-  scale_linetype_manual(values = c("Edad pico" = "dashed"), guide = "none") +  # <- quita duplicado
-  labs(x = "Edad", y = "log(Salario)") +
-  theme_bw() +
-  theme(legend.position = "bottom")
+modelos <- list("Salario real"= real_ho_usual,
+                "Salario nominal" = all_formal_h)
+
+resultados_modelos <- map_dfr(
+  modelos,
+  ~{
+    g <- glance(.x)
+    
+    # Calcular RMSE manualmente (dividiendo por n)
+    residuos <- residuals(.x)
+    n <- length(residuos)
+    rmse <- sqrt(mean(residuos^2))
+    
+    tibble(
+      RSE = g$sigma,                     # Error estándar residual (por df = n - k)
+      RMSE = rmse,                       # Calculado sobre n
+      R2_Ajustado = g$adj.r.squared,
+      F = g$statistic,
+      AIC = AIC(.x),
+      BIC = BIC(.x)
+    )
+  },
+  .id = "Modelo"
+)
+
+# Redondear a tres decimales
+resultados_modelos <- resultados_modelos %>%
+  mutate(across(where(is.numeric), ~ round(.x, 3)))
+
+# Exportar a LaTeX
+xtable(resultados_modelos,
+       caption = "Medidas de ajuste para los modelos de salario por edad",
+       label = "tab:ajuste_modelos",
+       digits = c(0, 0, rep(3, 6)))
+
+
+# plot de datos predichos --------------------------------------------------------------
+
+# Edad pico
+edad_pico1 <- -coef(real_ho_usual)["age"] / (2 * coef(real_ho_usual)["I(age^2)"])
+edad_pico2 <- -coef(all_formal_h)["age"] / (2 * coef(all_formal_h)["I(age^2)"])
+
+# se ordean las edades de menos a mayor de la muestra y se quitan los duplicados
+grid_age <- data.frame(age = seq(min(db$age, na.rm=TRUE),
+                                 max(db$age, na.rm=TRUE),
+                                 by = 1))
+
+# funcion para estimar por modelo 1 y 2 los valores dados en el grid
+
+pred_log <- function(mod, grid){
+  pr <- predict(mod, newdata = grid, se.fit = TRUE)
+  tibble(
+    age = grid$age,
+    fit = as.numeric(pr$fit),
+    lwr = fit - 1.96 * as.numeric(pr$se.fit),
+    upr = fit + 1.96 * as.numeric(pr$se.fit)
+  )
+}
+
+pred1 <- pred_log(real_ho_usual, grid_age) %>% mutate(modelo = "Salario real")
+pred2 <- pred_log(all_formal_h, grid_age) %>% mutate(modelo = "Salario nominal")
+pred  <- bind_rows(pred1, pred2)
+
+
+
+# Dataframe con edades pico
+
+peak_age <- function(mod){
+  b1  <- unname(coef(mod)["age"])
+  b2  <- unname(coef(mod)["I(age^2)"])
+  -b1 / (2*b2)
+}
+
+edad_pico1 <- peak_age(real_ho_usual)
+edad_pico2 <- peak_age(all_formal_h)
+
+y_pico1 <- as.numeric(predict(real_ho_usual, newdata = data.frame(age = edad_pico1)))
+y_pico2 <- as.numeric(predict(all_formal_h, newdata = data.frame(age = edad_pico2)))
+
+
+peaks <- tibble(
+  modelo = c("Salario real", "Salario nominal"),
+  xint   = c(edad_pico1,           edad_pico2),
+  y      = c(y_pico1,              y_pico2),
+  label  = c(
+    paste0("Edad pico: ", sprintf("%.2f", edad_pico1)),
+    paste0("Edad pico: ", sprintf("%.2f", edad_pico2))
+  )
+)
+
+# el grafico final
+
+pdf("views/3_fig_pred_ic.pdf", width = 10, height = 6)
+ggplot(pred, aes(x = age, y = fit)) +
+  geom_ribbon(aes(ymin = lwr, ymax = upr), fill = "lightblue", alpha = 0.4) +
+  geom_line(color = "darkblue", size = 1) +
+  # líneas de pico: se dibujan UNA por panel usando 'data = peaks' y 'inherit.aes = FALSE'
+  geom_vline(data = peaks, aes(xintercept = xint),
+             inherit.aes = FALSE, linetype = "dashed",
+             color = "darkorchid", linewidth = 1) +
+  # etiqueta en la línea del pico, a la altura predicha del pico
+  geom_text(data = peaks, aes(x = xint, y = y, label = label),
+            inherit.aes = FALSE, color = "darkorchid",
+            vjust = -0.6, hjust = -0.05, size = 3.5) +
+  labs(title = "Perfil salario-edad con IC 95% y edad pico",
+       x = "Edad", y = "Log(Salario por hora)") +
+  facet_wrap(~ modelo, nrow = 1) +
+  theme_bw(base_size = 13) +
+  theme(plot.title = element_text(face = "bold")) +   # <- negrilla en el título
+  scale_y_continuous(labels = label_number(accuracy = 0.01))
 dev.off() 
 
-
-
-# Para cada modelo, el pico es -beta2/2beta3
+# Bootstrap edad pico -----------------------------------------------------------
 
 # Funcion para estimar los coeficientes segun la muestra y la edad pico
 
-f_edad_pico <- function(db3, index){
-  mod_p3 <- lm(log_w ~ age + I(age^2), data = db3 , subset = index)
+f_edad_pico <- function(db, index){
+  mod_1 <- lm(log(y_ing_lab_m_ha) ~ age + I(age^2), data = db , subset = index)
+  mod_2 <- lm(log(y_salary_m_hu)  ~ age + I(age^2), data = db , subset = index)
   
-  b2_hat <- coef(mod_p3)[2] # coefciente age
-  b3_hat <- coef(mod_p3)[3] # coeficiente age^2b3
+  b2_hat1 <- coef(mod_1)[2] # coefciente age
+  b3_hat1 <- coef(mod_1)[3] # coeficiente age^2b3
   
-  edad_max <- -b2_hat/(2*b3_hat) 
+  b2_hat2 <- coef(mod_2)[2] # coefciente age
+  b3_hat2 <- coef(mod_2)[3] # coeficiente age^2b3
   
-  return(edad_max)
+  edad_max1 <- -b2_hat1/(2*b3_hat1) 
+  edad_max2 <- -b2_hat2/(2*b3_hat2) 
+  
+  return(c(edad_max_nominal = edad_max1,
+           edad_max_real    = edad_max2))
   
 }
 
-f_edad_pico(db3, 1:nrow(db3))
+f_edad_pico(db, 1:nrow(db))
 
 ## El bootstrap -------------------------------------------------------------------
 # para identificar intervalo de confianza de la edad máxima segun cambie la muestra
 
 set.seed(10101)
-boot_p3 <- boot(data = db3, f_edad_pico, R = 1000) # no paramétrico
+boot_p3 <- boot(data = db, f_edad_pico, R = 1000) # no paramétrico
 boot_p3
 
+# CIs percentil para cada componente (1 = nominal, 2 = real)
+ic_nom <- boot.ci(boot_p3, type = "perc", index = 1)$percent[4:5]
+ic_real <- boot.ci(boot_p3, type = "perc", index = 2)$percent[4:5]
 
-ic_p3 <- boot.ci(boot_p3, type = "perc")$percent[4:5] # (percentil 2.5 y 97.5 para un 95% de confianza).
-
-ic_p3
-
-edad_max_boot <- boot_p3$t # edades máximas estimadas por el boostrap
+ic_nom
+ic_real
 
 
-#Guardar a PDF
-pdf("views/p3edad_max2.pdf", width = 8, height = 6)  
-ggplot(data.frame(edad_max_boot), aes(x = edad_max_boot)) +
-  geom_histogram(aes(y =after_stat(density)), bins = 30, fill = "lightblue", color = "lightblue", alpha = 0.7) +
-  geom_density(color = "blue", linewidth = 1) +  # Agregar densidad
-  geom_vline(aes(xintercept = mean(edad_max_boot)), color = "darkorchid", linetype = "dashed", linewidth = 1) +  # Media
-  geom_vline(aes(xintercept = ic_p3[1]), color = "black", linetype = "longdash", linewidth = 0.5) +  # Límite inferior IC
-  geom_vline(aes(xintercept = ic_p3[2]), color = "black", linetype = "longdash", linewidth = 0.5) +  # Límite superior IC
-  labs(
-    x = "Edad máxima estimada",
-    y = "Densidad") +
+
+
+# Plot edades máximas ----------------------------------------------------------
+
+# Las edades pico de bootstrap por modelo
+edad_max_boot_nom  <- boot_p3$t[, 1]
+edad_max_boot_real <- boot_p3$t[, 2]
+
+
+
+boot_long <- data.frame(
+  edad   = c(edad_max_boot_nom, edad_max_boot_real),
+  modelo = factor(rep(c("Nominal", "Real"),
+                      each = nrow(boot_p3$t)))
+)
+
+peaks_df <- data.frame(
+  modelo = c("Nominal", "Real"),
+  mean   = c(mean(edad_max_boot_nom,  na.rm = TRUE),
+             mean(edad_max_boot_real, na.rm = TRUE)),
+  low    = c(ic_nom[1],  ic_real[1]),
+  high   = c(ic_nom[2],  ic_real[2])
+)
+
+
+
+ggplot(boot_long, aes(x = edad)) +
+  geom_histogram(aes(y = after_stat(density)),
+                 bins = 30, fill = "lightblue", color = "lightblue", alpha = 0.7) +
+  geom_density(color = "blue", linewidth = 1) +
+  geom_vline(data = peaks_df, aes(xintercept = mean),
+             color = "darkorchid", linetype = "dashed", linewidth = 1) +
+  geom_vline(data = peaks_df, aes(xintercept = low),
+             color = "black", linetype = "longdash", linewidth = 0.5) +
+  geom_vline(data = peaks_df, aes(xintercept = high),
+             color = "black", linetype = "longdash", linewidth = 0.5) +
+  labs(title = "Edad pico estima por bootstrap" ,x = "Edad pico estimada", y = "Densidad") +
+  facet_wrap(~ modelo, nrow = 1) +
   theme_bw()
-dev.off() 
+
 
 
