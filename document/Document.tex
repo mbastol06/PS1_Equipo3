@@ -8,6 +8,7 @@
 \usepackage{authblk}
 \usepackage{caption}
 \usepackage[utf8]{inputenc}
+\makeatother
 \usepackage{amsfonts}
 \usepackage{a4wide,graphicx,color}
 \usepackage{amsmath}
@@ -159,20 +160,22 @@ F Statistic (df = 2; 9889) & 206.012$^{***}$ & 235.041$^{***}$ \\
 \begin{itemize}
 \item \textbf{Interpretación de los coeficientes:}
 
-De acuerdo con los resultados de las dos regresiones, el perfil salarial según la edad tienen la misma forma funcional, es decir una curva convexa. En concreto, el término lineal de la edad muestra el efecto directo de “sumar un año”, mientras que el término cuadrático ($\text{edad}^2$) captura cómo que existen efectos diferenciados sobre el salario en edades diferentes de la vida, es decir que la relacion entre la edad y el salario no es lineal.
+De acuerdo con los resultados de las dos regresiones, el perfil salarial según la edad tienen la misma forma funcional, es decir una curva cóncava. En concreto, el término lineal de la edad muestra el efecto directo de “sumar un año”, mientras que el término cuadrático ($\text{edad}^2$) captura cómo que existen efectos diferenciados sobre el salario en edades diferentes de la vida, es decir que la relación entre la edad y el salario no es lineal.
 
-El sumar un año de edad incrementa 5.9\% y 6.6\% el salario (el efecto directo) tomando como el salario real y nominal por hora respectivamente. Ambos coeficientes estimados son significativos estadísticamente y postivos lo que indica en primera isntancia un efecto directo positivo de la edad sobre el salario. El coeficiente relacionado con la edad al cuadrado captura esa relación no lineal. Tanto para el modelo con el salario real como el nominal el coeficiente de la edad cuadrática es negativo lo que indica la convexidad de la relación, es decir que hasta un punto la relación entre edad y el logaritmo del salario es positiva y luego es negativa. 
+El sumar un año de edad incrementa 5.9\% y 6.6\% el salario (el efecto directo) tomando como el salario real y nominal por hora respectivamente. Ambos coeficientes estimados son significativos estadísticamente y positivos lo que indica en primera instancia un efecto directo positivo de la edad sobre el salario. El coeficiente relacionado con la edad al cuadrado captura esa relación no lineal. Tanto para el modelo con el salario real como el nominal el coeficiente de la edad cuadrática es negativo lo que indica la concavidad de la relación, es decir que hasta un punto la relación entre edad y salario o es positiva y luego es negativa, en ambos modelos el término es negativo y estadísticamente significativo. 
 
- Para estimar la semileasticidad de la edad sobre el logaritmo del salario solucionamos la condición de primer orden. Luego un año adicional de edad aumenta porcentualme3nte el salario en:
+ Para estimar la semileasticidad de la edad sobre el logaritmo del salario solucionamos la condición de primer orden. Luego un año adicional de edad aumenta porcentualmente el salario en:
 \begin{equation*}
 	100 \times (\beta_2+ 2 \times \beta_3\times edad) \%
 \end{equation*}
 
-La semieleasticidad de para las edades de 18 , 25, 45 y 50 años se presentan en el siguiente cuadro:
+La semieleasticidad de para las edades de 18 , 25, 45 y 50 años se presentan en el cuadro \ref{3_semielastic}. Como se observa, entre más joven más aporta un año más de edad en el incremento porcentual del salario, va decreciendo e incluso se vuelve negativo el aporte desde edad más avanzada lo que se denomina edad pico. 
 
 \begin{table}[ht]
 \centering
-\caption{Semielasticidad del salario sobre el ingreso}    
+\caption{Semielasticidad del salario sobre el ingreso}
+\label{3_semielastic}
+\small
 \begin{tabular}{rrr}
   \hline
 Edad & Salario Real & Salario Nominal \\ 
@@ -185,6 +188,39 @@ Edad & Salario Real & Salario Nominal \\
    \hline
 \end{tabular}
 \end{table}
+ 
+El coeficiente constante para ambos modelos es positivo y significativo, y representa el valor del logaritmo del salario cuando la edad es cero. Aunque este valor no tiene una interpretación económica directa, no se trabaja con 0 años, por lo que es el término que ajusta  el  modelo para la relación entre edad y salario dentro del rango de edades observado en la muestra. 
+
+\item \textbf{Ajuste de la muestra:}
+
+Para analizar el ajuste de los modelos dentro de la muestra, se presenta los siguientes estadísticos como el error estándar  (RSE),  el error cuadrático medio (RMSE), el $R^2$ ajustado, estadístico F y criterios de información Akaike (AIC) y bayeciano (BIC).
+
+\begin{table}[ht]
+\centering
+\label{3_estad_ajuste}
+\begin{tabular}{lrrrrrr}
+  \hline
+Modelo & RSE & RMSE & $R^2*$ & F & AIC & BIC \\ 
+  \hline
+Salario real & 0.671 & 0.671 & 0.040 & 206.012 & 20186.076 & 20214.874 \\ 
+ Salario nominal & 0.677 & 0.677 & 0.045 & 235.041 & 20360.186 & 20388.984 \\ 
+   \hline
+\end{tabular}
+\caption{Medidas de ajuste para los modelos de salario por edad} 
+\end{table}
+
+Los resultados muestran que ambos modelos ofrecen un desempeño explicativo limitado pero estadísticamente significativo. El coeficiente de determinación ajustado $R^{2*}$ es de 0.040 en el modelo del salario real y de 0.045 en el del salario nominal, lo que indica que aproximadamente el $4$–$4.5\%$ de la variación en el logaritmo del salario se explica únicamente por la edad y su cuadrado. El error estándar residual (RSE), que estima la desviación promedio de los residuos ajustando por los grados de libertad, es de $0.671$ y $0.677$ respectivamente, mientras que el RMSE, que se calcula sobre el total de observaciones, coincide numéricamente con esos valores debido al gran tamaño muestral. Ambos modelos presentan un F estadístico alto y significativo (206.0 y 235.0), que el modelo es globalmente estadísticamente significativo. Finalmente, los criterios de información AIC y BIC son menores en el modelo con salario nominal, lo que sugiere que este ofrece un ajuste más eficiente penalizando la complejidad del modelo.
+
+\item \textbf{Gráfico de ingreso salarial, edad pico y su intervalo de confianza:}
+
+A continuación se presenta el gráfico de los valores predichos con cada modelo:
+
+\begin{figure}[H]
+	\centering
+	\caption{Gráfico del logaritmo de salarios predichos, intervalo de confianza y edad pico}
+	\includegraphics[scale=0.5]{../views/3_fig_pred_ic.pdf}
+            \label{fig:3_predicho}
+\end{figure}
 
 
 \end{itemize}
@@ -195,7 +231,7 @@ Edad & Salario Real & Salario Nominal \\
 
 En esta sección analizaremos la relación entre ingresos y género femenino. 
 En primer lugar, es importante discutir qué medida de ingreso utilizar. 
-La base de datos de la GNIH incluye diversas medidas, como ingreso por primas monetarias, ingreso mensual, ingreso usual en el mes e ingreso efectivo en el mes, entre otras. 
+La base de datos de la GEIH incluye diversas medidas, como ingreso por primas monetarias, ingreso mensual, ingreso usual en el mes e ingreso efectivo en el mes, entre otras. 
 
 En los estudios que analizan la brecha salarial entre hombres y mujeres, es común emplear el ingreso por hora, ya que permite aislar el efecto de las horas trabajadas en el mes, lo cual podría sesgar los resultados. 
 Asimismo, suele utilizarse la variable de ingreso en logaritmos, lo que mejora la interpretabilidad del coeficiente estimado, que pasaría a representar cuánto impacta, en términos porcentuales, una unidad adicional de la variable independiente sobre el ingreso. 
