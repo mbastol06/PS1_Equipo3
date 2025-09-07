@@ -30,76 +30,34 @@ setwd("C:/Users/mpaul/OneDrive - Universidad de los andes/repositorios/PS1_Equip
 # Cargue de los datos 
 db <- read_csv("stores/base_final.csv")
 
-
-#### ============================================================
-###Punto 2 - Estadísticas Descriptivas
-
-## 1) Se definen los nombres de las variables de interés
-
-db <- db %>% mutate(ln_salario = log(y_total_m_ha))
-
-variables_descriptivas <- tibble::tribble(
-  ~var,               ~label,
-  "y_total_m",       "Salario mensual",
-  "y_total_m_ha",    "Salario por hora",
-  "ln_salario",       "ln(Salario)",
-  "age",              "Edad",
-  "sex",              "Sexo (1 = Mujer)",
-  "micro_empresa",    "Trabaja en microempresa (1 = Sí)",
-  "formal",           "Trabajo formal (1 = Sí)",
-  "hours_work_usual", "Horas trabajadas",
-  "p7040",       "Segundo trabajo (1 = Sí)"
-) %>%
-  dplyr::filter(var %in% names(db))
-
-to_numeric <- function(x) {
-  if (is.factor(x) || is.character(x)) suppressWarnings(as.numeric(as.character(x))) else as.numeric(x)
-}
-
-## 2) Se calculan las estadísticas descriptivas para cada variable
-
-tabla_1 <- variables_descriptivas %>%
-  mutate(
-    x        = map(var, ~ to_numeric(db[[.x]])),
-    N        = map_int(x, ~ sum(!is.na(.))),
-    Media    = map_dbl(x, ~ mean(., na.rm = TRUE)),
-    DesvEst  = map_dbl(x, ~ sd(.,   na.rm = TRUE)),
-    Min      = map_dbl(x, ~ suppressWarnings(min(., na.rm = TRUE))),
-    Max      = map_dbl(x, ~ suppressWarnings(max(., na.rm = TRUE)))
-  ) %>%
-  transmute(
-    Variable = label, N, Media, `Desv. Est.` = DesvEst, Min, Max
-  )
-
-## 3) Se usan dos decimales 
-
-tabla_1 <- tabla_1 %>%
-  mutate(
-    N           = comma(N, accuracy = 1),
-    Media       = comma(Media, accuracy = 0.01),
-    `Desv. Est.`= comma(`Desv. Est.`, accuracy = 0.01),
-    Min         = comma(Min, accuracy = 0.01),
-    Max         = comma(Max, accuracy = 0.01)
-  )
-
-## 4) Se usa GT para construir la tabla, como se presentó en clase 
-
-gt(tabla_1) |>
-  tab_header(title = md("**Tabla 1. Estadísticas descriptivas**")) |>
-  cols_label(
-    Variable = "Variable", N = "N",
-    Media = "Media", `Desv. Est.` = "Desv. Est.", Min = "Min", Max = "Max"
-  ) |>
-  fmt_missing(everything(), missing_text = "NA")
-
-
-
 ############### PUNTO 3
-db3 <- db%>% mutate(log_w = log(y_ing_lab_m_ha))
 
-# la regresion
-reg_p3 <- log_w ~ age + I(age^2)
-mod_p3 <- lm(reg_p3, data = db3)
+# se crea la variable logaritmo del salario
+
+db <- db%>% mutate(log_w = log(y_ing_lab_m_ha))
+
+# la regresion -----------------------------------------------------------------
+
+# estimamos 2 modelos para las diferentes mediadas del perfis salaria hora-edad
+
+real_ho_usual = lm(log(y_salary_m_hu) ~ age + I(age^2), data = db)
+
+all_formal_h = lm(log(y_total_m_ha) ~ age + I(age^2), data = db)
+
+laboral_hour = lm(log(y_ing_lab_m_ha) ~ age + I(age^2), data = db)
+
+stargazer(real_ho_usual,all_formal_h,laboral_hour, type = "text")
+
+# las variables  y_total_m_ha y y_ing_lab_m_ha parecen ser la misma, verificamos
+db <- db %>% mutate(prueba = y_total_m_ha-y_ing_lab_m_ha) 
+summary(db$prueba) #efectivamente son ma misma variable
+
+#  limpiamos base
+db <- db <- dplyr::select(db ,-prueba , y_ing_lab_m_ha)
+stargazer(real_ho_usual,all_formal_h, type = "text", title = "Perfil de salario-edad",
+          font.size = "tiny" )
+stargazer(real_ho_usual,all_formal_h, type = "latex", title = "Perfil de salario-edad",
+          font.size = "tiny" , out = "views/3_regresions")
 
 stargazer(mod_p3, type = "text", title = "Logaritmo del salario en funcion de la edad")
 stargazer(mod_p3, type = "latex", title = "Logaritmo del salario en funcion de la edad")
