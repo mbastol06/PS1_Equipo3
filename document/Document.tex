@@ -147,30 +147,58 @@ Lo último que se hizo para la organización de la base de datos fue reemplazar 
 \begin{itemize}
 \item \textbf{Estadística descriptiva de los datos:}
 
-Tabla
+La base de datos final resultó en un total de 9,892 observaciones con 19 variables de interés. En el Cuadro \ref{tab:descriptivas} se presentan las estadísticas descriptivas tanto para las variables numéricas o binarias, como para las variables categóricas.\\
+
+En la muestra, el salario promedio de los individuos es de \$1,610,063 pesos colombianos, o, lo que es lo mismo para el momento de la realización de la encuesta, 2.2 veces el salario mínimo legal vigente (\$737,717). Por supuesto, este salario promedio contempla los auxilios de transporte y otras adiciones en los ingresos de los individuos. Esta estadística se corresponde con un salario por hora de \$8,121 pesos en promedio y un promedio de 48.3 horas trabajadas por semana, lo que implicó una gran cercanía con el número de horas legales de trabajo para 2017, que fue de 48.\\
+
+Además, la muestra está balanceada en proporciones iguales entre hombres y mujeres, con un promedio de edad de 36.2 años, con un mínimo de 18 y un máximo de 86. Los trabajadores trabajan en microempresas un 23\% de las ocasiones, mientras que el 77\% de ellos tienen empleos formales.
 
 \begin{table}[!htbp]
 \centering
 \caption{Estadísticas descriptivas}
 \label{tab:descriptivas}
-\small
-\begin{tabular}{@{\extracolsep{5pt}}lccccc}
-\\[-1.8ex]\hline
-\hline \\[-1.8ex]
-Variable & N & Media & Desv. Est. & Min & Max \\
-\hline \\[-1.8ex]
-Salario mensual              & 9,892 & 1,610,062 & 1,537,098 & 20,000 & 7,892,291 \\
-Salario por hora             & 9,892 & 8,121.29     & 8,099.11     & 326.67    & 41,470.34    \\
-ln(Salario)                  & 9,892 & 8.71         & 0.69         & 5.79      & 10.63        \\
-Edad                         & 9,892 & 36.24        & 12.02        & 18.00     & 86.00        \\
-Mujer (1 = Sí)             & 9,892 & 0.50         & 0.50         & 0.00      & 1.00         \\
-Trabaja en microempresa (1 = Sí) & 9,892 & 0.23     & 0.42         & 0.00      & 1.00         \\
-Trabajo formal (1 = Sí)      & 9,892 & 0.77         & 0.42         & 0.00      & 1.00         \\
-\hline
-\hline \\[-1.8ex]
-\end{tabular}
-\end{table}
 
+\subcaption*{(a) Variables numéricas}
+\resizebox{1\linewidth}{!}{%
+\begin{tabular}{lccccc}
+\hline
+Variable & N & Media & Desv. Est. & Min & Max \\
+\hline
+Salario mensual                  & 9,892 & 1,610,063 & 1,537,099 & 20,000 & 7,892,292 \\
+Salario por hora                 & 9,892 & 8,121.29  & 8,099.11  & 326.67 & 41,470.34 \\
+ln(Salario)                      & 9,892 & 8.71      & 0.69      & 5.79   & 10.63 \\
+Horas trabajadas                 & 9,892 & 48.34     & 12.25     & 1.00   & 130.00 \\
+Edad                             & 9,892 & 36.24     & 12.02     & 18.00  & 86.00 \\
+Mujer (1 = Sí)                   & 9,892 & 0.50      & 0.50      & 0.00   & 1.00 \\
+Trabaja en microempresa (1 = Sí) & 9,892 & 0.23      & 0.42      & 0.00   & 1.00 \\
+Trabajo formal (1 = Sí)          & 9,892 & 0.77      & 0.42      & 0.00   & 1.00 \\
+\hline
+\end{tabular}
+}
+
+\vspace{1em}
+
+\subcaption*{(b) Variables categóricas}
+\resizebox{1\linewidth}{!}{%
+\begin{tabular}{lcccc}
+\hline
+Variable & Categoría & Descripción & Frecuencia & Porcentaje \\
+\hline
+Nivel educativo   & 7  & Educación terciaria             & 4,478 & 45.27\% \\
+Oficio            & 39 & Apoyo administrativo y logístico&   814 & 8.23\% \\
+Tamaño de empresa & 5  & $>$ 50 empleados                & 5,107 & 51.63\% \\
+Tipo de empleo    & 1  & Empleado de empresa particular  & 8,757 & 88.53\% \\
+\hline
+\end{tabular}
+}
+
+\vspace{1em}
+
+\begin{minipage}{1\linewidth}
+\footnotesize \textit{Nota:} En el panel superior se presentan las estadísticas descriptivas de las variables numéricas o binarias. En el panel inferior se presentan las frecuencias para las variables categóricas.
+\end{minipage}
+
+\end{table}
 
 Histogramas
 
@@ -261,7 +289,7 @@ El sumar un año de edad incrementa 5.9\% y 6.6\% el salario (el efecto directo)
 	100 \times (\beta_2+ 2 \times \beta_3\times edad) \%
 \end{equation*}
 
-La semieleasticidad de para las edades de 18 , 25, 45 y 50 años se presentan en el cuadro \ref{3_semielastic}. Como se observa, entre más joven más aporta un año más de edad en el incremento porcentual del salario, va decreciendo e incluso se vuelve negativo el aporte desde edad más avanzada lo que se denomina edad pico. 
+La semieleasticidad de para las edades de 18 , 25, 45 y 50 años se presentan en el Cuadro \ref{3_semielastic}. Como se observa, entre más joven más aporta un año más de edad en el incremento porcentual del salario, va decreciendo e incluso se vuelve negativo el aporte desde edad más avanzada lo que se denomina edad pico. 
 
 \begin{table}[ht]
 \centering

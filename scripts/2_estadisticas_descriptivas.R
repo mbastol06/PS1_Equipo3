@@ -15,7 +15,8 @@ pacman::p_load(
   VIM,
   gtsummary,
   gt,
-  scales
+  scales,
+  xtable
 )
 
 
@@ -41,7 +42,7 @@ variables_descriptivas <- tribble(
   "sex",              "Sexo (1 = Mujer)",
   "micro_empresa",    "Trabaja en microempresa (1 = Sí)",
   "formal",           "Trabajo formal (1 = Sí)",
-  "hours_work_usual", "Horas trabajadas",
+  "total_hours_worked", "Horas trabajadas",
   "p7040",       "Segundo trabajo (1 = Sí)"
 ) %>%
   filter(var %in% names(combinado))
@@ -86,6 +87,47 @@ gt(tabla_1) |>
   ) |>
   fmt_missing(everything(), missing_text = "NA")
 
+
+## 5) Se construye una tabla para las demás variables
+
+otras_cat <- c("max_educ_level", "tipo_ocup", "oficio", "size_firm")
+
+resumen_otras <- function(df, var) {
+  df %>%
+    count(!!sym(var)) %>%
+    mutate(
+      Variable   = var,
+      Porcentaje = round(100 * n / sum(n), 2)
+    ) %>%
+    rename(Categoria = !!sym(var), Frecuencia = n)
+}
+
+tabla_2 <- bind_rows(lapply(otras_cat, function(v) resumen_otras(combinado, v)))
+
+modas_otras <- tabla_2 %>%
+  group_by(Variable) %>%
+  slice_max(order_by = Frecuencia, n = 1, with_ties = FALSE) %>%
+  ungroup()
+
+modas_otras <- modas_otras %>%
+  mutate(Descripcion = case_when(
+    Variable == "max_educ_level" & Categoria == 7 ~ "Educación terciaria",
+    Variable == "tipo_ocup"      & Categoria == 1 ~ "Empleado de empresa particular",
+    Variable == "oficio"         & Categoria == 39 ~ "Apoyo administrativo y logístico",
+    Variable == "size_firm"      & Categoria == 5 ~ "> 50 empleados",
+    TRUE ~ "Otro"
+  ))
+
+tabla_2 <- modas_otras %>%
+  select(Variable, Categoria, Descripcion, Frecuencia, Porcentaje)
+
+gt(tabla_2) |>
+  tab_header(title = md("**Tabla 2. Frecuencia de Variables Categóricas**")) |>
+  cols_label(
+    Variable = "Variable", Categoria = "Categoria",
+    Descripcion = "Descripcion", Frecuencia = "Frecuencia", Porcentaje = "Porcentaje"
+  ) |>
+  fmt_missing(everything(), missing_text = "NA")
 
 
 #### ============================================================
