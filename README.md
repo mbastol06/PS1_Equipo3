@@ -23,7 +23,7 @@ El repositorio se compone de cinco carpetas:
 
 1. **document**:En donde se encuentra documento final en PDF y el editor tipo TXT. En el archivo Documento.pdf es donde se desarrolla completamente el taller, en donde sen la introducción se describe los problemas analizados, la base datos utilizada y su limpieza de los datos, el perfilamiento del salario según la edad, la modelación de la brecha de género de los ingresos y finalmente con los modelos mencionados se realizan evaluaciones de pronóstico y se concluye.
    
-2. **scripts**: Esta carpeta incluye todos los scripts utilizados para el desarrollo del taller, cada uno de ellos está comentado y replicable. Los scripts son los siguientes:
+2. **scripts**: Esta carpeta incluye todos los scripts utilizados para el desarrollo del taller, cada uno de ellos está comentado y replicable. Los scripts que se mmencionan según el órden en el que se debe seguir para replicar enteramente el ejercicio:
 
 &nbsp;	web\_scraping.R                --> en donde se desarrolla el web scraping para obtener los datos de la GEIH
 
