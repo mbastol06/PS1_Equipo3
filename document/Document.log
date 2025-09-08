@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.9.7)  7 SEP 2025 17:56
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.9.7)  7 SEP 2025 19:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -771,9 +771,19 @@ Package hyperref Info: Link coloring ON on input line 87.
 \@outlinefile=\write4
 \openout4 = `Document.out'.
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 115--116
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 117--118
+
+ []
+
 LaTeX Font Info:    Trying to load font information for U+msa on input line 124
 .
- (C:\Program Files\MiKTeX\tex/latex/amsfonts\umsa.fd
+(C:\Program Files\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Trying to load font information for U+msb on input line 124
@@ -781,9 +791,48 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 124
 
 (C:\Program Files\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [1
+)
+Underfull \hbox (badness 10000) in paragraph at lines 124--125
 
-{C:/Users/lukaz/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] [2]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 126--127
+
+ []
+
+[1
+
+{C:/Users/lukaz/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
+Underfull \hbox (badness 10000) in paragraph at lines 133--134
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 135--136
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 137--138
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 139--140
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 141--142
+
+ []
+
+[2]
+Underfull \hbox (badness 10000) in paragraph at lines 143--144
+
+ []
+
 <../views/1_histo_sal.png, id=47, 289.08pt x 252.945pt>
 File: ../views/1_histo_sal.png Graphic file (type png)
 <use ../views/1_histo_sal.png>
@@ -795,26 +844,84 @@ File: ../views/1_histo_sal_hora.png Graphic file (type png)
 Package pdftex.def Info: ../views/1_histo_sal_hora.png  used on input line 191.
 
 (pdftex.def)             Requested size: 221.14421pt x 193.49843pt.
- [3 <../views/1_histo_sal.png> <../views/1_histo_sal_hora.png>] [4] [5]
-<../views/3_fig_pred_ic.pdf, id=79, 722.7pt x 433.62pt>
+[3]
+Underfull \hbox (badness 10000) in paragraph at lines 207--208
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 209--211
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 212--213
+
+ []
+
+[4 <../views/1_histo_sal.png> <../views/1_histo_sal_hora.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 255--256
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 257--258
+
+ []
+
+[5] [6]
+<../views/3_fig_pred_ic.pdf, id=84, 722.7pt x 433.62pt>
 File: ../views/3_fig_pred_ic.pdf Graphic file (type pdf)
 <use ../views/3_fig_pred_ic.pdf>
 Package pdftex.def Info: ../views/3_fig_pred_ic.pdf  used on input line 313.
 (pdftex.def)             Requested size: 361.3491pt x 216.80946pt.
- [6 <../views/3_fig_pred_ic.pdf>]
-<../views/3_fig_boot.pdf, id=95, 722.7pt x 361.35pt>
+ [7 <../views/3_fig_pred_ic.pdf>]
+<../views/3_fig_boot.pdf, id=101, 722.7pt x 361.35pt>
 File: ../views/3_fig_boot.pdf Graphic file (type pdf)
 <use ../views/3_fig_boot.pdf>
 Package pdftex.def Info: ../views/3_fig_boot.pdf  used on input line 337.
 (pdftex.def)             Requested size: 433.62334pt x 216.81168pt.
+ [8 <../views/3_fig_boot.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 396--398
 
-[7] [8 <../views/3_fig_boot.pdf>] [9]
-<../views/sd_fwl_hist.png, id=127, 334.1283pt x 148.8762pt>
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 399--400
+
+ []
+
+[9]
+Underfull \hbox (badness 10000) in paragraph at lines 431--433
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 475--478
+
+ []
+
+[10]
+<../views/sd_fwl_hist.png, id=133, 334.1283pt x 148.8762pt>
 File: ../views/sd_fwl_hist.png Graphic file (type png)
 <use ../views/sd_fwl_hist.png>
 Package pdftex.def Info: ../views/sd_fwl_hist.png  used on input line 485.
 (pdftex.def)             Requested size: 250.5956pt x 111.65688pt.
- [10] [11 <../views/sd_fwl_hist.png>]
+
+Underfull \hbox (badness 10000) in paragraph at lines 490--492
+
+ []
+
+[11 <../views/sd_fwl_hist.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 582--583
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 584--585
+
+ []
+
 [12]
 <../views/age_peak_bar.png, id=147, 334.1283pt x 148.8762pt>
 File: ../views/age_peak_bar.png Graphic file (type png)
@@ -827,13 +934,87 @@ File: ../views/age_whiskey_point.png Graphic file (type png)
 Package pdftex.def Info: ../views/age_whiskey_point.png  used on input line 602
 .
 (pdftex.def)             Requested size: 250.5956pt x 111.65688pt.
+ [13 <../views/age_peak_bar.png> <../views/age_whiskey_point.png>]
+Overfull \hbox (7.65614pt too wide) detected at line 685
+[][]
+ []
+
+[14]
+Overfull \hbox (67.77818pt too wide) detected at line 742
+[][]
+ []
 
 
-LaTeX Warning: Reference `tab:avdiscriminationrates' on page 13 undefined on in
-put line 609.
+Underfull \hbox (badness 10000) in paragraph at lines 786--787
 
-[13 <../views/age_peak_bar.png> <../views/age_whiskey_point.png>] [14]
-(Document.bbl) [15] (Document.aux
+ []
+
+[15]
+Underfull \hbox (badness 10000) in paragraph at lines 788--789
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 790--791
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 792--793
+
+ []
+
+<../views/hist_error_p5.png, id=170, 409.53pt x 216.81pt>
+File: ../views/hist_error_p5.png Graphic file (type png)
+<use ../views/hist_error_p5.png>
+Package pdftex.def Info: ../views/hist_error_p5.png  used on input line 798.
+(pdftex.def)             Requested size: 368.57838pt x 195.14043pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 803--804
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 805--806
+
+ []
+
+[16]
+Underfull \hbox (badness 10000) in paragraph at lines 847--848
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 849--850
+
+ []
+
+[17 <../views/hist_error_p5.png>] [18]
+Underfull \hbox (badness 10000) in paragraph at lines 851--852
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 853--854
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 855--856
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 857--858
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 859--860
+
+ []
+
+[19] [20] (Document.bbl) [21] (Document.aux
 LaTeX Info: Redefining \. on input line 12.
 LaTeX Info: Redefining \% on input line 12.
 )
@@ -843,37 +1024,51 @@ L3 programming layer <2024-01-04>
  ***********
 
 
-LaTeX Warning: There were undefined references.
-
-
 LaTeX Warning: There were multiply-defined labels.
 
-Package rerunfilecheck Info: File `Document.out' has not changed.
-(rerunfilecheck)             Checksum: 05D8EF72EBB923042C453E09C3F06BDD;782.
+
+Package rerunfilecheck Warning: File `Document.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `Document.out':
+(rerunfilecheck)             Before: 05D8EF72EBB923042C453E09C3F06BDD;782
+(rerunfilecheck)             After:  CB5D5DFD4F3D3FF340E4DB35F05E9F9D;641.
  ) 
 Here is how much of TeX's memory you used:
- 16137 strings out of 474486
- 256462 string characters out of 5753571
- 1960542 words of memory out of 5000000
- 38109 multiletter control sequences out of 15000+600000
- 567453 words of font info for 71 fonts, out of 8000000 for 9000
+ 16178 strings out of 474486
+ 257251 string characters out of 5753571
+ 1963542 words of memory out of 5000000
+ 38139 multiletter control sequences out of 15000+600000
+ 568853 words of font info for 77 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,13n,79p,1081b,666s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <C:\Users\lukaz\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm
-1200.pk><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/
-Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program File
-s/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX/font
-s/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX/fonts/type1/publi
-c/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm
-/cmr17.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:
-/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files
-/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX/font
-s/type1/public/amsfonts/cm/cmsy6.pfb><C:/Program Files/MiKTeX/fonts/type1/publi
-c/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm
-/cmti12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmti8.pfb>
-Output written on Document.pdf (15 pages, 396453 bytes).
+ 75i,13n,79p,1131b,666s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+pdfTeX warning (dest): name{section.7} has been referenced but does not exist, 
+replaced by a fixed one
+
+
+pdfTeX warning (dest): name{section.6} has been referenced but does not exist, 
+replaced by a fixed one
+
+ <C:\Users\lukaz\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm12
+00.pk><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Pr
+ogram Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/
+MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX/fonts
+/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files/MiKTeX/fonts/type1/publi
+c/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm
+/cmr10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C
+:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Fil
+es/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files/MiKTeX/font
+s/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX/fonts/type1/public
+/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm
+/cmsy6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C
+:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Fi
+les/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files/MiKTeX/f
+onts/type1/public/amsfonts/cm/cmti8.pfb>
+Output written on Document.pdf (21 pages, 445575 bytes).
 PDF statistics:
- 247 PDF objects out of 1000 (max. 8388607)
- 45 named destinations out of 1000 (max. 500000)
- 92 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 289 PDF objects out of 1000 (max. 8388607)
+ 55 named destinations out of 1000 (max. 500000)
+ 97 words of extra memory for PDF output out of 10000 (max. 10000000)
 

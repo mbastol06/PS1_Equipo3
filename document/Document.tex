@@ -112,35 +112,35 @@ Poner acá la introducción
 \begin{itemize}
 \item \textbf{Fuente de los datos:}
 
-La información utilizada para este estudio fue obtenida desde el \textit{“Reporte de Medición de Pobreza Monetaria y Desigualdad”}, correspondiente a la Gran Encuesta Integrada de Hogares (GEIH) hecha por el Departamento Administrativo Nacional de Estadística (DANE) en el año 2018. 
+La información utilizada para este estudio fue obtenida desde el \textit{“Reporte de Medición de Pobreza Monetaria y Desigualdad”}, correspondiente a la Gran Encuesta Integrada de Hogares (GEIH) hecha por el Departamento Administrativo Nacional de Estadística (DANE) en el año 2018.\\
 
-Este reporte busca hacer una caracterización de la población sobre rubros como los ingresos, el estrato, la edad, el sexo, la cantidad de horas trabajadas, entre otros. 
+Este reporte busca hacer una caracterización de la población sobre rubros como los ingresos, el estrato, la edad, el sexo, la cantidad de horas trabajadas, entre otros.\\ 
 
 \end{itemize}
 
 \begin{itemize}
 \item \textbf{Web Scraping:}
 
-Los datos necesarios para el análisis están consignados en una página web (\url{https://ignaciomsarmiento.github.io/GEIH2018_sample/})) que dirige a diez enlaces diferentes para cada una de las particiones de la base de datos original. Así, la forma más pertinente para extraer los datos resultó ser el método de raspado web o web scraping.  Sin embargo, debido a que la página está construida en formato Java Script, las instrucciones revisadas a lo largo del curso para este método fueron insuficientes. 
+Los datos necesarios para el análisis están consignados en una página web (\url{https://ignaciomsarmiento.github.io/GEIH2018_sample/})) que dirige a diez enlaces diferentes para cada una de las particiones de la base de datos original. Así, la forma más pertinente para extraer los datos resultó ser el método de raspado web o web scraping.  Sin embargo, debido a que la página está construida en formato Java Script, las instrucciones revisadas a lo largo del curso para este método fueron insuficientes.\\
 
-Para acceder a la fuente cruda de las tablas de cada uno de los diez chunks de datos fue necesario hacer una revisión de los elementos de la página por medio de la herramienta "Inspección” integrada en el explorador Google Chrome. Allí, en el panel de elementos en la ventana de “Red” se identificó un apartado con la fuente HTML de la página, que dirigía al mismo enlace de arriba, con un “\url{pages/geih_page_1.html}” adicional para la primera página. Agregando esa terminación sobre cada una de las otras nueve páginas y se hizo entonces un web scraping común para un HTML con tablas. Este proceso de extracción se hizo iterativamente sobre cada uno de los enlaces y se compiló en una tabla combinada con 32,177 observaciones para 178 variables diferentes.  
+Para acceder a la fuente cruda de las tablas de cada uno de los diez chunks de datos fue necesario hacer una revisión de los elementos de la página por medio de la herramienta "Inspección” integrada en el explorador Google Chrome. Allí, en el panel de elementos en la ventana de “Red” se identificó un apartado con la fuente HTML de la página, que dirigía al mismo enlace de arriba, con un “\url{pages/geih_page_1.html}” adicional para la primera página. Agregando esa terminación sobre cada una de las otras nueve páginas y se hizo entonces un web scraping común para un HTML con tablas. Este proceso de extracción se hizo iterativamente sobre cada uno de los enlaces y se compiló en una tabla combinada con 32,177 observaciones para 178 variables diferentes.\\  
 
 \end{itemize}
 
 \begin{itemize}
 \item \textbf{Limpieza de los datos:}
 
-Para hacer que los datos fuesen adecuados para hacer el análisis central de este trabajo, a saber, la modelación del salario por hora en esta muestra poblacional específica, fue necesario hacer un proceso de depuración e imputación de datos de la siguiente manera. 
+Para hacer que los datos fuesen adecuados para hacer el análisis central de este trabajo, a saber, la modelación del salario por hora en esta muestra poblacional específica, fue necesario hacer un proceso de depuración e imputación de datos de la siguiente manera.\\ 
 
-Primero, se redujo la muestra poblacional a los individuos mayores a 18 años de edad, que son los que están en edad de trabajar y tienen datos de salario disponibles; así como también se eliminaron los individuos que trabajaran por cuenta propia toda vez que la contabilidad de sus ingresos es inexacta y difícil de rastrear. Esto también implicó la eliminación de observaciones que tuvieran salarios de cero o nulos. 
+Primero, se redujo la muestra poblacional a los individuos mayores a 18 años de edad, que son los que están en edad de trabajar y tienen datos de salario disponibles; así como también se eliminaron los individuos que trabajaran por cuenta propia toda vez que la contabilidad de sus ingresos es inexacta y difícil de rastrear. Esto también implicó la eliminación de observaciones que tuvieran salarios de cero o nulos.\\ 
 
-Segundo, se eliminaron, de la muestra inicial de 178, todas las variables que en cada una de las observaciones tuvieran consistentemente valores faltantes o valores idénticos. Además, se desestimaron todas las variables que tuvieran valores faltantes en más del 60\% de las observaciones. Estos dos pasos fueron necesarios para evitar utilizar observaciones y variables que podían no aportar nada a la base más que ruido. 
+Segundo, se eliminaron, de la muestra inicial de 178, todas las variables que en cada una de las observaciones tuvieran consistentemente valores faltantes o valores idénticos. Además, se desestimaron todas las variables que tuvieran valores faltantes en más del 60\% de las observaciones. Estos dos pasos fueron necesarios para evitar utilizar observaciones y variables que podían no aportar nada a la base más que ruido.\\ 
 
-Después de estos dos pasos, se hizo la imputación de datos para cada uno de los valores faltantes en la base de datos resultante. Esto se hizo por medio de dos métodos. El primero implicó identificar todas las variables categóricas de la muestra, que eran todas aquellas que se correspondían con la indagación de salarios de los individuos (por ejemplo, preguntas de respuestas binarias de sí o no, o de respuestas con un rango del 1 al 3). Luego de que se hizo esto, se calculó la moda de las observaciones en esas variables para todos los individuos que compartieran el mismo estrato social, y los valores faltantes se imputaron con ella. Esto, entendiendo que es más probable que individuos que compartan condiciones socioeconómicas similares puedan tener características en sus ingresos comparables. 
+Después de estos dos pasos, se hizo la imputación de datos para cada uno de los valores faltantes en la base de datos resultante. Esto se hizo por medio de dos métodos. El primero implicó identificar todas las variables categóricas de la muestra, que eran todas aquellas que se correspondían con la indagación de salarios de los individuos (por ejemplo, preguntas de respuestas binarias de sí o no, o de respuestas con un rango del 1 al 3). Luego de que se hizo esto, se calculó la moda de las observaciones en esas variables para todos los individuos que compartieran el mismo estrato social, y los valores faltantes se imputaron con ella. Esto, entendiendo que es más probable que individuos que compartan condiciones socioeconómicas similares puedan tener características en sus ingresos comparables.\\ 
 
-El segundo método implicó identificar las variables numéricas, que eran todas aquellas que tenían valores en magnitud monetaria, como los ingresos, los auxilios y las deducciones. A los valores faltantes de estas variables se les aplicó el método de K Vecinos más Cercanos (\textit{o K-Nearest Neighbors}) que busca las similitudes entre las observaciones de la base e identifica, por medio de un algoritmo de aprendizaje supervisado, los k vecinos más cercanos para cada una (en este caso los 5 más cercanos). Así, con los valores de los vecinos, se imputaron las observaciones con valores faltantes en dichas variables. 
+El segundo método implicó identificar las variables numéricas, que eran todas aquellas que tenían valores en magnitud monetaria, como los ingresos, los auxilios y las deducciones. A los valores faltantes de estas variables se les aplicó el método de K Vecinos más Cercanos (\textit{o K-Nearest Neighbors}) que busca las similitudes entre las observaciones de la base e identifica, por medio de un algoritmo de aprendizaje supervisado, los k vecinos más cercanos para cada una (en este caso los 5 más cercanos). Así, con los valores de los vecinos, se imputaron las observaciones con valores faltantes en dichas variables.\\ 
 
-Lo último que se hizo para la organización de la base de datos fue reemplazar con los valores del percentil 97.5 todos los valores de las observaciones de las variables de ingreso que se ubicaran más allá de ese umbral. Esto para evitar que esas variables, que suelen tener una dispersión importante en ese último segmento poblacional, tuviesen un impacto indeseado sobre la estadística descriptiva de la muestra.   
+Lo último que se hizo para la organización de la base de datos fue reemplazar con los valores del percentil 97.5 todos los valores de las observaciones de las variables de ingreso que se ubicaran más allá de ese umbral. Esto para evitar que esas variables, que suelen tener una dispersión importante en ese último segmento poblacional, tuviesen un impacto indeseado sobre la estadística descriptiva de la muestra.\\   
 
 \end{itemize}
 
@@ -204,15 +204,15 @@ Histogramas
 \end{itemize}
 
 \section{Perfil edad-salario}
-En esta sección analizaremos la relación entre el perfil edad-salario. En primer lugar, es importante discutir qué medida de ingreso utilizar. La base de datos de la GEIH incluye diversas medidas, como ingreso por primas monetarias, ingreso mensual, ingreso usual en el mes e ingreso efectivo en el mes, entre otras. 
+En esta sección analizaremos la relación entre el perfil edad-salario. En primer lugar, es importante discutir qué medida de ingreso utilizar. La base de datos de la GEIH incluye diversas medidas, como ingreso por primas monetarias, ingreso mensual, ingreso usual en el mes e ingreso efectivo en el mes, entre otras.\\ 
 
 En los estudios que analizan el perfil salarial de edad, es común emplear el ingreso por hora, ya que permite aislar el efecto de las horas trabajadas en el mes, lo cual podría sesgar los resultados. 
-Asimismo, suele utilizarse la variable de ingreso en logaritmos, lo que mejora la interpretabilidad del coeficiente estimado, que pasaría a representar cuánto impacta, en términos porcentuales, una unidad adicional de la variable independiente sobre el ingreso, en este caso un año adicional en la edad.
+Asimismo, suele utilizarse la variable de ingreso en logaritmos, lo que mejora la interpretabilidad del coeficiente estimado, que pasaría a representar cuánto impacta, en términos porcentuales, una unidad adicional de la variable independiente sobre el ingreso, en este caso un año adicional en la edad.\\
 
-Se estimó el siguiente modelo para identificar el perfil edad-salario de las observaciones de la muestra.
+Se estimó el siguiente modelo para identificar el perfil edad-salario de las observaciones de la muestra.\\
 \begin{equation}
     \ln{w_i}= \beta_1 + \beta_2 Age_i + \beta_3 Age_i^2 + u_i
-\end{equation}
+\end{equation}\\
 Donde $w_i$ es el ingreso salarial por hora del individuo $i$ y $Age_i$ es su edad. Se realizó la estimación del modelo con las diferentes medidas de ingreso salarial real y nominal por hora:
 
 \begin{table}[!htbp] 
@@ -252,9 +252,9 @@ F Statistic (df = 2; 9889) & 206.012$^{***}$ & 235.041$^{***}$ \\
 \begin{itemize}
 \item \textbf{Interpretación de los coeficientes:}
 
-De acuerdo con los resultados de las dos regresiones, el perfil salarial según la edad tienen la misma forma funcional, es decir una curva cóncava. En concreto, el término lineal de la edad muestra el efecto directo de “sumar un año”, mientras que el término cuadrático ($\text{edad}^2$) captura cómo que existen efectos diferenciados sobre el salario en edades diferentes de la vida, es decir que la relación entre la edad y el salario no es lineal.
+De acuerdo con los resultados de las dos regresiones, el perfil salarial según la edad tienen la misma forma funcional, es decir una curva cóncava. En concreto, el término lineal de la edad muestra el efecto directo de “sumar un año”, mientras que el término cuadrático ($\text{edad}^2$) captura cómo que existen efectos diferenciados sobre el salario en edades diferentes de la vida, es decir que la relación entre la edad y el salario no es lineal.\\
 
-El sumar un año de edad incrementa 5.9\% y 6.6\% el salario (el efecto directo) tomando como el salario real y nominal por hora respectivamente. Ambos coeficientes estimados son significativos estadísticamente y positivos lo que indica en primera instancia un efecto directo positivo de la edad sobre el salario. El coeficiente relacionado con la edad al cuadrado captura esa relación no lineal. Tanto para el modelo con el salario real como el nominal el coeficiente de la edad cuadrática es negativo lo que indica la concavidad de la relación, es decir que hasta un punto la relación entre edad y salario o es positiva y luego es negativa, en ambos modelos el término es negativo y estadísticamente significativo. 
+El sumar un año de edad incrementa 5.9\% y 6.6\% el salario (el efecto directo) tomando como el salario real y nominal por hora respectivamente. Ambos coeficientes estimados son significativos estadísticamente y positivos lo que indica en primera instancia un efecto directo positivo de la edad sobre el salario. El coeficiente relacionado con la edad al cuadrado captura esa relación no lineal. Tanto para el modelo con el salario real como el nominal el coeficiente de la edad cuadrática es negativo lo que indica la concavidad de la relación, es decir que hasta un punto la relación entre edad y salario o es positiva y luego es negativa, en ambos modelos el término es negativo y estadísticamente significativo.\\ 
 
  Para estimar la semileasticidad de la edad sobre el logaritmo del salario solucionamos la condición de primer orden. Luego un año adicional de edad aumenta porcentualmente el salario en:
 \begin{equation*}
@@ -394,9 +394,9 @@ F Statistic & 97.364$^{***}$ (df = 1; 9890) & 9.559$^{***}$ (df = 1; 9890) & 91.
 } % cierre de resizebox
 \end{table}
 El Cuadro \ref{cuadro_inco} presenta los resultados de la estimación por mínimos cuadrados ordinarios utilizando diversas medidas de ingreso. 
-$ysalarym$ corresponde al ingreso nominal de la ocupación principal, $ysalarymha$ al salario por hora de la ocupación principal, $yingLabm$ al ingreso proveniente de todas las ocupaciones, $ytotalm$ al ingreso total proveniente de ocupaciones e ingresos independientes, y $ytotalmha$ al ingreso total de ocupaciones e independientes medido por hora.
+$ysalarym$ corresponde al ingreso nominal de la ocupación principal, $ysalarymha$ al salario por hora de la ocupación principal, $yingLabm$ al ingreso proveniente de todas las ocupaciones, $ytotalm$ al ingreso total proveniente de ocupaciones e ingresos independientes, y $ytotalmha$ al ingreso total de ocupaciones e independientes medido por hora.\\
 
-Los resultados muestran evidencia de que las mujeres ganan menos que los hombres. Aunque existe cierta variación en los coeficientes de la variable $female$, todos son negativos y estadísticamente significativos, lo que indica pérdidas salariales para las mujeres.
+Los resultados muestran evidencia de que las mujeres ganan menos que los hombres. Aunque existe cierta variación en los coeficientes de la variable $female$, todos son negativos y estadísticamente significativos, lo que indica pérdidas salariales para las mujeres.\\
 
 Cabe señalar que en los resultados anteriores todos los coeficientes fueron estimados mediante mínimos cuadrados ordinarios. 
 No obstante, es posible obtenerlos aplicando el Teorema de Frisch-Waugh-Lovell (FWL). 
@@ -429,7 +429,7 @@ Para estimar $\beta_1$ usando el Teorema de Frisch-Waugh-Lovell, se siguen los s
 \end{enumerate}
 
 Este procedimiento permite estimar el efecto de $X_1$ sobre $y$, controlando por $X_2$, sin necesidad de realizar directamente la regresión múltiple completa. 
-Además, resulta útil para reducir el costo computacional en aplicaciones con gran cantidad de variables.
+Además, resulta útil para reducir el costo computacional en aplicaciones con gran cantidad de variables.\\
 
 Como ilustración de este procedimiento, estimamos el siguiente modelo mediante el método clásico de MCO y también aplicando el teorema de FWL:
 
@@ -474,7 +474,7 @@ F Statistic & 245.548$^{***}$ (df = 3; 9888) & 119.495$^{***}$ (df = 1; 9890) \\
 
 El Cuadro \ref{cuadro_FWL} muestra que los coeficientes de $female$ y $resid\_fem$ son idénticos. 
 Sin embargo, los errores estándar no lo son. 
-Esto ocurre debido a la forma en que se realiza la estimación en dos etapas: al reducir el número de variables en la segunda ecuación, los grados de libertad utilizados también disminuyen. 
+Esto ocurre debido a la forma en que se realiza la estimación en dos etapas: al reducir el número de variables en la segunda ecuación, los grados de libertad utilizados también disminuyen.\\ 
 
 Otra manera de estimar el error estándar es a través del método bootstrap. 
 Este procedimiento consiste en realizar un remuestreo de la muestra $n$ veces y reestimar el coeficiente en cada repetición. 
@@ -488,7 +488,7 @@ El error estándar se obtiene a partir de la dispersión de esta distribución d
 \end{figure}
 
 La Figura \ref{fig:female} muestra la distribución del coeficiente de $female$. 
-Al calcular el error estándar, obtenemos un valor de 0.01472, prácticamente idéntico al obtenido mediante la estimación por MCO.
+Al calcular el error estándar, obtenemos un valor de 0.01472, prácticamente idéntico al obtenido mediante la estimación por MCO.\\
 
 Al estimarmos el modelo \ref{eq_inc}, no hemos considerado ningún control. Es posible que existan variables omitidas influenciando nuestros resultados. De esta manera, a fin de verificar la robustez agregamos los siguientes controles a nuestra estimación:
 \begin{itemize}
@@ -579,9 +579,9 @@ F Statistic & 9.317$^{***}$ (df = 1; 9890) & 158.028$^{***}$ (df = 3; 9888) & 62
 } 
 \end{table}
 
-\noindent \textit{Nota:} En la ecuación (5) se omitieron las variables relacionadas con el oficio y el número de personas que trabajan en la empresa.
+\noindent \textit{Nota:} En la ecuación (5) se omitieron las variables relacionadas con el oficio y el número de personas que trabajan en la empresa.\\
 
-Los resultados en el Cuadro \ref{cuadro_controls} muestran que el coeficiente de $female$ sigue siendo negativo y significativo. Además, la inclusión de controles incrementa la magnitud del coeficiente. El modelo con todos los controles indica que las mujeres llegan a ganar aproximadamente un 10\% menos que los hombres, dado que ambos tengan la misma experiencia, edad y ejerzan profesiones similares.
+Los resultados en el Cuadro \ref{cuadro_controls} muestran que el coeficiente de $female$ sigue siendo negativo y significativo. Además, la inclusión de controles incrementa la magnitud del coeficiente. El modelo con todos los controles indica que las mujeres llegan a ganar aproximadamente un 10\% menos que los hombres, dado que ambos tengan la misma experiencia, edad y ejerzan profesiones similares.\\
 
 Un aspecto interesante sería estimar la edad pico en la que las mujeres alcanzarían su máximo salarial. Esto puede calcularse mediante un problema sencillo de maximización: 
 \[
@@ -859,11 +859,6 @@ En el caso del Modelo 4, la complejidad proviene de la combinación de polinomio
 Por su parte, el Modelo 7 introduce polinomios de quinto grado en la edad y en las horas trabajadas, lo que genera curvas más sensibles y con oscilaciones más marcadas, en especial en los extremos del soporte. Al no estar acompañada de tantas interacciones, esta flexibilidad resulta menos organizada y más vulnerable a la exclusión de observaciones. En consecuencia, el error de predicción aumenta con LOOCV, lo que sugiere que el Modelo 7 es más inestable frente a datos atípicos o poco frecuentes.\\
 
 En conclusión, el vínculo con la estadística de influencia es directo: en LOOCV, cada observación se deja por fuera una vez, y aquellas con alto leverage o con residuos grandes (PRESS residuals) afectan más el error total. En este sentido, es probable que el Modelo 7 sea más vulnerable a observaciones influyentes, lo que explica el aumento en su RMSE bajo LOOCV. El Modelo 4, en cambio, parece menos sensible a estas observaciones, lo que lo convierte en una especificación más estable frente a posibles outliers o casos de alto apalancamiento.
-
-\section{?}
-
-\section{Conclusion}
-
 
 
 
