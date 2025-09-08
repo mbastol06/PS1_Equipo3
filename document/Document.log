@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.9.7)  7 SEP 2025 23:04
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.9.7)  7 SEP 2025 23:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -659,8 +659,8 @@ File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
 \l__pdf_internal_box=\box112
 )
 (Document.aux
-LaTeX Info: Redefining \. on input line 12.
-LaTeX Info: Redefining \% on input line 12.
+LaTeX Info: Redefining \. on input line 13.
+LaTeX Info: Redefining \% on input line 13.
 
 
 LaTeX Warning: Label `sec:intro' multiply defined.
@@ -782,326 +782,302 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 96.
 (C:\Program Files\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
+Underfull \hbox (badness 10000) in paragraph at lines 107--108
 
-Package natbib Warning: Citation `oecd_tax_analytics' on page 1 undefined on in
-put line 107.
-
-
-Package natbib Warning: Citation `worldbank_data_gov' on page 1 undefined on in
-put line 107.
+ []
 
 
-Package natbib Warning: Citation `lemieux_earnings' on page 1 undefined on inpu
-t line 109.
+Underfull \hbox (badness 10000) in paragraph at lines 110--111
+
+ []
 
 
-Package natbib Warning: Citation `dustmann_wage_dist' on page 1 undefined on in
-put line 109.
+Underfull \hbox (badness 10000) in paragraph at lines 112--113
 
-
-Package natbib Warning: Citation `angrist_pischke' on page 1 undefined on input
- line 111.
-
-
-Package natbib Warning: Citation `card_krueger' on page 1 undefined on input li
-ne 111.
-
-
-Package natbib Warning: Citation `oecd_wage_inequality' on page 1 undefined on 
-input line 111.
-
-
-Overfull \hbox (21.55093pt too wide) in paragraph at lines 111--112
-[]\OT1/cmr/m/n/12 El an^^Sali-sis eco-nom^^Setri-co se or-ga-ni-za en tres fren
--tes. Pri-me-ro, es-ti-ma-mos el per-fil edad{salario
  []
 
 [1
 
 {C:/Users/lukaz/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 119--120
+Underfull \hbox (badness 10000) in paragraph at lines 122--123
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 121--122
+Underfull \hbox (badness 10000) in paragraph at lines 124--125
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 128--129
+Underfull \hbox (badness 10000) in paragraph at lines 131--132
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 130--131
+Underfull \hbox (badness 10000) in paragraph at lines 133--134
 
  []
 
 [2]
-Underfull \hbox (badness 10000) in paragraph at lines 137--138
+Underfull \hbox (badness 10000) in paragraph at lines 140--141
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 139--140
+Underfull \hbox (badness 10000) in paragraph at lines 142--143
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 141--142
+Underfull \hbox (badness 10000) in paragraph at lines 144--145
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 143--144
+Underfull \hbox (badness 10000) in paragraph at lines 146--147
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 145--146
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 147--148
+Underfull \hbox (badness 10000) in paragraph at lines 148--149
 
  []
 
 [3]
-Underfull \hbox (badness 10000) in paragraph at lines 154--155
+Underfull \hbox (badness 10000) in paragraph at lines 150--151
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 156--157
+Underfull \hbox (badness 10000) in paragraph at lines 157--158
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 158--159
+Underfull \hbox (badness 10000) in paragraph at lines 159--160
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 160--161
+Underfull \hbox (badness 10000) in paragraph at lines 161--162
 
  []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 163--164
+
+ []
+
+[4]
 
 Package caption Warning: \setcaptionsubtype
-(caption)                outside box or environment on input line 168.
+(caption)                outside box or environment on input line 171.
 See the caption package documentation for explanation.
 
 
 Package caption Warning: \subcaption
-(caption)                outside box or environment on input line 168.
+(caption)                outside box or environment on input line 171.
 See the caption package documentation for explanation.
 
 
 Package caption Warning: \subcaption
-(caption)                outside box or environment on input line 188.
+(caption)                outside box or environment on input line 191.
 See the caption package documentation for explanation.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 210--211
+Underfull \hbox (badness 10000) in paragraph at lines 213--214
 
  []
 
-[4] [5]
-<../views/1_histo_sal.png, id=60, 289.08pt x 252.945pt>
+[5]
+<../views/1_histo_sal.png, id=66, 289.08pt x 252.945pt>
 File: ../views/1_histo_sal.png Graphic file (type png)
 <use ../views/1_histo_sal.png>
-Package pdftex.def Info: ../views/1_histo_sal.png  used on input line 222.
+Package pdftex.def Info: ../views/1_histo_sal.png  used on input line 225.
 (pdftex.def)             Requested size: 221.14421pt x 193.49843pt.
-<../views/1_histo_sal_hora.png, id=62, 289.08pt x 252.945pt>
+<../views/1_histo_sal_hora.png, id=68, 289.08pt x 252.945pt>
 File: ../views/1_histo_sal_hora.png Graphic file (type png)
 <use ../views/1_histo_sal_hora.png>
-Package pdftex.def Info: ../views/1_histo_sal_hora.png  used on input line 229.
+Package pdftex.def Info: ../views/1_histo_sal_hora.png  used on input line 232.
 
 (pdftex.def)             Requested size: 221.14421pt x 193.49843pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 245--246
+Underfull \hbox (badness 10000) in paragraph at lines 248--249
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 247--249
+Underfull \hbox (badness 10000) in paragraph at lines 250--252
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 253--254
 
  []
 
 [6 <../views/1_histo_sal.png> <../views/1_histo_sal_hora.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 250--251
+Underfull \hbox (badness 10000) in paragraph at lines 296--297
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 293--294
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 295--296
+Underfull \hbox (badness 10000) in paragraph at lines 298--299
 
  []
 
 [7] [8]
-<../views/3_fig_pred_ic.pdf, id=89, 722.7pt x 433.62pt>
+<../views/3_fig_pred_ic.pdf, id=96, 722.7pt x 433.62pt>
 File: ../views/3_fig_pred_ic.pdf Graphic file (type pdf)
 <use ../views/3_fig_pred_ic.pdf>
-Package pdftex.def Info: ../views/3_fig_pred_ic.pdf  used on input line 351.
+Package pdftex.def Info: ../views/3_fig_pred_ic.pdf  used on input line 354.
 (pdftex.def)             Requested size: 361.3491pt x 216.80946pt.
  [9 <../views/3_fig_pred_ic.pdf>]
-<../views/3_fig_boot.pdf, id=105, 722.7pt x 361.35pt>
+<../views/3_fig_boot.pdf, id=111, 722.7pt x 361.35pt>
 File: ../views/3_fig_boot.pdf Graphic file (type pdf)
 <use ../views/3_fig_boot.pdf>
-Package pdftex.def Info: ../views/3_fig_boot.pdf  used on input line 375.
+Package pdftex.def Info: ../views/3_fig_boot.pdf  used on input line 378.
 (pdftex.def)             Requested size: 433.62334pt x 216.81168pt.
  [10 <../views/3_fig_boot.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 434--436
+Underfull \hbox (badness 10000) in paragraph at lines 437--439
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 437--438
+Underfull \hbox (badness 10000) in paragraph at lines 440--441
 
  []
 
 [11]
-Underfull \hbox (badness 10000) in paragraph at lines 469--471
+Underfull \hbox (badness 10000) in paragraph at lines 472--474
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 513--516
+Underfull \hbox (badness 10000) in paragraph at lines 516--519
 
  []
 
-[12]
-<../views/sd_fwl_hist.png, id=137, 334.1283pt x 148.8762pt>
+<../views/sd_fwl_hist.png, id=134, 334.1283pt x 148.8762pt>
 File: ../views/sd_fwl_hist.png Graphic file (type png)
 <use ../views/sd_fwl_hist.png>
-Package pdftex.def Info: ../views/sd_fwl_hist.png  used on input line 523.
+Package pdftex.def Info: ../views/sd_fwl_hist.png  used on input line 526.
 (pdftex.def)             Requested size: 250.5956pt x 111.65688pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 528--530
+[12]
+Underfull \hbox (badness 10000) in paragraph at lines 531--533
 
  []
 
 [13 <../views/sd_fwl_hist.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 620--621
+Underfull \hbox (badness 10000) in paragraph at lines 623--624
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 622--623
+Underfull \hbox (badness 10000) in paragraph at lines 625--626
 
  []
 
-<../views/age_peak_bar.png, id=147, 334.1283pt x 148.8762pt>
+<../views/age_peak_bar.png, id=153, 334.1283pt x 148.8762pt>
 File: ../views/age_peak_bar.png Graphic file (type png)
 <use ../views/age_peak_bar.png>
-Package pdftex.def Info: ../views/age_peak_bar.png  used on input line 632.
+Package pdftex.def Info: ../views/age_peak_bar.png  used on input line 635.
 (pdftex.def)             Requested size: 250.5956pt x 111.65688pt.
 [14 <../views/age_peak_bar.png>] [15]
-<../views/age_whiskey_point.png, id=159, 334.1283pt x 148.8762pt>
+<../views/age_whiskey_point.png, id=165, 334.1283pt x 148.8762pt>
 File: ../views/age_whiskey_point.png Graphic file (type png)
 <use ../views/age_whiskey_point.png>
-Package pdftex.def Info: ../views/age_whiskey_point.png  used on input line 640
+Package pdftex.def Info: ../views/age_whiskey_point.png  used on input line 643
 .
 (pdftex.def)             Requested size: 250.5956pt x 111.65688pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 644--645
+Underfull \hbox (badness 10000) in paragraph at lines 647--648
 
  []
 
 [16 <../views/age_whiskey_point.png>]
-Overfull \hbox (7.65614pt too wide) detected at line 725
+Overfull \hbox (7.65614pt too wide) detected at line 728
 [][]
  []
 
 
-Overfull \hbox (67.77818pt too wide) detected at line 782
+Overfull \hbox (67.77818pt too wide) detected at line 785
 [][]
  []
 
 [17]
-Underfull \hbox (badness 10000) in paragraph at lines 826--827
+Underfull \hbox (badness 10000) in paragraph at lines 829--830
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 828--829
+Underfull \hbox (badness 10000) in paragraph at lines 831--832
 
  []
 
 [18]
-Underfull \hbox (badness 10000) in paragraph at lines 830--831
+Underfull \hbox (badness 10000) in paragraph at lines 833--834
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 832--833
+Underfull \hbox (badness 10000) in paragraph at lines 835--836
 
  []
 
-<../views/hist_error_p5.png, id=178, 409.53pt x 216.81pt>
+<../views/hist_error_p5.png, id=184, 409.53pt x 216.81pt>
 File: ../views/hist_error_p5.png Graphic file (type png)
 <use ../views/hist_error_p5.png>
-Package pdftex.def Info: ../views/hist_error_p5.png  used on input line 838.
+Package pdftex.def Info: ../views/hist_error_p5.png  used on input line 841.
 (pdftex.def)             Requested size: 368.57838pt x 195.14043pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 843--844
+Underfull \hbox (badness 10000) in paragraph at lines 846--847
+
+ []
+
+[19 <../views/hist_error_p5.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 848--849
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 845--846
+Underfull \hbox (badness 10000) in paragraph at lines 890--891
 
  []
 
-[19]
-Underfull \hbox (badness 10000) in paragraph at lines 887--888
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 889--890
+[20]
+Underfull \hbox (badness 10000) in paragraph at lines 892--893
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 891--892
-
- []
-
-[20 <../views/hist_error_p5.png>] [21]
-Underfull \hbox (badness 10000) in paragraph at lines 893--894
+Underfull \hbox (badness 10000) in paragraph at lines 894--895
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 895--896
+Underfull \hbox (badness 10000) in paragraph at lines 896--897
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 897--898
+Underfull \hbox (badness 10000) in paragraph at lines 898--899
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 899--900
+Underfull \hbox (badness 10000) in paragraph at lines 900--901
 
  []
 
-[22] (Document.bbl) [23]
+[21]
+Underfull \hbox (badness 10000) in paragraph at lines 902--903
 
-Package natbib Warning: There were undefined citations.
+ []
 
-(Document.aux
-LaTeX Info: Redefining \. on input line 16.
-LaTeX Info: Redefining \% on input line 16.
+[22] (Document.bbl) [23] (Document.aux
+LaTeX Info: Redefining \. on input line 13.
+LaTeX Info: Redefining \% on input line 13.
 )
  ***********
 LaTeX2e <2023-11-01> patch level 1
@@ -1115,13 +1091,13 @@ Package rerunfilecheck Info: File `Document.out' has not changed.
 (rerunfilecheck)             Checksum: CB5D5DFD4F3D3FF340E4DB35F05E9F9D;641.
  ) 
 Here is how much of TeX's memory you used:
- 16185 strings out of 474486
- 257390 string characters out of 5753571
+ 16181 strings out of 474486
+ 257293 string characters out of 5753571
  1961542 words of memory out of 5000000
- 38146 multiletter control sequences out of 15000+600000
+ 38143 multiletter control sequences out of 15000+600000
  568853 words of font info for 77 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,13n,79p,1243b,703s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,13n,79p,1154b,701s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\lukaz\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm
 1200.pk><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/
 Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program File
@@ -1137,9 +1113,9 @@ cm/cmsy6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
 <C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program 
 Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files/MiKTeX
 /fonts/type1/public/amsfonts/cm/cmti8.pfb>
-Output written on Document.pdf (23 pages, 454533 bytes).
+Output written on Document.pdf (23 pages, 455505 bytes).
 PDF statistics:
- 293 PDF objects out of 1000 (max. 8388607)
- 55 named destinations out of 1000 (max. 500000)
+ 297 PDF objects out of 1000 (max. 8388607)
+ 54 named destinations out of 1000 (max. 500000)
  81 words of extra memory for PDF output out of 10000 (max. 10000000)
 
