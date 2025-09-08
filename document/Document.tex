@@ -604,11 +604,261 @@ La Figura \ref{fig:age_peak_bar} muestra los resultados de la edad pico. En gene
 \end{figure}
 
 La Figura \ref{fig:age_whiskey_bar} muestra los resultados de los intervalos de confianza. Como era de esperar, la inclusión de más controles amplía dichos intervalos; sin embargo, el incremento no supera los 2 años con respecto al valor central de la estimación.
+
 \section{Prediciendo Salarios}
 
-Referencing tables is very easy you can do the following: In Table \ref{tab:avdiscriminationrates} ...
+Para evaluar y comparar el desempeño predictivo, reportamos el Error Cuadrático Medio de Predicción (RMSE) de las especificaciones de los dos puntos anteriores y lo contrastamos con cinco modelos adicionales que incorporan no linealidades y mayor complejidad. Los modelos seleccionados fueron los siguientes:
 
-Citing papers is easier, for example \cite{albouy2020unlocking} shows that crime around parks. For many papers in parenthesis \cite{albouy2020unlocking,mcmillen2019more} 
+\begin{itemize}
+
+\item \textbf{Modelo 1 (Edad cuadrática):}
+{\small
+\[
+\begin{aligned}
+\ln w_{i} &= \beta_{0} 
++ \beta_{1}\,\text{Edad}_{i}
++ \beta_{2}\,\text{Edad}_{i}^{2}
++ u_{i}
+\end{aligned}
+\]
+}
+
+\item \textbf{Modelo 2 (Brecha salarial por género incondicional):}
+{\small
+\[
+\begin{aligned}
+\ln w_{i} &= \beta_{0} 
++ \beta_{1}\,\text{Mujer}_{i}
++ u_{i}
+\end{aligned}
+\]
+}
+
+\item \textbf{Modelo 3 (Brecha salarial por género condicional):}
+{\small
+\[
+\begin{aligned}
+\ln w_{i} &= \beta_{0} 
++ \beta_{1}\,\text{Mujer}_{i}
++ \beta_{2}\,\text{Edad}_{i}
++ \beta_{3}\,\text{Edad}_{i}^{2}
++ \beta_{4}\,\text{Educ}_{i}
+\\&\quad
++ \beta_{5}\,\text{Horas}_{i}
++ \beta_{6}\,\text{Microemp}_{i}
++ \beta_{7}\,\text{Formal}_{i}
++ \beta_{8}\,\text{TamañoFirma}_{i}
++ \beta_{9}\,\text{Oficio}_{i}
++ u_{i}
+\end{aligned}
+\]
+}
+
+\item \textbf{Modelo 4 (Modelo 3 con polinomio de tercer grado en edad e interacciones de este polinomio con el resto de controles):}
+{\small
+\[
+\begin{aligned}
+\ln w_{i} &= \beta_{0} 
++ \sum_{m=1}^{3} \beta_{1}^{m}\,\text{Edad}_{i}^{m}
++ \beta_{2}\,\text{Mujer}_{i}
++ \beta_{3}\,\text{Educ}_{i}
++ \beta_{4}\,\text{Horas}_{i}
+\\&\quad
++ \beta_{5}\,\text{Microemp}_{i}
++ \beta_{6}\,\text{Formal}_{i}
++ \beta_{7}\,\text{TamañoFirma}_{i}
++ \beta_{8}\,\text{Oficio}_{i}
+\\&\quad
++ \sum_{m=0}^{3}\Big[
+\gamma_{1}^{m}(\text{Mujer}_{i}\,\text{Edad}_{i}^{m})
++ \gamma_{2}^{m}(\text{Educ}_{i}\,\text{Edad}_{i}^{m})
++ \gamma_{3}^{m}(\text{Horas}_{i}\,\text{Edad}_{i}^{m})
+\\&\qquad\qquad
++ \gamma_{4}^{m}(\text{Microemp}_{i}\,\text{Edad}_{i}^{m})
++ \gamma_{5}^{m}(\text{Formal}_{i}\,\text{Edad}_{i}^{m})
++ \gamma_{6}^{m}(\text{TamañoFirma}_{i}\,\text{Edad}_{i}^{m})
+\\&\qquad\qquad
++ \gamma_{7}^{m}(\text{Oficio}_{i}\,\text{Edad}_{i}^{m})
+\Big]
++ u_{i}
+\end{aligned}
+\]
+}
+
+\item \textbf{Modelo 5 (Modelo 4 pero con el polinomio de edad de grado 5):}
+{\small
+\[
+\begin{aligned}
+\ln w_{i} &= \beta_{0} 
++ \sum_{m=1}^{5} \beta_{1}^{m}\,\text{Edad}_{i}^{m}
++ \sum_{j} \beta_{j}\,\text{Control}_{ji}
+\\&\quad
++ \sum_{m=0}^{5}\sum_{j} \gamma_{j}^{m}\,(\text{Control}_{ji}\,\text{Edad}_{i}^{m})
++ u_{i}
+\end{aligned}
+\]
+}
+\emph{Controles:} Mujer, Educ, Horas, Microemp, Formal, TamañoFirma, Oficio.
+
+\item \textbf{Modelo 6 (Modelo 3 añadiendo Eduación Terciaria como control):}
+{\small
+\[
+\begin{aligned}
+\ln w_{i} &= \beta_{0} 
++ \beta_{1}\,\text{Mujer}_{i}
++ \beta_{2}\,\text{Edad}_{i}
++ \beta_{3}\,\text{Edad}_{i}^{2}
++ \beta_{4}\,\text{Educ}_{i}
+\\&\quad
++ \beta_{5}\,\text{Horas}_{i}
++ \beta_{6}\,\text{Microemp}_{i}
++ \beta_{7}\,\text{Formal}_{i}
++ \beta_{8}\,\text{Tamaño}_{i}
++ \beta_{9}\,\text{Oficio}_{i}
+\\&\quad
++ \beta_{10}\,\text{College}_{i}
++ u_{i}
+\end{aligned}
+\]
+}
+
+\item \textbf{Modelo 7 (Modelo 6 con polinomios de grado 5 para edad y total de horas trabajadas):}
+{\small
+\[
+\begin{aligned}
+\ln w_{i} &= \beta_{0} 
++ \sum_{m=1}^{5} \beta_{1}^{m}\,\text{Edad}_{i}^{m}
++ \sum_{m=1}^{5} \beta_{2}^{m}\,\text{Horas}_{i}^{m}
+\\&\quad
++ \beta_{3}\,\text{Mujer}_{i}
++ \beta_{4}\,\text{Educ}_{i}
++ \beta_{5}\,\text{Microemp}_{i}
++ \beta_{6}\,\text{Formal}_{i}
++ \beta_{7}\,\text{Tamaño}_{i}
++ \beta_{8}\,\text{Oficio}_{i}
++ \beta_{9}\,\text{College}_{i}
++ u_{i}
+\end{aligned}
+\]
+}
+
+\item \textbf{Modelo 8 (Modelo 6 con polinomios de grado 3 para edad y educación, así como interacciones de estos polinomios con el resto de controles):}
+{\small
+\[
+\begin{aligned}
+\ln w_{i} &= \beta_{0} 
++ \sum_{m=1}^{3} \beta_{1}^{m}\,\text{Edad}_{i}^{m}
++ \sum_{m=1}^{3} \beta_{2}^{m}\,\text{Horas}_{i}^{m}
+\\&\quad
++ \sum_{m=0}^{3}\sum_{j} \gamma_{1j}^{m}\,(\text{Edad}_{i}^{m}\,\text{Control}_{ji})
++ \sum_{m=0}^{3}\sum_{j} \gamma_{2j}^{m}\,(\text{Horas}_{i}^{m}\,\text{Control}_{ji})
++ u_{i}
+\end{aligned}
+\]
+}
+\emph{Controles:} Mujer, Educ, Microemp, Formal, Tamaño, Oficio, College.
+
+\end{itemize}
+
+Como se puede observar, para explorar nuevos modelos predictivos propusimos añadir polinomios a las variables continuas disponibles (edad y horas trabajadas), así como interactuar dichos polinomios con el resto de predictores del modelo. De esta manera, capturamos posibles relaciones no lineales y heterogeneidades en los retornos a la edad y a las horas según las características individuales y del mercado laboral. Esta estrategia nos permite evaluar si una mayor flexibilidad funcional se traduce en mejoras de desempeño predictivo. Los resultados de RMSE para los 8 modelos se presentan a continuación.
+
+
+\begin{table}[htbp]
+\centering
+\begin{tabular}{l r}
+\hline
+Modelo & RMSE \\
+\hline
+1 & 0.67766 \\
+2 & 0.69275 \\
+3 & 0.44956 \\
+4 & 0.44769 \\
+5 & 0.54028 \\
+6 & 0.44956 \\
+7 & 0.44763  \\
+8 & 0.62034 \\
+\hline
+\end{tabular}
+\caption{Comparación del RMSE entre los modelos seleccionados}
+\label{tab:scores}
+\end{table}
+
+Al comparar los ocho modelos estimados, observamos que las especificaciones más simples (Modelos 1 y 2) presentan los RMSE más altos, con valores de 0.678 y 0.693 respectivamente. Esto indica que los modelos que consideran únicamente edad o género, sin incorporar más información, son poco precisos en la predicción de los salarios. A medida que incluimos más controles y formas funcionales flexibles, el RMSE disminuye de manera importante, lo que evidencia la relevancia de capturar la heterogeneidad de las variables individuales y laborales para disminuir el sesgo.\\
+
+Por otro lado, los Modelos 3, 4, 6 y 7 alcanzan los RMSE más bajos, todos en torno a 0.448–0.450. Dentro de este grupo, destacan especialmente el Modelo 4 y el Modelo 7. El Modelo 4 introduce polinomios cúbicos en la edad junto con interacciones con variables clave como género, educación, formalidad u oficio, lo que permite capturar diferencias en cómo la edad impacta los salarios dependiendo de estas características. El Modelo 7, por su parte, amplía la flexibilidad al incorporar polinomios de quinto grado tanto en edad como en horas trabajadas, además de los controles seleccionados para el Modelo 3, lo que le da capacidad para representar no linealidades más complejas en dos dimensiones fundamentales del mercado laboral. El hecho de que ambos modelos obtengan RMSE muy similares a los de especificaciones más sencillas (3 y 6) indica que gran parte de la capacidad predictiva ya está capturada por los controles, pero que la incorporación de estas formas funcionales adicionales ayuda a refinar la predicción en los márgenes donde las relaciones son más complejas.\\
+
+Por último, los Modelos 5 y 8 muestran un RMSE más alto (0.540 y 0.620, respectivamente) en comparación con los modelos de complejidad intermedia. Esto refleja que, aunque las interacciones y polinomios de alto grado pueden capturar patrones no lineales, también pueden inducir sobreajuste y empeorar la capacidad predictiva fuera de muestra. En conjunto, nuestros resultados resaltan la importancia de un balance: los modelos con controles adecuados y cierta flexibilidad no lineal son los que logran el mejor desempeño, mientras que un aumento excesivo en complejidad resulta contraproducente.\\
+
+Ahora, para la especificación con el menor error de predicción, conviene examinar las observaciones con los errores más altos (en valor absoluto) para determinar si esos desajustes se deben a limitaciones del modelo o, por el contrario, a posibles subdeclaraciones de ingreso por parte de algunos individuos. Con ese fin, analizamos la distribución de los errores.\\
+
+
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{../views/hist_error_p5.png}
+    \caption{Histograma del error de predicción en el "testing set"}
+    \label{fig:hist_error}
+\end{figure}
+
+Al examinar la distribución de los errores de predicción en la muestra de prueba, observamos que estos se concentran fuertemente alrededor de cero y siguen una forma aproximadamente simétrica. Esto indica que, en promedio, el modelo no presenta un sesgo sistemático: predice tanto por encima como por debajo del valor observado con una frecuencia similar. La mayoría de los errores se ubica en un rango relativamente estrecho, lo que refleja un buen ajuste global, aunque se identifican algunas observaciones en las colas de la distribución. Estas colas corresponden a los casos en los que el modelo “falla” con mayor magnitud y, por lo tanto, resultan los más relevantes de analizar en detalle.\\
+
+Al concentrarnos en las colas de la distribución —específicamente los percentiles 1 y 99— encontramos que estas observaciones extremas comparten ciertas características diferenciales frente al resto de la muestra. En particular, tienden a registrar menos horas trabajadas ( 43.97 en promedio, lo cual está por debajo del percentil 25 en la muestra total), menor grado de formalidad y una mayor presencia de trabajadores en microempresas. Esto sugiere que los errores más grandes no provienen de perfiles totalmente atípicos, sino de segmentos del mercado laboral donde la variabilidad en los ingresos es mayor y más difícil de capturar con el modelo. Además, se trata de grupos menos presentes en la muestra, lo que limita el ajuste y explica en parte por qué el modelo no logra predecirlos con precisión.\\
+
+\begin{table}[htbp]
+\centering
+\caption{Descriptivas — Observaciones en las colas de la distirbución del error}
+\label{tab:descriptivas_colas}
+\begin{threeparttable}
+\begin{tabular}{@{}ll@{}}
+\toprule
+\textbf{Variable} & \textbf{N = 60}\\
+\midrule
+Age & 36.98 (13.41)\\
+Horas trabajadas & 43.97 (19.89)\\
+\addlinespace[0.5ex]
+\multicolumn{2}{@{}l}{\textbf{Educación}}\\
+\quad 1 & 1/60 (1.7\%)\\
+\quad 3 & 0/60 (0\%)\\
+\quad 4 & 4/60 (6.7\%)\\
+\quad 5 & 5/60 (8.3\%)\\
+\quad 6 & 13/60 (22\%)\\
+\quad 7 & 37/60 (62\%)\\
+Mujer & 35/60 (58\%)\\
+Micro empresa & 23/60 (38\%)\\
+Formal & 32/60 (53\%)\\
+\addlinespace[0.5ex]
+\multicolumn{2}{@{}l}{\textbf{Tamaño firma}}\\
+\quad 1 & 5/60 (8.3\%)\\
+\quad 2 & 18/60 (30\%)\\
+\quad 3 & 4/60 (6.7\%)\\
+\quad 4 & 11/60 (18\%)\\
+\quad 5 & 22/60 (37\%)\\
+\addlinespace[0.5ex]
+Educación Terciaria & 13/60 (22\%)\\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}
+\footnotesize
+\item \textit{Nota}: Para variables continuas, media (desv.\ est.). Para categóricas, frecuencia (porcentaje).
+\end{tablenotes}
+\end{threeparttable}
+\end{table}
+
+Dentro de estas 60 observaciones extremas, identificamos cuatro casos con un leverage aproximadamente tres veces menor que la media, pero que se ubican por encima del percentil 99 de los errores de predicción. Este patrón resulta llamativo porque se trata de individuos con perfiles relativamente comunes —es decir, no atípicos en sus características observables— cuyos ingresos declarados superan de forma importante lo que el modelo predice. En este sentido, podrían constituir alertas para la DIAN, ya que los errores no parecen deberse a rarezas en el perfil, sino a posibles discrepancias entre lo esperado y lo reportado.\\
+
+En conjunto, nuestro análisis muestra que la mayor parte de los errores extremos se asocian a segmentos con baja formalidad, microempresas y menos horas trabajadas, lo cual refleja limitaciones del modelo en grupos poco representados y con alta variabilidad de ingresos. Sin embargo, los pocos casos con leverage bajo y errores muy grandes merecen especial atención, ya que no se explican por perfiles raros y podrían corresponder a situaciones en las que los ingresos declarados se apartan de manera significativa de lo que cabría esperar. Así, los errores de predicción resultan útiles tanto para identificar limitaciones del modelo como para señalar posibles candidatos de investigación por parte de la DIAN.\\
+
+Finalmente, con el fin de contrastar la estabilidad de nuestros resultados, aplicamos la técnica de Leave-One-Out Cross-Validation (LOOCV) a los dos modelos que previamente habían mostrado el menor error predictivo bajo el enfoque de validation set. Esta comparación nos permite evaluar si el desempeño de los modelos se mantiene cuando cada observación es excluida sucesivamente, lo cual otorga una medida más robusta de error fuera de muestra y se relaciona estrechamente con la sensibilidad del modelo frente a observaciones influyentes.\\
+
+Para los dos modelos con mejor desempeño en validación simple, encontramos que el RMSE mediante el enfoque de validation set fue de 0.4477 en el Modelo 4 y de 0.4476 en el Modelo 7. Cuando aplicamos Leave-One-Out Cross-Validation (LOOCV), el error cambió ligeramente: el Modelo 4 obtuvo un RMSE de 0.4440, mientras que el Modelo 7 alcanzó 0.4504. Esto significa que, con LOOCV, el Modelo 4 mejora marginalmente su desempeño, mientras que el Modelo 7 empeora.\\
+
+Las diferencias entre ambos métodos son pequeñas, pero informativas. El hecho de que el Modelo 4 mantenga un error estable e incluso algo menor bajo LOOCV sugiere que es más robusto y generaliza mejor a nuevas observaciones. En contraste, el Modelo 7 parece más sensible al esquema de validación: aunque su desempeño era casi idéntico al del Modelo 4 con validation set, en LOOCV su error aumenta, lo que indica mayor variabilidad y posible sobreajuste a la partición inicial de entrenamiento/validación.\\
+
+En el caso del Modelo 4, la complejidad proviene de la combinación de polinomios cúbicos en la edad con interacciones con todas las demás variables del modelo. Esta estrategia le permite ajustar la relación entre edad y salario de manera diferenciada según género, educación, formalidad u oficio. Al incorporar la heterogeneidad de forma más estructurada, el modelo logra mantener un desempeño estable incluso bajo un esquema exigente como el LOOCV, donde cada observación se deja por fuera en la estimación.\\
+
+Por su parte, el Modelo 7 introduce polinomios de quinto grado en la edad y en las horas trabajadas, lo que genera curvas más sensibles y con oscilaciones más marcadas, en especial en los extremos del soporte. Al no estar acompañada de tantas interacciones, esta flexibilidad resulta menos organizada y más vulnerable a la exclusión de observaciones. En consecuencia, el error de predicción aumenta con LOOCV, lo que sugiere que el Modelo 7 es más inestable frente a datos atípicos o poco frecuentes.\\
+
+En conclusión, el vínculo con la estadística de influencia es directo: en LOOCV, cada observación se deja por fuera una vez, y aquellas con alto leverage o con residuos grandes (PRESS residuals) afectan más el error total. En este sentido, es probable que el Modelo 7 sea más vulnerable a observaciones influyentes, lo que explica el aumento en su RMSE bajo LOOCV. El Modelo 4, en cambio, parece menos sensible a estas observaciones, lo que lo convierte en una especificación más estable frente a posibles outliers o casos de alto apalancamiento.
 
 \section{?}
 
