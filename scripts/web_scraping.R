@@ -1,7 +1,19 @@
-#### ============================================================
-### Punto 2 - Web Scrapping
+###########################################################################
+#                        PROBLEM SET 1
+#                            Equipo 3       
+#  Autores:   Maria Paula Basto - Lucas Daniel Carrillo Aguirre 
+#            Catalina Leal      -  Lucas Eduardo Vera Costa
+#                     Punto 2 - Web Scrapping                                 
+############################################################################
+
+rm(list = ls()) # Vacía environment
+
+
+# directorio de trabajo
 
 setwd(dirname(dirname(rstudioapi::getActiveDocumentContext()$path))) 
+
+# Paquetes -----------------------------------------------------------------
 
 if (!requireNamespace("pacman", quietly = TRUE)) install.packages("pacman")
 
@@ -25,7 +37,7 @@ pacman::p_load(
   scales
 )
 
-## 1) Parámetros
+## 1) Parámetros--------------------------------------------------------
 
 #Se carga la base original y se enumeran, del 1 al 10, las páginas subsiguientes para cada chunk
 
@@ -35,7 +47,7 @@ paginas <- tibble::tibble(
   url   = paste0(url_or, "geih_page_", chunk, ".html")
 )
 
-## 2) Se extraen las tablas de formato HTML
+## 2) Se extraen las tablas de formato HTML -----------------------
 
 funciontabla <- function(url_tabla, chunk){
   pg   <- read_html(url_tabla)
@@ -52,10 +64,10 @@ funciontabla <- function(url_tabla, chunk){
     dplyr::relocate(chunk, origen)
 }
 
-## 3) Aplicar a todas las páginas
+## 3) Aplicar a todas las páginas ----------------------------------
 data_final <- purrr::map2_dfr(paginas$url, paginas$chunk, funciontabla)
 
 
-# 4) Guardar
+# 4) Guardar --------------------------------------------------------
 
 write_csv(data_final, "stores/datos_extraidos.csv")

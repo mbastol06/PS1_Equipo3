@@ -1,24 +1,34 @@
+###########################################################################
+#                        PROBLEM SET 1
+#                            Equipo 3       
+#  Autores:   Maria Paula Basto - Lucas Daniel Carrillo Aguirre 
+#            Catalina Leal      -  Lucas Eduardo Vera Costa
+#                     3. Age-wage profil                                   
+############################################################################
 
-#define el directorio una carpeta arriba del código, esto es exactamente el repositorio
+rm(list = ls()) # Vacía environment
+
+# Paquetes -----------------------------------------------------------------
+require("pacman")
+pacman::p_load(rvest,tidyverse,stargazer)
+set.seed(10101)
+
+
+
+# define el directorio una carpeta arriba del código, esto es exactamente el repositorio
 setwd(dirname(dirname(rstudioapi::getActiveDocumentContext()$path))) 
 
 
-# cargando los paquetes
-require("pacman")
-pacman::p_load(rvest,tidyverse,stargazer)
-
-set.seed(10101)
-
-################################################################################
-################## Respondiendo la cuestión 4 ##################################
-################################################################################
-
+# Cargue de los datos -------------------------
 data = read.csv("stores/base_final.csv")
 
+# VARIABLES DE LOS MODELOS -----------------------
 # Renaming some variable and filtering for above 18
 
 data <- data %>% filter(age >= 18) %>% mutate(female = 1 - sex) %>% mutate(age_sqr = age^2) 
 
+
+# Estimación de los modelos -------------------------------------------------------
 # Now creating data_reg for the regresions we will consider only the occupied ones
 
 data_reg <- data
@@ -38,9 +48,9 @@ all_formal_h = lm(log(y_total_m_ha) ~ female, data = data_reg)
 stargazer(nominal_salary,princ_occup,all_occup,all_formal,all_formal_h, type = "text")
 stargazer(nominal_salary,princ_occup,all_occup,all_formal,all_formal_h, type = "latex",
           out = "views/simple_female_reg.tex")
-#-------------------------------------------------------------------------------
-## Estimando usando Frisch Waugh-Lowell
-#-------------------------------------------------------------------------------
+
+## Estimando usando Frisch Waugh-Lowell ----------------------------
+
 data_FWL = data %>% select(y_ing_lab_m, female, age, age_sqr) %>% drop_na()
 
 reg_age = lm(data = data_FWL, log(y_ing_lab_m) ~ female + age + age_sqr)
@@ -53,7 +63,7 @@ reg_age_FWL <- lm(resid_ing ~ resid_fem, data = data_FWL)
 
 stargazer(reg_age, reg_age_FWL, type = "text")
 
-# Bootstrap with B = 5000
+# Bootstrap with B = 5000 ---------------------------------------------------
 
 B = 5000
 
@@ -98,18 +108,22 @@ FWL <- function(variables,dependent,data,var_interes){
 write.csv(sd, "stores/sd_FWL.csv")
 stargazer(reg_age, reg_age_FWL, type = "latex", out = "views/reg_FWL.tex")
 ggsave(sd_hist, dpi = 300,filename = "views/sd_fwl_hist.png")
-#-------------------------------------------------------------------------------
-# Haciendo varias regresiones con los controles
-#-------------------------------------------------------------------------------
+
+#  regresiones con los controles -----------------------------------------------
+
 reg_fem <- lm(data = data_reg, log(y_total_m_ha) ~ female)
 
 reg_fem_age <- lm(data = data_reg, log(y_total_m_ha) ~ female + age + age_sqr)
 
-reg_fem_age_educ <- lm(data = data_reg, log(y_total_m_ha) ~ female + age + age_sqr  + as.factor(max_educ_level) + as.factor(college))
+reg_fem_age_educ <- lm(data = data_reg, log(y_total_m_ha) ~ female + age +
+                         age_sqr  + as.factor(max_educ_level) + as.factor(college))
 
-reg_fem_age_educ_hwork <- lm(data = data_reg, log(y_total_m_ha) ~ female + age + age_sqr  + as.factor(max_educ_level) +as.factor(college)+ total_hours_worked)
+reg_fem_age_educ_hwork <- lm(data = data_reg, log(y_total_m_ha) ~ female + age +
+                               age_sqr  + as.factor(max_educ_level) +as.factor(college)+ 
+                               total_hours_worked)
 
-reg_fem_age_educ_cwork <-lm(data = data_reg, log(y_total_m_ha) ~ female + age + age_sqr  + as.factor(max_educ_level) + +as.factor(college) +total_hours_worked 
+reg_fem_age_educ_cwork <-lm(data = data_reg, log(y_total_m_ha) ~ female + age + age_sqr + 
+                              as.factor(max_educ_level) + +as.factor(college) +total_hours_worked 
                               + formal + as.factor(size_firm) + as.factor(oficio)) 
 reg_list <- list(
   reg_fem,reg_fem_age,reg_fem_age_educ, reg_fem_age_educ_hwork,reg_fem_age_educ_cwork)
@@ -117,8 +131,8 @@ reg_list <- list(
 stargazer(reg_list, type = "latex", omit = c("size_firm","oficio"), out = "views/reg_controls.tex")
 
 
-#-------------------------------------------------------------------------------
-# Calculating the peak age for the models through bootstrat
+
+# Calculating the peak age for the models through bootstrat ----------------------------
 data_chart <- data.frame(coef1 = 0,coef2 = 0, peak_age = 0,cf_0.05 = 0, cf_0.95 = 0)
 
 for (reg in reg_list[-1]){
@@ -174,7 +188,7 @@ age_quad_data  =age_quad_data[-1,]
 age_quad_chart = ggplot(data = age_quad_data, aes(x = age, y = log_wage,colour = model)) + 
   geom_line()
 
-# saving the outputs
+# saving the outputs ------------------------------------------------------------------------
 
 stargazer(reg_list,omit = c("oficio","sizeFirm"), type = "latex", out = "stores/reg_pay_fem.tex")
 
