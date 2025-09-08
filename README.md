@@ -6,7 +6,7 @@ En este repositorio se encuentra el desarrollo del **Problem set1** de la materi
 
 
 
-#### Autores: 
+#### Autores:
 
 * Maria Paula Basto Lozano
 * Lucas Daniel Carrillo Aguirre
@@ -17,31 +17,30 @@ En este repositorio se encuentra el desarrollo del **Problem set1** de la materi
 
 
 
-#### El repositorio 
+#### El repositorio
 
 El repositorio se compone de cinco carpetas:
 
 1. **document**:En donde se encuentra documento final en PDF y el editor tipo TXT. En el archivo Documento.pdf es donde se desarrolla completamente el taller, en donde sen la introducción se describe los problemas analizados, la base datos utilizada y su limpieza de los datos, el perfilamiento del salario según la edad, la modelación de la brecha de género de los ingresos y finalmente con los modelos mencionados se realizan evaluaciones de pronóstico y se concluye.
-   
 2. **scripts**: Esta carpeta incluye todos los scripts utilizados para el desarrollo del taller, cada uno de ellos está comentado y replicable. Los scripts son los siguientes:
 
-&nbsp;	web\_scraping.R                --> en donde se desarrolla el web scraping para obtener los datos de la GEIH
+ 	   web\_scraping.R                --> en donde se desarrolla el web scraping para obtener los datos de la GEIH
 
-&nbsp;	limpieza\_base\_datos.R         --> en donde se realizan las imputaciones, y eliminación de observaciones según    
+ 	   limpieza\_base\_datos.R         --> en donde se realizan las imputaciones, y eliminación de observaciones según
 
-&nbsp;                                       corresponda
+                                        corresponda
 
-&nbsp;	2\_estadisticas\_descriptivas.R --> en donde se analizan los datos y se codifican las estadísticas descriptivas
+ 	   2\_estadisticas\_descriptivas.R --> en donde se analizan los datos y se codifican las estadísticas descriptivas
 
-&nbsp;	3\_age\_wage\_profile.R          --> en donde se analiza el modelo de perfilamiento de la edad según salario
+ 	   3\_age\_wage\_profile.R          --> en donde se analiza el modelo de perfilamiento de la edad según salario
 
-&nbsp;       4\_gendergap.R                 --> en donde se desarrolla el punto cuatro relacionado con la brecha de género
+           4\_gendergap.R                 --> en donde se desarrolla el punto cuatro relacionado con la brecha de género
 
-&nbsp;                                         en el ingreso
+                                          en el ingreso
 
-&nbsp;	5\_predicting\_wages            --> en donde se analiza el rendimiento de los modelos de perfilamiento del 					  salario según la edad, los desarrollados en la brecha de género y otros más 					  complejos que se propusieron
+ 	   5\_predicting\_wages            --> en donde se analiza el rendimiento de los modelos de perfilamiento del 					                             salario según la edad, los desarrollados en la brecha de género y otros más 					                     complejos que se propusieron
 
-&nbsp;	Es importante mencionar que los spripts son replicable, se recomienda cambiar el directorio de trabajo
+ 	Es importante mencionar que los spripts son replicable, se recomienda cambiar el directorio de trabajo
 
 
 
@@ -53,5 +52,5 @@ El repositorio se compone de cinco carpetas:
 
 
 
-5\. **views:** en donde se encuentran los outputs adjuntos en el documento "Documento.pdf", como tablas de regresión, gráficos entre otros. 
+5\. **views:** en donde se encuentran los outputs adjuntos en el documento "Documento.pdf", como tablas de regresión, gráficos entre otros.
 

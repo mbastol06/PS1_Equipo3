@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.2.19)  7 SEP 2025 20:59
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.2.19)  7 SEP 2025 21:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -785,13 +785,13 @@ Package hyperref Info: Link coloring ON on input line 87.
 \@outlinefile=\write4
 \openout4 = `Document.out'.
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 124
+LaTeX Font Info:    Trying to load font information for U+msa on input line 104
 .
 
 (C:\Users\mpaul\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 124
+LaTeX Font Info:    Trying to load font information for U+msb on input line 104
 .
 
 (C:\Users\mpaul\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
@@ -800,12 +800,12 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 [1
 
 {C:/Users/mpaul/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] [2]
-<../views/1_histo_sal.png, id=39, 289.08pt x 252.945pt>
+<../views/1_histo_sal.png, id=48, 289.08pt x 252.945pt>
 File: ../views/1_histo_sal.png Graphic file (type png)
 <use ../views/1_histo_sal.png>
 Package pdftex.def Info: ../views/1_histo_sal.png  used on input line 184.
 (pdftex.def)             Requested size: 221.14421pt x 193.49843pt.
-<../views/1_histo_sal_hora.png, id=41, 289.08pt x 252.945pt>
+<../views/1_histo_sal_hora.png, id=50, 289.08pt x 252.945pt>
 File: ../views/1_histo_sal_hora.png Graphic file (type png)
 <use ../views/1_histo_sal_hora.png>
 Package pdftex.def Info: ../views/1_histo_sal_hora.png  used on input line 191.
@@ -813,30 +813,30 @@ Package pdftex.def Info: ../views/1_histo_sal_hora.png  used on input line 191.
 (pdftex.def)             Requested size: 221.14421pt x 193.49843pt.
 
 [3 <../views/1_histo_sal.png> <../views/1_histo_sal_hora.png>] [4] [5]
-<../views/3_fig_pred_ic.pdf, id=71, 722.7pt x 433.62pt>
+<../views/3_fig_pred_ic.pdf, id=80, 722.7pt x 433.62pt>
 File: ../views/3_fig_pred_ic.pdf Graphic file (type pdf)
 <use ../views/3_fig_pred_ic.pdf>
 Package pdftex.def Info: ../views/3_fig_pred_ic.pdf  used on input line 313.
 (pdftex.def)             Requested size: 361.3491pt x 216.80946pt.
  [6 <../views/3_fig_pred_ic.pdf>]
-<../views/3_fig_boot.pdf, id=87, 722.7pt x 361.35pt>
+<../views/3_fig_boot.pdf, id=96, 722.7pt x 361.35pt>
 File: ../views/3_fig_boot.pdf Graphic file (type pdf)
 <use ../views/3_fig_boot.pdf>
 Package pdftex.def Info: ../views/3_fig_boot.pdf  used on input line 337.
 (pdftex.def)             Requested size: 433.62334pt x 216.81168pt.
  [7] [8 <../views/3_fig_boot.pdf>] [9]
-<../views/sd_fwl_hist.png, id=119, 334.1283pt x 148.8762pt>
+<../views/sd_fwl_hist.png, id=128, 334.1283pt x 148.8762pt>
 File: ../views/sd_fwl_hist.png Graphic file (type png)
 <use ../views/sd_fwl_hist.png>
 Package pdftex.def Info: ../views/sd_fwl_hist.png  used on input line 485.
 (pdftex.def)             Requested size: 250.5956pt x 111.65688pt.
  [10] [11 <../views/sd_fwl_hist.png>] [12]
-<../views/age_peak_bar.png, id=139, 334.1283pt x 148.8762pt>
+<../views/age_peak_bar.png, id=148, 334.1283pt x 148.8762pt>
 File: ../views/age_peak_bar.png Graphic file (type png)
 <use ../views/age_peak_bar.png>
 Package pdftex.def Info: ../views/age_peak_bar.png  used on input line 594.
 (pdftex.def)             Requested size: 250.5956pt x 111.65688pt.
-<../views/age_whiskey_point.png, id=141, 334.1283pt x 148.8762pt>
+<../views/age_whiskey_point.png, id=150, 334.1283pt x 148.8762pt>
 File: ../views/age_whiskey_point.png Graphic file (type png)
 <use ../views/age_whiskey_point.png>
 Package pdftex.def Info: ../views/age_whiskey_point.png  used on input line 602
@@ -872,7 +872,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 792--793
 
  []
 
-<../views/hist_error_p5.png, id=162, 409.53pt x 216.81pt>
+<../views/hist_error_p5.png, id=171, 409.53pt x 216.81pt>
 File: ../views/hist_error_p5.png Graphic file (type png)
 <use ../views/hist_error_p5.png>
 Package pdftex.def Info: ../views/hist_error_p5.png  used on input line 798.
@@ -934,20 +934,14 @@ L3 programming layer <2024-01-04>
 
 LaTeX Warning: There were multiply-defined labels.
 
-
-Package rerunfilecheck Warning: File `Document.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `Document.out':
-(rerunfilecheck)             Before: 2B022656E61BE12AB2DF8CDAA873F012;646
-(rerunfilecheck)             After:  05D8EF72EBB923042C453E09C3F06BDD;782.
+Package rerunfilecheck Info: File `Document.out' has not changed.
+(rerunfilecheck)             Checksum: 05D8EF72EBB923042C453E09C3F06BDD;782.
  ) 
 Here is how much of TeX's memory you used:
- 16175 strings out of 474486
- 262423 string characters out of 5743755
+ 16177 strings out of 474486
+ 262445 string characters out of 5743755
  1960542 words of memory out of 5000000
- 38136 multiletter control sequences out of 15000+600000
+ 38138 multiletter control sequences out of 15000+600000
  568853 words of font info for 77 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,13n,79p,1131b,666s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -970,9 +964,9 @@ ublic/amsfonts/cm/cmsy6.pfb><C:/Users/mpaul/AppData/Local/Programs/MiKTeX/fonts
 eX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/mpaul/AppData/Local/Prog
 rams/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/mpaul/AppData/L
 ocal/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti8.pfb>
-Output written on Document.pdf (21 pages, 445020 bytes).
+Output written on Document.pdf (21 pages, 445930 bytes).
 PDF statistics:
- 283 PDF objects out of 1000 (max. 8388607)
+ 290 PDF objects out of 1000 (max. 8388607)
  55 named destinations out of 1000 (max. 500000)
- 81 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 97 words of extra memory for PDF output out of 10000 (max. 10000000)
 
