@@ -2,11 +2,11 @@
 
 
 
-En este repositorio se encuentra el desarrollo del Problem set1 de la materia de Big Data y Machine Learning  de la Universidad de los Andes para el periodo 2025.II.
+En este repositorio se encuentra el desarrollo del **Problem set1** de la materia de Big Data y Machine Learning  de la Universidad de los Andes para el periodo 2025.II.
 
 
 
-Autores: 
+#### Autores: 
 
 * Maria Paula Basto Lozano
 * Lucas Daniel Carrillo Aguirre
@@ -14,6 +14,10 @@ Autores:
 * Lucas Eduardo Veras Costa
 
 
+
+
+
+#### El repositorio 
 
 El repositorio se compone de cinco carpetas:
 
@@ -49,5 +53,5 @@ El repositorio se compone de cinco carpetas:
 
 
 
-5\. **views:**en donde se encuentran los outputs adjuntos en el documento "Documento.pdf", como tablas de regresión, gráficos entre otros. 
+5\. **views:** en donde se encuentran los outputs adjuntos en el documento "Documento.pdf", como tablas de regresión, gráficos entre otros. 
 
