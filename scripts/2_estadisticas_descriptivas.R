@@ -206,7 +206,7 @@ p2 <- ggplot(combinado_grafica, aes(x = ln_salario)) +
 p2
 
 ggsave(
-  p1,
+  p2,
   filename = "views/1_histo_sal_hora.png",
   dpi = 300,
   width = 4,

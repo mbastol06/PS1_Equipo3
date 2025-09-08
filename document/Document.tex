@@ -87,14 +87,13 @@
 \begin{document}
 
 
-
 \maketitle
 
 \thispagestyle{empty} % Leaves first page without page number
 
 %
 
-
+El link del repositorio es: \url{https://github.com/mbastol06/PS1_Equipo3}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %    DOCUMENT    		          %
@@ -105,7 +104,12 @@
 
 \section{Introducción} \label{sec:intro}
 
-Poner acá la introducción
+En la última década, el uso de métodos de ciencia de datos para apoyar la formulación de política pública y la administración tributaria se ha expandido con rapidez, en particular para tareas de detección de riesgos, priorización de auditorías y focalización de programas \citep{oecd_tax_analytics, worldbank_data_gov}. La disponibilidad de encuestas de hogares de alta calidad y la posibilidad de integrarlas con herramientas reproducibles de extracción y depuración de información abren una ventana para estudiar patrones salariales y su heterogeneidad con mayor detalle. En este trabajo realizamos un ejercicio aplicado de modelación del salario y evaluación de su capacidad predictiva en población urbana colombiana, con el objetivo de ilustrar cómo estas técnicas pueden informar diagnósticos sobre el mercado laboral y, eventualmente, apoyar estrategias de fiscalización y cumplimiento.
+
+El insumo empírico proviene de la Gran Encuesta Integrada de Hogares (GEIH, 2018). Los microdatos se obtuvieron mediante \textit{web scraping} reproducible desde un repositorio público con diez páginas HTML, y se consolidaron en una única base. La depuración siguió criterios estándar: se restringió la muestra a ocupados mayores de 18 años, se excluyó a trabajadores por cuenta propia, y se eliminaron registros con salario nulo. Para el tratamiento de faltantes, las variables categóricas se imputaron con la moda por estrato socioeconómico (y formalidad, cuando aplica), y las variables continuas con el método de \textit{k}-vecinos más cercanos (KNN). Adicionalmente, se \textit{winsorizó} al percentil 97.5 las variables de ingreso para mitigar la influencia de valores extremos. Con la base final (9{,}892 observaciones), se presentan estadísticas descriptivas y la distribución del salario por hora y su logaritmo, evidenciando asimetría a la derecha y diferencias entre media y mediana consistentes con la literatura salarial \citep{lemieux_earnings, dustmann_wage_dist}.
+
+El análisis econométrico se organiza en tres frentes. Primero, estimamos el perfil edad–salario mediante especificaciones cuadráticas, identificando un patrón cóncavo y calculando la edad pico. Segundo, estudiamos la brecha género–salario tanto en forma incondicional como condicional, incorporando controles de capital humano, intensidad laboral y características del empleo; verificamos la equivalencia con el teorema de Frisch–Waugh–Lovell y obtenemos errores estándar por \textit{bootstrap} \citep{angrist_pischke}. Tercero, evaluamos el desempeño predictivo comparando modelos de distinta complejidad (polinomios e interacciones), usando validación simple y \textit{leave-one-out cross-validation} (LOOCV); además, exploramos la distribución de los errores para identificar observaciones extremas que podrían informar ejercicios de gestión de riesgo. En conjunto, los resultados muestran que especificaciones con controles bien escogidos y flexibilidad moderada logran un mejor compromiso sesgo–varianza, y que la microheterogeneidad por ocupación, tamaño de firma y formalidad es clave para explicar diferencias salariales \citep{card_krueger, oecd_wage_inequality}.
+
 
 \section{Datos} \label{sec:intro}
 
@@ -151,8 +155,9 @@ La base de datos final resultó en un total de 9,892 observaciones con 19 variab
 
 En la muestra, el salario promedio de los individuos es de \$1,610,063 pesos colombianos, o, lo que es lo mismo para el momento de la realización de la encuesta, 2.2 veces el salario mínimo legal vigente (\$737,717). Por supuesto, este salario promedio contempla los auxilios de transporte y otras adiciones en los ingresos de los individuos. Esta estadística se corresponde con un salario por hora de \$8,121 pesos en promedio y un promedio de 48.3 horas trabajadas por semana, lo que implicó una gran cercanía con el número de horas legales de trabajo para 2017, que fue de 48.\\
 
-Además, la muestra está balanceada en proporciones iguales entre hombres y mujeres, con un promedio de edad de 36.2 años, con un mínimo de 18 y un máximo de 86. Los trabajadores trabajan en microempresas un 23\% de las ocasiones, mientras que el 77\% de ellos tienen empleos formales. Esto \\
+Además, la muestra está balanceada en proporciones iguales entre hombres y mujeres, con un promedio de edad de 36.2 años, con un mínimo de 18 y un máximo de 86. Los trabajadores trabajan en microempresas un 23\% de las ocasiones, mientras que el 77\% de ellos tienen empleos formales. Esto contrasta con la información proveída por el DANE a finales de 2017 que indicaba que la proporción de ocupados informales en las 13 ciudades y áreas metropolitanas fue 47,0\% para el trimestre móvil diciembre 2017 - febrero 2018. Es decir, la muestra analizada en Bogotá para ese momento se ocupó ostensiblemente en mayor proporción de manera formal que el promedio nacional.\\
 
+Por último, el máximo nivel educativo alcanzado por los individuos de la muestra, en promedio, fue la educación terciaria, comprendiendo el 45\% del total. El tipo de empleo más común, dando cuenta del 88.5\% del total, fue el empleo en empresa particular, además de que más de la mitad de los encuestados afirmaron trabajar en una empresa de más de 50 empleados; y el oficio más usual fue el de apoyo administrativo y logístico, con un 8.2\% de la muestra. Estos datos dan cuenta de una clara tendencia entre una contratación de tipo privado y un segmento poblacional con estudios superiores. Así como con el promedio de ingresos y el tipo de empleo, esto permite observar unas mejores condiciones laborales que el promedio nacional, explicado principalmente por una mayor cantidad de oportunidades académicas y profesionales.\\
 
 
 \begin{table}[!htbp]
@@ -202,7 +207,10 @@ Tipo de empleo    & 1  & Empleado de empresa particular  & 8,757 & 88.53\% \\
 
 \end{table}
 
-Histogramas
+En la Figura \ref{fig:hist-doble} se presentan las distribuciones del salario por hora (panel izquierdo) y su logaritmo natural (panel derecho) en la muestra analizada. Estos histogramas dan cuenta de dos condiciones clave: por un lado, los salarios se concentran en la parte más baja de la distribución, entre los \$3,000 y los \$9,000 pesos por hora.\\
+
+Por otra parte, que, a pesar de que la distribución del logaritmo es más o menos simétrica, la diferencia entre la media y la mediana da cuenta de que los salarios más altos siguen empujando las estadísticas hacia arriba. A pesar de que, por cuenta del corte de ingresos en el percentil 97.5 las concentraciones en los ingresos más altos no son tan altas como podrían llegar a serlo en una muestra original, la muestra sigue presentando una cola al final de casi 500 individuos (de un total de casi diez mil) que tienen ingresos de más de \$40,000 pesos por hora. Este hecho es fundamental para entender cómo la muestra podría dar cuenta de una importante desigualdad salarial en una ciudad que, de por sí, contiene brechas socioeconómicas pronunciadas.
+
 
 \begin{figure}[H]
     \centering
@@ -633,7 +641,9 @@ La Figura \ref{fig:age_peak_bar} muestra los resultados de la edad pico. En gene
  \flushleft
 \end{figure}
 
-La Figura \ref{fig:age_whiskey_bar} muestra los resultados de los intervalos de confianza. Como era de esperar, la inclusión de más controles amplía dichos intervalos; sin embargo, el incremento no supera los 2 años con respecto al valor central de la estimación.
+La Figura \ref{fig:age_whiskey_bar} muestra los resultados de los intervalos de confianza. Como era de esperar, la inclusión de más controles amplía dichos intervalos; sin embargo, el incremento no supera los 2 años con respecto al valor central de la estimación.\\
+
+En nuestras estimaciones encontramos que el coeficiente de mujer es negativo y significativo en todas las especificaciones, lo que confirma la existencia de una brecha salarial en contra de las mujeres. En el modelo más simple, esta brecha es incondicional y refleja la diferencia promedio de ingresos entre géneros. Al incorporar controles de edad, educación y características laborales, la magnitud de la brecha disminuye, lo que indica que parte de la diferencia se explica por la distinta composición de hombres y mujeres en términos de capital humano y tipo de empleo. Sin embargo, el hecho de que la brecha permanezca significativa aun en las especificaciones más completas señala la existencia de un componente no explicado. Esto puede interpretarse como evidencia de discriminación de género en el mercado laboral, aunque también podría reflejar variables no observadas o problemas de selección. En cualquier caso, los resultados sugieren que la brecha salarial no se reduce únicamente a diferencias observables y requiere una interpretación cuidadosa.
 
 \section{Prediciendo Salarios}
 
