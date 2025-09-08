@@ -1,6 +1,14 @@
-#### Taller 1 - Big Data and Machine Learning
+###########################################################################
+#                        PROBLEM SET 1
+#                            Equipo 3       
+#  Autores:   Maria Paula Basto - Lucas Daniel Carrillo Aguirre 
+#            Catalina Leal      -  Lucas Eduardo Vera Costa
+#                    Limpieza de Base de Datos                                 
+############################################################################
 
-## Limpieza de Base de Datos
+rm(list = ls()) # Vacía environment
+
+# Paquetes -----------------------------------------------------------------
 
 setwd(dirname(dirname(rstudioapi::getActiveDocumentContext()$path)))
 
@@ -37,7 +45,7 @@ ruta_csv <- "stores/datos_extraidos.csv"
 
 combinado <- read_csv(ruta_csv)
 
-## 1) Se filtran los individuos por edad mayor a 18 años y empleados (se excluyen los empleados por cuenta propia)
+## 1) Se filtran los individuos por edad mayor a 18 años y empleados (se excluyen los empleados por cuenta propia) -----------
 
 combinado <- combinado %>%
   filter(age >= 18)
@@ -51,7 +59,7 @@ combinado <- combinado %>%
 combinado <- combinado %>%
   filter(cuenta_propia != 1)
 
-## 2) Se filtran las variables ue no sirvan para el análisis, como missing values en todas las observaciones o valores iguales
+## 2) Se filtran las variables ue no sirvan para el análisis, como missing values en todas las observaciones o valores iguales ----------
 
 combinado <- combinado %>%
   select(where(~ !all(is.na(.))))
@@ -62,7 +70,7 @@ combinado <- combinado %>%
 combinado <- combinado %>%
   select(where(~ mean(is.na(.)) <= 0.6))
 
-## 3) Se identifican las variables categóricas que están definidas como integers
+## 3) Se identifican las variables categóricas que están definidas como integers ----------------------------------
 
 cols_con_na <- names(combinado)[colSums(is.na(combinado)) > 0]
 sapply(combinado[ , cols_con_na, drop = FALSE], class)
@@ -75,7 +83,7 @@ variables_categoricas <- c(
 
 variables_categoricas <- intersect(variables_categoricas, names(combinado))
 
-## 4) Se reemplazan los NAs de las variables categóricas por la moda de los individuos que comparten estrato
+## 4) Se reemplazan los NAs de las variables categóricas por la moda de los individuos que comparten estrato --------------------------
 
 moda <- function(x) {
   x <- x[!is.na(x)]
@@ -96,7 +104,7 @@ colSums(is.na(combinado[ , variables_categoricas]))
 combinado <- combinado %>%
   mutate(across(where(is.integer), as.factor))
 
-## 5) Se reemplazan los NAs de las variables numéricas con método KNN usando la función kNN específicamente del paquete VIM
+## 5) Se reemplazan los NAs de las variables numéricas con método KNN usando la función kNN específicamente del paquete VIM ------------------
 
 variables_numericas <- c("p6510s1", "p6545s1", "p6580s1", "p6585s1a1", 
                          "p6585s2a1", "p6585s3a1", "p7070", "isa", 
@@ -109,7 +117,7 @@ combinado <- VIM::kNN(
   imp_var = FALSE
 )
 
-## 6) Se eliminan las observaciones que estén por encima del percentil 97.5 para que no exista una distribución asimétrica
+## 6) Se eliminan las observaciones que estén por encima del percentil 97.5 para que no exista una distribución asimétrica ------------
 
 variables_ingresos <- names(combinado)[
   grepl("(^y_|ingtot|p6500)", names(combinado), ignore.case = TRUE)
@@ -120,7 +128,7 @@ for (v in variables_ingresos) {
   combinado[[v]] <- ifelse(combinado[[v]] > p975, p975, combinado[[v]])
 }
 
-## 7) Se hacen modificaciones finales y se eliminan variables innecesarias 
+## 7) Se hacen modificaciones finales y se eliminan variables innecesarias  -------------------------------
 
 combinado$female <- ifelse(combinado$sex == 0, 1, 0)
 
@@ -151,6 +159,6 @@ combinado <- combinado %>%
   )
 
 
-## 7) Se guarda la tabla para que se pueda cargar más adelante
+## 7) Se guarda la tabla para que se pueda cargar más adelante -----------------------
 
 write_csv(combinado, "stores/base_final.csv")

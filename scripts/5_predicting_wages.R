@@ -1,5 +1,14 @@
-#PREGUNTA 5#
-rm(list = ls())
+###########################################################################
+#                        PROBLEM SET 1
+#                            Equipo 3       
+#  Autores:   Maria Paula Basto - Lucas Daniel Carrillo Aguirre 
+#            Catalina Leal      -  Lucas Eduardo Vera Costa
+#                     3. Age-wage profil                                   
+############################################################################
+
+rm(list = ls()) # Vacía environment
+
+# Paquetes -----------------------------------------------------------------
 if (!requireNamespace("pacman", quietly = TRUE)) install.packages("pacman")
 
 pacman::p_load(
@@ -29,10 +38,11 @@ pacman::p_load(
   forcats
 )
 
+# directorio de trabajo ---------------------------------------------------------
   db <- read_csv("C:/Users/catal/Documents/PEG-1/Big Data/Taller 1/PS1_Equipo3/stores/base_final.csv")
 
 
-#Ajuste de variables relevantes
+#Ajuste de variables relevantes --------------------------------------------------
   
   #pasar categóricas a factor
   categoricas <- c("oficio", "size_firm", "max_educ_level")
@@ -62,7 +72,7 @@ inTrain <- createDataPartition(
 training <- db |> filter(row_number() %in% inTrain)
 testing  <- db |> filter(!(row_number() %in% inTrain))
 
-#Definimos los 8 modelos y sacamos el RMSE
+#Definimos los 8 modelos y sacamos el RMSE ------------------------------------------
 
 #1. modelo del punto 3
 form_1   <- ln_w ~ age  + I(age^2)
@@ -190,7 +200,7 @@ scores<- data.frame( Modelo_1= c(score1a),
 
 head(scores)
 
-#Observaciones inusuales en el mejor modelo en terminos de RMSE
+#Observaciones inusuales en el mejor modelo en terminos de RMSE ----------------------
 best_fit <- modelo7a       
 dtest    <- testing  
 
@@ -236,7 +246,7 @@ influential <- testing_h %>%
   dplyr::select(directorio, age, total_hours_worked, max_educ_level, female,  micro_empresa, formal, size_firm,
                 college)
 
-##Descriptivas para obs. en las colas
+##Descriptivas para obs. en las colas -------------------------------------------
 
 des_vars <- c("age", "total_hours_worked", "max_educ_level", "female",  "micro_empresa",
               "formal", "size_firm", "college")
@@ -265,7 +275,7 @@ testing_h_tails |>
   modify_caption("Descriptivas — Observaciones en las colas")
 
  
-#2 mejores con LOOCV (modelos 4 y 7)
+#2 mejores con LOOCV (modelos 4 y 7) --------------------------------------------
 #Como estamos en OLS se tiene que MSE_LOOCV es la media de (residuales_i/1-h_i)^2
 
 full_model_1 <- lm(form_4,
