@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.2.19)  8 SEP 2025 19:16
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.2.19)  8 SEP 2025 19:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1116,15 +1116,6 @@ LaTeX Info: Redefining \% on input line 48.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
  (main.nav)
-Overfull \hbox (180.44362pt too wide) in paragraph at lines 48--48
- [][]  \OT1/cmss/m/n/5 ([])  
- []
-
-
-Overfull \hbox (180.44362pt too wide) in paragraph at lines 51--51
- [][]  \OT1/cmss/m/n/5 ([])  
- []
-
 <C:/Users/mpaul/OneDrive - Universidad de los Andes/repositorios/PS1_Equipo3/vi
 ews/logo.png, id=26, 1505.625pt x 582.175pt>
 File: C:/Users/mpaul/OneDrive - Universidad de los Andes/repositorios/PS1_Equip
@@ -1134,23 +1125,15 @@ o3/views/logo.png Graphic file (type png)
 Package pdftex.def Info: C:/Users/mpaul/OneDrive - Universidad de los Andes/rep
 ositorios/PS1_Equipo3/views/logo.png  used on input line 51.
 (pdftex.def)             Requested size: 71.13188pt x 27.50258pt.
-
-Overfull \hbox (180.44362pt too wide) has occurred while \output is active
- [][]  \OT1/cmss/m/n/5 ([])  
- []
-
-[1
+ [1
 
 {C:/Users/mpaul/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map} <C:/Users/mpa
 ul/OneDrive - Universidad de los Andes/repositorios/PS1_Equipo3/views/logo.png>
 ]
-Overfull \hbox (180.44362pt too wide) in paragraph at lines 96--96
- [][]  \OT1/cmss/m/n/5 ([])  
- []
-
 LaTeX Font Info:    Font shape `OT1/cmss/b/n' in size <10> not available
 (Font)              Font shape `OT1/cmss/bx/n' tried instead on input line 96.
 LaTeX Font Info:    Trying to load font information for U+msa on input line 96.
+
 
 (C:\Users\mpaul\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
@@ -1168,30 +1151,11 @@ ut line 96.
 erncmss.fd
 File: ot1mathkerncmss.fd 2020/01/31 Fontinst v1.933 font definitions for OT1/ma
 thkerncmss.
-)
-Overfull \hbox (180.44362pt too wide) has occurred while \output is active
- [][]  \OT1/cmss/m/n/5 ([])  
- []
+) [2
 
-[2
+] [3
 
 ]
-Overfull \hbox (180.44362pt too wide) in paragraph at lines 138--138
- [][]  \OT1/cmss/m/n/5 ([])  
- []
-
-
-Overfull \hbox (180.44362pt too wide) has occurred while \output is active
- [][]  \OT1/cmss/m/n/5 ([])  
- []
-
-[3
-
-]
-Overfull \hbox (180.44362pt too wide) in paragraph at lines 183--183
- [][]  \OT1/cmss/m/n/5 ([])  
- []
-
 <C:/Users/mpaul/OneDrive - Universidad de los Andes/repositorios/PS1_Equipo3/vi
 ews/3_fig_pred_ic.pdf, id=130, 722.7pt x 433.62pt>
 File: C:/Users/mpaul/OneDrive - Universidad de los Andes/repositorios/PS1_Equip
@@ -1199,7 +1163,7 @@ o3/views/3_fig_pred_ic.pdf Graphic file (type pdf)
 <use C:/Users/mpaul/OneDrive - Universidad de los Andes/repositorios/PS1_Equipo
 3/views/3_fig_pred_ic.pdf>
 Package pdftex.def Info: C:/Users/mpaul/OneDrive - Universidad de los Andes/rep
-ositorios/PS1_Equipo3/views/3_fig_pred_ic.pdf  used on input line 183.
+ositorios/PS1_Equipo3/views/3_fig_pred_ic.pdf  used on input line 181.
 (pdftex.def)             Requested size: 172.09766pt x 103.2571pt.
 <C:/Users/mpaul/OneDrive - Universidad de los Andes/repositorios/PS1_Equipo3/vi
 ews/3_fig_boot.pdf, id=131, 722.7pt x 361.35pt>
@@ -1208,14 +1172,9 @@ o3/views/3_fig_boot.pdf Graphic file (type pdf)
 <use C:/Users/mpaul/OneDrive - Universidad de los Andes/repositorios/PS1_Equipo
 3/views/3_fig_boot.pdf>
 Package pdftex.def Info: C:/Users/mpaul/OneDrive - Universidad de los Andes/rep
-ositorios/PS1_Equipo3/views/3_fig_boot.pdf  used on input line 183.
+ositorios/PS1_Equipo3/views/3_fig_boot.pdf  used on input line 181.
 (pdftex.def)             Requested size: 172.09766pt x 86.04758pt.
-
-Overfull \hbox (180.44362pt too wide) has occurred while \output is active
- [][]  \OT1/cmss/m/n/5 ([])  
- []
-
-[4
+ [4
 
  <C:/Users/mpaul/OneDrive - Universidad de los Andes/repositorios/PS1_Equipo3/v
 iews/3_fig_pred_ic.pdf> <C:/Users/mpaul/OneDrive - Universidad de los Andes/rep
@@ -1241,10 +1200,10 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 26888 strings out of 474486
- 522300 string characters out of 5743755
- 1945542 words of memory out of 5000000
- 48608 multiletter control sequences out of 15000+600000
+ 26886 strings out of 474486
+ 522270 string characters out of 5743755
+ 1944542 words of memory out of 5000000
+ 48606 multiletter control sequences out of 15000+600000
  568648 words of font info for 68 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,16n,123p,381b,945s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1264,7 +1223,7 @@ s/cm/cmssi8.pfb><C:/Users/mpaul/AppData/Local/Programs/MiKTeX/fonts/type1/publi
 c/amsfonts/cm/cmsy10.pfb><C:/Users/mpaul/AppData/Local/Programs/MiKTeX/fonts/ty
 pe1/public/amsfonts/cm/cmsy5.pfb><C:/Users/mpaul/AppData/Local/Programs/MiKTeX/
 fonts/type1/public/amsfonts/cm/cmsy7.pfb>
-Output written on main.pdf (4 pages, 257878 bytes).
+Output written on main.pdf (4 pages, 257500 bytes).
 PDF statistics:
  236 PDF objects out of 1000 (max. 8388607)
  9 named destinations out of 1000 (max. 500000)
