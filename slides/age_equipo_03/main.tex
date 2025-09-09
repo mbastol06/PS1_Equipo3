@@ -5,6 +5,7 @@
 \usepackage{graphicx}
 \usepackage{tabularx} % Tablas ajustables
 \usepackage{booktabs}
+\usepackage{adjustbox}
 \usepackage{bm}
 \usepackage{mathtools}
 \usepackage{utopia} % Fuente Utopia
@@ -35,7 +36,7 @@
 \setbeamerfont{institute}{size=\small}
 
 % Título y portada
-\title{Datos}
+\title{Perfil salarial - edad}
 \date[\textcolor{white}{\today}]{\today}
 
 \begin{document}
@@ -43,24 +44,138 @@
 % Portada
 \frame{\titlepage}
 
-%----------------------
-\begin{frame}{Datos}
-\begin{itemize}
-\item \textbf{Variables usadas en la estimación}
-   \begin{itemize}
-   \item \textbf{Trimestrales}
-   \item FDI/GDP - Empieza en 2000-Q1
-   \item FFB/GDP - Empieza en 2000-Q1
-   \item (EXP + IMP)/GDP - Empieza en 2000-Q1
-   \item Geopolitical Risk - Empieza en 2000-Q1
-   \item GTA - flujo neto de medidas arancelarias afectadas - Empieza en 2010-Q1
-   \item GTA - flujo neto de medidas de FDI y CCM implementadas - Empieza en 2010-Q1 
-   \item GTA - flujo neto de medidas migratorias implementadas - Empieza en 2010-Q1 
-   \item GTA - flujo neto de medidas no arancelarias afectadas - Empieza en 2010-Q1
-   \end{itemize}
-\end{itemize}
+
+% PRIMERA DIAPOSITIVA: Modelo, regresiones e interpretación
+\begin{frame}{Modelo estimado e interpretación}
+\textbf{Modelo:}
+\begin{equation*}
+\ln{w_i} = \beta_1 + \beta_2 \text{Age}_i + \beta_3 \text{Age}_i^2 + u_i
+\end{equation*}
+
+\vspace{0.2cm}
+\textbf{Resultados de regresión:}
+\begin{table}[!htbp] 
+\centering 
+ 
+\scriptsize
+\begin{tabular}{@{\extracolsep{5pt}}lcc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & \multicolumn{2}{c}{\textit{Dependent variable:}} \\ 
+\cline{2-3} 
+\\[-1.8ex] & log(y\_salary\_m\_hu) & log(y\_total\_m\_ha) \\ 
+\\[-1.8ex] & (1) & (2)\\ 
+\hline \\[-1.8ex] 
+ age & 0.059$^{***}$ & 0.066$^{***}$ \\ 
+  & (0.003) & (0.003) \\ 
+  & & \\ 
+ I(age$\hat{\mkern6mu}$2) & $-$0.001$^{***}$ & $-$0.001$^{***}$ \\ 
+  & (0.00004) & (0.00004) \\ 
+  & & \\ 
+ Constant & 7.407$^{***}$ & 7.393$^{***}$ \\ 
+  & (0.064) & (0.065) \\ 
+  & & \\ 
+\hline \\[-1.8ex] 
+Observations & 9,892 & 9,892 \\ 
+R$^{2}$ & 0.040 & 0.045 \\ 
+Adjusted R$^{2}$ & 0.040 & 0.045 \\ 
+Residual Std. Error (df = 9889) & 0.671 & 0.677 \\ 
+F Statistic (df = 2; 9889) & 206.012$^{***}$ & 235.041$^{***}$ \\ 
+\hline 
+\hline \\[-1.8ex] 
+\textit{Note:}  & \multicolumn{2}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+\end{tabular} 
+\end{table} 
+
 \end{frame}
-%---------------------
+
+% SEGUNDA DIAPOSITIVA: Semielasticidades y ajustes
+\begin{frame}{Semielasticidad y medidas de ajuste}
+\textbf{Semielasticidad:}
+\[
+100 \times (\beta_2 + 2\beta_3 \times \text{edad})
+\]
+
+\begin{table}[ht]
+\scriptsize
+\centering
+\caption*{Semielasticidad del salario según la edad}
+\begin{tabular}{rrrr}
+\toprule
+Edad & Salario Real & Salario Nominal \\
+\midrule
+18 & 3.588 & 3.957 \\
+25 & 2.676 & 2.927 \\
+35 & 1.372 & 1.456 \\
+45 & 0.069 & -0.015 \\
+50 & -0.582 & -0.750 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\vspace{0.2cm}
+\textbf{Ajuste del modelo:}
+\begin{table}[ht]
+\scriptsize
+\centering
+\caption*{Indicadores de ajuste}
+\begin{tabular}{lrrrrrr}
+\toprule
+Modelo & RSE & RMSE & $R^2$ & F & AIC & BIC \\
+\midrule
+Salario real & 0.671 & 0.671 & 0.040 & 206.0 & 20186.1 & 20214.9 \\
+Salario nominal & 0.677 & 0.677 & 0.045 & 235.0 & 20360.2 & 20389.0 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\end{frame}
+
+% TERCERA DIAPOSITIVA: Edad pico
+\begin{frame}{Edad pico e intervalos de confianza}
+
+\begin{columns}
+    \column{0.5\textwidth}
+    \begin{itemize}
+  \item Edad pico:
+  \[
+  edad\_pico = -\frac{\beta_2}{2\beta_3}
+  \]
+  \end{itemize}
+
+
+\vspace{0.2cm}
+\column{0.5\textwidth}
+\begin{itemize}
+    \item Estimaciones:
+  \begin{itemize}
+    \item Salario real: 45.53 años [43.74, 46.21]
+    \item Salario nominal: 44.89 años [44.25, 47.05]
+  \end{itemize}
+\end{itemize}
+\end{columns}
+
+\vspace{0.2cm}
+
+\begin{itemize}
+     \item Estimación vía bootstrap (R = 1000) con método percentil (95\%)
+\end{itemize}
+
+ 
+
+
+
+\vspace{0.2cm}
+\begin{columns}
+\column{0.5\textwidth}
+\includegraphics[width=\linewidth]{C:/Users/mpaul/OneDrive - Universidad de los Andes/repositorios/PS1_Equipo3/views/3_fig_pred_ic.pdf}
+\column{0.5\textwidth}
+\includegraphics[width=\linewidth]{C:/Users/mpaul/OneDrive - Universidad de los Andes/repositorios/PS1_Equipo3/views/3_fig_boot.pdf}
+\end{columns}
+
+
+\end{frame}
+
 
 
 \end{document}
