@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.8.29)  8 SEP 2025 19:56
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.8.29)  8 SEP 2025 21:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1043,20 +1043,20 @@ Package pdftex.def Info: ../../views/logo.png  used on input line 50.
 {C:/Users/lveras/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map} <../../views
 /logo.png>]
 LaTeX Font Info:    Font shape `OT1/cmss/b/n' in size <10> not available
-(Font)              Font shape `OT1/cmss/bx/n' tried instead on input line 86.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 86.
+(Font)              Font shape `OT1/cmss/bx/n' tried instead on input line 87.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 87.
 
  (C:\Program Files\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 86.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 87.
 
 
 (C:\Program Files\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Trying to load font information for OT1+mathkerncmss on inp
-ut line 86.
+ut line 87.
 
 (C:\Program Files\MiKTeX\tex/latex/sansmathaccent\ot1mathkerncmss.fd
 File: ot1mathkerncmss.fd 2020/01/31 Fontinst v1.933 font definitions for OT1/ma
@@ -1069,10 +1069,10 @@ thkerncmss.
 <../../views/sd_fwl_hist.png, id=58, 334.1283pt x 148.8762pt>
 File: ../../views/sd_fwl_hist.png Graphic file (type png)
 <use ../../views/sd_fwl_hist.png>
-Package pdftex.def Info: ../../views/sd_fwl_hist.png  used on input line 141.
+Package pdftex.def Info: ../../views/sd_fwl_hist.png  used on input line 142.
 (pdftex.def)             Requested size: 150.35634pt x 66.99367pt.
 
-Overfull \vbox (114.36299pt too high) detected at line 141
+Overfull \vbox (114.36299pt too high) detected at line 142
  []
 
 
@@ -1082,7 +1082,7 @@ Overfull \vbox (114.36299pt too high) detected at line 141
  <../../views/sd_fwl_hist.png>]
 File: ../../views/sd_fwl_hist.png Graphic file (type png)
 <use ../../views/sd_fwl_hist.png>
-Package pdftex.def Info: ../../views/sd_fwl_hist.png  used on input line 160.
+Package pdftex.def Info: ../../views/sd_fwl_hist.png  used on input line 161.
 (pdftex.def)             Requested size: 150.35634pt x 66.99367pt.
 
 
@@ -1096,13 +1096,13 @@ Package pdftex.def Info: ../../views/sd_fwl_hist.png  used on input line 160.
 <../../views/age_peak_bar.png, id=84, 334.1283pt x 148.8762pt>
 File: ../../views/age_peak_bar.png Graphic file (type png)
 <use ../../views/age_peak_bar.png>
-Package pdftex.def Info: ../../views/age_peak_bar.png  used on input line 231.
+Package pdftex.def Info: ../../views/age_peak_bar.png  used on input line 232.
 (pdftex.def)             Requested size: 150.35634pt x 66.99367pt.
 <../../views/age_whiskey_point.png, id=85, 334.1283pt x 148.8762pt>
 File: ../../views/age_whiskey_point.png Graphic file (type png)
 <use ../../views/age_whiskey_point.png>
 Package pdftex.def Info: ../../views/age_whiskey_point.png  used on input line 
-231.
+232.
 (pdftex.def)             Requested size: 150.35634pt x 66.99367pt.
 
 
@@ -1149,7 +1149,7 @@ eX/fonts/type1/public/amsfonts/cm/cmss9.pfb><C:/Program Files/MiKTeX/fonts/type
 1/public/amsfonts/cm/cmssbx10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/a
 msfonts/cm/cmssi10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/
 cmsy10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
-Output written on main.pdf (6 pages, 314743 bytes).
+Output written on main.pdf (6 pages, 314612 bytes).
 PDF statistics:
  150 PDF objects out of 1000 (max. 8388607)
  13 named destinations out of 1000 (max. 500000)
