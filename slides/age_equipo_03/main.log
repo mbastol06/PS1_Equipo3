@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.2.19)  8 SEP 2025 19:01
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.2.19)  8 SEP 2025 19:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -986,6 +986,11 @@ infolines.sty)
 beaver.sty))
 (C:\Users\mpaul\AppData\Local\Programs\MiKTeX\tex/latex/beamer\beamerfontthemep
 rofessionalfonts.sty)
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\\' on input line 40.
+
+
 (C:\Users\mpaul\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdf
 tex.def
 File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
@@ -997,24 +1002,24 @@ LaTeX Info: Redefining \% on input line 12.
 )
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1076,7 +1081,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 fg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
-Package hyperref Info: Link coloring OFF on input line 42.
+Package hyperref Info: Link coloring OFF on input line 48.
  (main.out) (main.out)
 \@outlinefile=\write5
 \openout5 = `main.out'.
@@ -1106,62 +1111,111 @@ Dictionary: translator-numbers-dictionary, Language: English
 heorem-dictionary-English.dict
 Dictionary: translator-theorem-dictionary, Language: English 
 )
-LaTeX Info: Redefining \. on input line 42.
-LaTeX Info: Redefining \% on input line 42.
+LaTeX Info: Redefining \. on input line 48.
+LaTeX Info: Redefining \% on input line 48.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
- (main.nav) [1
+ (main.nav)
+Overfull \hbox (180.44362pt too wide) in paragraph at lines 48--48
+ [][]  \OT1/cmss/m/n/5 ([])  
+ []
 
-{C:/Users/mpaul/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
+
+Overfull \hbox (180.44362pt too wide) in paragraph at lines 51--51
+ [][]  \OT1/cmss/m/n/5 ([])  
+ []
+
+<C:/Users/mpaul/OneDrive - Universidad de los Andes/repositorios/PS1_Equipo3/vi
+ews/logo.png, id=26, 1505.625pt x 582.175pt>
+File: C:/Users/mpaul/OneDrive - Universidad de los Andes/repositorios/PS1_Equip
+o3/views/logo.png Graphic file (type png)
+<use C:/Users/mpaul/OneDrive - Universidad de los Andes/repositorios/PS1_Equipo
+3/views/logo.png>
+Package pdftex.def Info: C:/Users/mpaul/OneDrive - Universidad de los Andes/rep
+ositorios/PS1_Equipo3/views/logo.png  used on input line 51.
+(pdftex.def)             Requested size: 71.13188pt x 27.50258pt.
+
+Overfull \hbox (180.44362pt too wide) has occurred while \output is active
+ [][]  \OT1/cmss/m/n/5 ([])  
+ []
+
+[1
+
+{C:/Users/mpaul/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map} <C:/Users/mpa
+ul/OneDrive - Universidad de los Andes/repositorios/PS1_Equipo3/views/logo.png>
+]
+Overfull \hbox (180.44362pt too wide) in paragraph at lines 96--96
+ [][]  \OT1/cmss/m/n/5 ([])  
+ []
+
 LaTeX Font Info:    Font shape `OT1/cmss/b/n' in size <10> not available
-(Font)              Font shape `OT1/cmss/bx/n' tried instead on input line 90.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 90.
-
+(Font)              Font shape `OT1/cmss/bx/n' tried instead on input line 96.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 96.
 
 (C:\Users\mpaul\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 90.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 96.
 
 
 (C:\Users\mpaul\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Trying to load font information for OT1+mathkerncmss on inp
-ut line 90.
+ut line 96.
 
 (C:\Users\mpaul\AppData\Local\Programs\MiKTeX\tex/latex/sansmathaccent\ot1mathk
 erncmss.fd
 File: ot1mathkerncmss.fd 2020/01/31 Fontinst v1.933 font definitions for OT1/ma
 thkerncmss.
 )
-Overfull \vbox (1.58472pt too high) detected at line 90
+Overfull \hbox (180.44362pt too wide) has occurred while \output is active
+ [][]  \OT1/cmss/m/n/5 ([])  
  []
 
 [2
 
-] [3
+]
+Overfull \hbox (180.44362pt too wide) in paragraph at lines 138--138
+ [][]  \OT1/cmss/m/n/5 ([])  
+ []
+
+
+Overfull \hbox (180.44362pt too wide) has occurred while \output is active
+ [][]  \OT1/cmss/m/n/5 ([])  
+ []
+
+[3
 
 ]
+Overfull \hbox (180.44362pt too wide) in paragraph at lines 183--183
+ [][]  \OT1/cmss/m/n/5 ([])  
+ []
+
 <C:/Users/mpaul/OneDrive - Universidad de los Andes/repositorios/PS1_Equipo3/vi
-ews/3_fig_pred_ic.pdf, id=127, 722.7pt x 433.62pt>
+ews/3_fig_pred_ic.pdf, id=130, 722.7pt x 433.62pt>
 File: C:/Users/mpaul/OneDrive - Universidad de los Andes/repositorios/PS1_Equip
 o3/views/3_fig_pred_ic.pdf Graphic file (type pdf)
 <use C:/Users/mpaul/OneDrive - Universidad de los Andes/repositorios/PS1_Equipo
 3/views/3_fig_pred_ic.pdf>
 Package pdftex.def Info: C:/Users/mpaul/OneDrive - Universidad de los Andes/rep
-ositorios/PS1_Equipo3/views/3_fig_pred_ic.pdf  used on input line 177.
+ositorios/PS1_Equipo3/views/3_fig_pred_ic.pdf  used on input line 183.
 (pdftex.def)             Requested size: 172.09766pt x 103.2571pt.
 <C:/Users/mpaul/OneDrive - Universidad de los Andes/repositorios/PS1_Equipo3/vi
-ews/3_fig_boot.pdf, id=128, 722.7pt x 361.35pt>
+ews/3_fig_boot.pdf, id=131, 722.7pt x 361.35pt>
 File: C:/Users/mpaul/OneDrive - Universidad de los Andes/repositorios/PS1_Equip
 o3/views/3_fig_boot.pdf Graphic file (type pdf)
 <use C:/Users/mpaul/OneDrive - Universidad de los Andes/repositorios/PS1_Equipo
 3/views/3_fig_boot.pdf>
 Package pdftex.def Info: C:/Users/mpaul/OneDrive - Universidad de los Andes/rep
-ositorios/PS1_Equipo3/views/3_fig_boot.pdf  used on input line 177.
+ositorios/PS1_Equipo3/views/3_fig_boot.pdf  used on input line 183.
 (pdftex.def)             Requested size: 172.09766pt x 86.04758pt.
- [4
+
+Overfull \hbox (180.44362pt too wide) has occurred while \output is active
+ [][]  \OT1/cmss/m/n/5 ([])  
+ []
+
+[4
 
  <C:/Users/mpaul/OneDrive - Universidad de los Andes/repositorios/PS1_Equipo3/v
 iews/3_fig_pred_ic.pdf> <C:/Users/mpaul/OneDrive - Universidad de los Andes/rep
@@ -1187,10 +1241,10 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 26878 strings out of 474486
- 521587 string characters out of 5743755
- 1944542 words of memory out of 5000000
- 48598 multiletter control sequences out of 15000+600000
+ 26888 strings out of 474486
+ 522300 string characters out of 5743755
+ 1945542 words of memory out of 5000000
+ 48608 multiletter control sequences out of 15000+600000
  568648 words of font info for 68 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,16n,123p,381b,945s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1210,9 +1264,9 @@ s/cm/cmssi8.pfb><C:/Users/mpaul/AppData/Local/Programs/MiKTeX/fonts/type1/publi
 c/amsfonts/cm/cmsy10.pfb><C:/Users/mpaul/AppData/Local/Programs/MiKTeX/fonts/ty
 pe1/public/amsfonts/cm/cmsy5.pfb><C:/Users/mpaul/AppData/Local/Programs/MiKTeX/
 fonts/type1/public/amsfonts/cm/cmsy7.pfb>
-Output written on main.pdf (4 pages, 200962 bytes).
+Output written on main.pdf (4 pages, 257878 bytes).
 PDF statistics:
- 233 PDF objects out of 1000 (max. 8388607)
+ 236 PDF objects out of 1000 (max. 8388607)
  9 named destinations out of 1000 (max. 500000)
- 101 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 106 words of extra memory for PDF output out of 10000 (max. 10000000)
 
